@@ -1,0 +1,22 @@
+C:\Code\AdvProAssig\AdvProAssig\bin\Debug\AdvProAssig.exe.config
+C:\Code\AdvProAssig\AdvProAssig\bin\Debug\AdvProAssig.exe
+C:\Code\AdvProAssig\AdvProAssig\bin\Debug\AdvProAssig.pdb
+C:\Code\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.csprojResolveAssemblyReference.cache
+C:\Code\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.Form1.resources
+C:\Code\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.Properties.Resources.resources
+C:\Code\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.csproj.GenerateResource.Cache
+C:\Code\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.csproj.CoreCompileInputs.cache
+C:\Code\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.exe
+C:\Code\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.pdb
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\bin\Debug\AdvProAssig.exe.config
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\bin\Debug\AdvProAssig.exe
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\bin\Debug\AdvProAssig.pdb
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.csprojResolveAssemblyReference.cache
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.Properties.Resources.resources
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.csproj.GenerateResource.Cache
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.csproj.CoreCompileInputs.cache
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.exe
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.pdb
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.LoginForm.resources
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.Form2.resources
+C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.AddStudent.resources
