@@ -23,7 +23,13 @@ namespace AdvProAssig
             InitializeComponent();
             DummyStaffDataEntry();
             txtBoxPassword.PasswordChar = '*';
-            txtBoxTest.Text = "Connection succesful";
+            using (conn)
+            {
+                conn.Open();
+                if(conn.State==ConnectionState.Open)
+                    txtBoxTest.Text = "Connection succesful";
+            }
+            
             
         }
         private void LoginForm_Load(object sender, EventArgs e)
@@ -89,9 +95,5 @@ namespace AdvProAssig
             stafflist.Add(new Staff("Staff", "Rod"));
         }
 
-        private void txtBoxTest_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
