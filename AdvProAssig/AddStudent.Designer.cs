@@ -38,10 +38,12 @@
             this.txtBoxCity = new System.Windows.Forms.TextBox();
             this.cbCourseLevel = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rbUnderGrad = new System.Windows.Forms.RadioButton();
             this.rbPostGrad = new System.Windows.Forms.RadioButton();
+            this.rbUnderGrad = new System.Windows.Forms.RadioButton();
             this.txtBoxStudentNumber = new System.Windows.Forms.TextBox();
             this.cbCounties = new System.Windows.Forms.ComboBox();
+            this.btnAddStudent = new System.Windows.Forms.Button();
+            this.btnExportToXML = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,17 +129,6 @@
             this.panel1.Size = new System.Drawing.Size(169, 29);
             this.panel1.TabIndex = 10;
             // 
-            // rbUnderGrad
-            // 
-            this.rbUnderGrad.AutoSize = true;
-            this.rbUnderGrad.Location = new System.Drawing.Point(4, 4);
-            this.rbUnderGrad.Name = "rbUnderGrad";
-            this.rbUnderGrad.Size = new System.Drawing.Size(77, 17);
-            this.rbUnderGrad.TabIndex = 0;
-            this.rbUnderGrad.TabStop = true;
-            this.rbUnderGrad.Text = "UnderGrad";
-            this.rbUnderGrad.UseVisualStyleBackColor = true;
-            // 
             // rbPostGrad
             // 
             this.rbPostGrad.AutoSize = true;
@@ -148,6 +139,17 @@
             this.rbPostGrad.TabStop = true;
             this.rbPostGrad.Text = "PostGrad";
             this.rbPostGrad.UseVisualStyleBackColor = true;
+            // 
+            // rbUnderGrad
+            // 
+            this.rbUnderGrad.AutoSize = true;
+            this.rbUnderGrad.Location = new System.Drawing.Point(4, 4);
+            this.rbUnderGrad.Name = "rbUnderGrad";
+            this.rbUnderGrad.Size = new System.Drawing.Size(77, 17);
+            this.rbUnderGrad.TabIndex = 0;
+            this.rbUnderGrad.TabStop = true;
+            this.rbUnderGrad.Text = "UnderGrad";
+            this.rbUnderGrad.UseVisualStyleBackColor = true;
             // 
             // txtBoxStudentNumber
             // 
@@ -197,11 +199,32 @@
             this.cbCounties.Size = new System.Drawing.Size(170, 21);
             this.cbCounties.TabIndex = 12;
             // 
+            // btnAddStudent
+            // 
+            this.btnAddStudent.Location = new System.Drawing.Point(88, 354);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
+            this.btnAddStudent.TabIndex = 13;
+            this.btnAddStudent.Text = "Add Student";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
+            // 
+            // btnExportToXML
+            // 
+            this.btnExportToXML.Location = new System.Drawing.Point(185, 354);
+            this.btnExportToXML.Name = "btnExportToXML";
+            this.btnExportToXML.Size = new System.Drawing.Size(105, 23);
+            this.btnExportToXML.TabIndex = 14;
+            this.btnExportToXML.Text = "Export to XML";
+            this.btnExportToXML.UseVisualStyleBackColor = true;
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 459);
+            this.Controls.Add(this.btnExportToXML);
+            this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.cbCounties);
             this.Controls.Add(this.txtBoxStudentNumber);
             this.Controls.Add(this.panel1);
@@ -239,5 +262,7 @@
         private System.Windows.Forms.RadioButton rbUnderGrad;
         private System.Windows.Forms.TextBox txtBoxStudentNumber;
         private System.Windows.Forms.ComboBox cbCounties;
+        private System.Windows.Forms.Button btnAddStudent;
+        private System.Windows.Forms.Button btnExportToXML;
     }
 }

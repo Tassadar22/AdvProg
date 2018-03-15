@@ -23,14 +23,12 @@ namespace AdvProAssig
             InitializeComponent();
             DummyStaffDataEntry();
             txtBoxPassword.PasswordChar = '*';
-            using (conn)
+            /*using (conn)
             {
                 conn.Open();
                 if(conn.State==ConnectionState.Open)
                     txtBoxTest.Text = "Connection succesful";
-            }
-            
-            
+            }*/
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
