@@ -14,6 +14,7 @@ namespace AdvProAssig
     public partial class LoginForm : Form
     {
         List<Staff> stafflist = new List<Staff>();
+        //Variable for passing values between both checker functions
         Staff loginstaff = new Staff();
         static string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StudentDataBase;Integrated Security=True;";
         SqlConnection conn = new SqlConnection(ConnectionString);
@@ -22,6 +23,7 @@ namespace AdvProAssig
             InitializeComponent();
             DummyStaffDataEntry();
             txtBoxPassword.PasswordChar = '*';
+            txtBoxTest.Text = "Connection succesful";
             
         }
         private void LoginForm_Load(object sender, EventArgs e)
@@ -87,6 +89,9 @@ namespace AdvProAssig
             stafflist.Add(new Staff("Staff", "Rod"));
         }
 
-        
+        private void txtBoxTest_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

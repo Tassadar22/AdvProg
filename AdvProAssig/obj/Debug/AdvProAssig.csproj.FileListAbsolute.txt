@@ -20,3 +20,15 @@ C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\Ad
 C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.LoginForm.resources
 C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.Form2.resources
 C:\OneDrive - Dublin Business School (DBS)\Lecture Notes\Advanced Programming\AdvProAssig\AdvProAssig\obj\Debug\AdvProAssig.AddStudent.resources
+C:\Code\AdvProg\AdvProAssig\bin\Debug\AdvProAssig.exe.config
+C:\Code\AdvProg\AdvProAssig\bin\Debug\AdvProAssig.exe
+C:\Code\AdvProg\AdvProAssig\bin\Debug\AdvProAssig.pdb
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.csprojResolveAssemblyReference.cache
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.AddStudent.resources
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.LoginForm.resources
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.Form2.resources
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.Properties.Resources.resources
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.csproj.GenerateResource.Cache
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.csproj.CoreCompileInputs.cache
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.exe
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.pdb

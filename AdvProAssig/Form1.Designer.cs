@@ -95,6 +95,7 @@
             this.txtBoxTest.Name = "txtBoxTest";
             this.txtBoxTest.Size = new System.Drawing.Size(100, 20);
             this.txtBoxTest.TabIndex = 6;
+            this.txtBoxTest.TextChanged += new System.EventHandler(this.txtBoxTest_TextChanged);
             // 
             // LoginForm
             // 
