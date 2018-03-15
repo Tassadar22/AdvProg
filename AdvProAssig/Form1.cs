@@ -15,15 +15,30 @@ namespace AdvProAssig
     {
         List<Staff> stafflist = new List<Staff>();
         DAO dao = new DAO();
+        string message;
         //Variable for passing values between both checker functions
         Staff loginstaff = new Staff();
         public LoginForm()
         {
-            InitializeComponent();
-            DummyStaffDataEntry();
-            txtBoxPassword.PasswordChar = '*';
-            dao.AddServerData();
-            
+            try
+            {
+                InitializeComponent();
+                DummyStaffDataEntry();
+                txtBoxPassword.PasswordChar = '*';
+                dao.AddServerData();
+                DAO testdao = new DAO();
+                List<Student> retrievedlist = new List<Student>();
+                retrievedlist = testdao.GetList();
+                foreach (Student student in retrievedlist)
+                {
+                    testresult.Text += student.ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                message = ex.Message;
+            }
+            testresult.Text = message;
         }
      private void btnLogin_Click(object sender, EventArgs e)
         {

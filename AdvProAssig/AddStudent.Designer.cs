@@ -43,7 +43,9 @@
             this.txtBoxStudentNumber = new System.Windows.Forms.TextBox();
             this.cbCounties = new System.Windows.Forms.ComboBox();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.btnExportToXML = new System.Windows.Forms.Button();
+            this.btnDelStu = new System.Windows.Forms.Button();
+            this.btnEditStudent = new System.Windows.Forms.Button();
+            this.btnExporttoXML = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,21 +211,44 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // btnExportToXML
+            // btnDelStu
             // 
-            this.btnExportToXML.Location = new System.Drawing.Point(185, 354);
-            this.btnExportToXML.Name = "btnExportToXML";
-            this.btnExportToXML.Size = new System.Drawing.Size(105, 23);
-            this.btnExportToXML.TabIndex = 14;
-            this.btnExportToXML.Text = "Export to XML";
-            this.btnExportToXML.UseVisualStyleBackColor = true;
+            this.btnDelStu.Location = new System.Drawing.Point(189, 354);
+            this.btnDelStu.Name = "btnDelStu";
+            this.btnDelStu.Size = new System.Drawing.Size(101, 23);
+            this.btnDelStu.TabIndex = 14;
+            this.btnDelStu.Text = "Delete Student";
+            this.btnDelStu.UseVisualStyleBackColor = true;
+            this.btnDelStu.Click += new System.EventHandler(this.btnDelStu_Click);
+            // 
+            // btnEditStudent
+            // 
+            this.btnEditStudent.Location = new System.Drawing.Point(304, 354);
+            this.btnEditStudent.Name = "btnEditStudent";
+            this.btnEditStudent.Size = new System.Drawing.Size(95, 23);
+            this.btnEditStudent.TabIndex = 15;
+            this.btnEditStudent.Text = "btnEditStudent";
+            this.btnEditStudent.UseVisualStyleBackColor = true;
+            this.btnEditStudent.Click += new System.EventHandler(this.btnEditStudent_Click);
+            // 
+            // btnExporttoXML
+            // 
+            this.btnExporttoXML.Location = new System.Drawing.Point(429, 354);
+            this.btnExporttoXML.Name = "btnExporttoXML";
+            this.btnExporttoXML.Size = new System.Drawing.Size(75, 23);
+            this.btnExporttoXML.TabIndex = 16;
+            this.btnExporttoXML.Text = "XML Export";
+            this.btnExporttoXML.UseVisualStyleBackColor = true;
+            this.btnExporttoXML.Click += new System.EventHandler(this.btnExporttoXML_Click);
             // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 459);
-            this.Controls.Add(this.btnExportToXML);
+            this.Controls.Add(this.btnExporttoXML);
+            this.Controls.Add(this.btnEditStudent);
+            this.Controls.Add(this.btnDelStu);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.cbCounties);
             this.Controls.Add(this.txtBoxStudentNumber);
@@ -239,7 +264,6 @@
             this.Controls.Add(this.lblDetails);
             this.Name = "AddStudent";
             this.Text = "Add Student Field";
-            this.Load += new System.EventHandler(this.AddStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -264,6 +288,8 @@
         private System.Windows.Forms.TextBox txtBoxStudentNumber;
         private System.Windows.Forms.ComboBox cbCounties;
         private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.Button btnExportToXML;
+        private System.Windows.Forms.Button btnDelStu;
+        private System.Windows.Forms.Button btnEditStudent;
+        private System.Windows.Forms.Button btnExporttoXML;
     }
 }

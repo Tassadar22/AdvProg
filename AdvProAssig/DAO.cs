@@ -18,9 +18,7 @@ namespace AdvProAssig
         //Consider changing to void method
         public bool AddServerData()
         {
-            try
-            {
-                SqlCommand createStudentTable = new SqlCommand("CREATE TABLE Student(" +
+            SqlCommand createStudentTable = new SqlCommand("CREATE TABLE Student(" +
                     "StudentFirstName VARCHAR(10)," +
                     "StudentSurName VARCHAR(20)," +
                     "StudentEmail VARCHAR(50)," +
@@ -31,15 +29,17 @@ namespace AdvProAssig
                     "StudentLevel VARCHAR(25)," +
                     "StudentCourse VARCHAR(20)," +
                     "StudentID INT)", conn);
-                SqlCommand addStudent1 = new SqlCommand("INSERT INTO Student VALUES("+
-                    "'John','Smith','John@DBS.com','4159879','45 Merrion Square'," +
-                    "'Dublin 2','Dublin','UnderGraduate','Psychology',45645688)", conn);
-                SqlCommand addStudent2 = new SqlCommand("INSERT INTO Student Values(" +
-                     "'Mary', 'Smith', 'Mary@DBS.com', '0872146455'," +
-                     "'20 the Green', 'Rathmines', 'Dublin 10', 'PostGraduate', 'Marketing', 45678912)", conn);
-                SqlCommand addStudent3 = new SqlCommand("INSERT INTO Student Values(" +
-                      "'Max', 'Power', 'Max@DBS.com', '0894561245'," +
-                     "'54 Briarwood', 'StoneyBatter', 'Dublin 7', 'UnderGraduate', 'Business', 78451254)", conn);
+            SqlCommand addStudent1 = new SqlCommand("INSERT INTO Student VALUES(" +
+                "'John','Smith','John@DBS.com','4159879','45 Merrion Square'," +
+                "'Dublin 2','Dublin','UnderGraduate','Psychology',45645688)", conn);
+            SqlCommand addStudent2 = new SqlCommand("INSERT INTO Student Values(" +
+                 "'Mary', 'Smith', 'Mary@DBS.com', '0872146455'," +
+                 "'20 the Green', 'Rathmines', 'Dublin 10', 'PostGraduate', 'Marketing', 45678912)", conn);
+            SqlCommand addStudent3 = new SqlCommand("INSERT INTO Student Values(" +
+                  "'Max', 'Power', 'Max@DBS.com', '0894561245'," +
+                 "'54 Briarwood', 'StoneyBatter', 'Dublin 7', 'UnderGraduate', 'Business', 78451254)", conn);
+            try
+            {
                 using (conn)
                 {
                     conn.Open();
@@ -73,11 +73,32 @@ namespace AdvProAssig
                 return false;
             }
         }
-
-        public Student Findstudent(int id)
+        //FINISH
+        public void Findstudent(int id)
         {
 
-            return Student
+            //return Student
+        }
+        public List<Student> GetList()
+        {
+            List<Student> list = new List<Student>();
+            SqlCommand Getstudentlist = new SqlCommand("SELECT * FROM Student", conn);
+            SqlDataReader reader;
+            try
+            {
+                conn.Open();
+                reader = Getstudentlist.ExecuteReader();
+                while(reader.Read())
+                {
+                    Student student = new Student();
+                    student.FirstName = reader[0].ToString();
+                }
+            }catch(Exception ex)
+            {
+
+            }
+            return list;
+
         }
         
     }

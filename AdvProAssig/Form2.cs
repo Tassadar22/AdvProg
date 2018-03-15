@@ -14,7 +14,10 @@ namespace AdvProAssig
     {
         public Form2()
         {
+           
             InitializeComponent();
+            
+            
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -36,6 +39,11 @@ namespace AdvProAssig
             AddStudent studentpage = new AddStudent();
             studentpage.ShowDialog();
             this.Close();
+        }
+
+        private void testresult_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

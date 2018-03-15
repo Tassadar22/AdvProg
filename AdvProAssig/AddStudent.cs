@@ -12,7 +12,7 @@ namespace AdvProAssig
 {
     public partial class AddStudent : Form
     {
-        //private DataSet StudentDataSet;
+        private DataSet StudentDataSet;
         public AddStudent()
         {
             InitializeComponent();
@@ -21,8 +21,22 @@ namespace AdvProAssig
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             
-            
-            /*//DataTable DTS;
+          
+        }
+
+        private void btnEditStudent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelStu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExporttoXML_Click(object sender, EventArgs e)
+        {
+            DataTable DTS;
             if(StudentDataSet == null)
             {
                 StudentDataSet = new DataSet("Students");
@@ -41,12 +55,7 @@ namespace AdvProAssig
             }
             DTS = StudentDataSet.Tables["Student"];
             DataRow rowstu = DTS.NewRow();
-            rowstu = */
-        }
-
-        private void AddStudent_Load(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }

@@ -35,3 +35,5 @@ INSERT INTO Student Values
 (
 'Max','Power','Max@DBS.com','0894561245',
 '54 Briarwood','StoneyBatter','Dublin 7','UnderGraduate','Business',78451254)
+
+SELECT * FROM Student

@@ -35,6 +35,7 @@
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtBoxTest = new System.Windows.Forms.TextBox();
+            this.testresult = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -96,11 +97,20 @@
             this.txtBoxTest.Size = new System.Drawing.Size(100, 20);
             this.txtBoxTest.TabIndex = 6;
             // 
+            // testresult
+            // 
+            this.testresult.Location = new System.Drawing.Point(46, 162);
+            this.testresult.Name = "testresult";
+            this.testresult.Size = new System.Drawing.Size(465, 166);
+            this.testresult.TabIndex = 7;
+            this.testresult.Text = "";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 340);
+            this.Controls.Add(this.testresult);
             this.Controls.Add(this.txtBoxTest);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtBoxPassword);
@@ -125,6 +135,7 @@
         private System.Windows.Forms.TextBox txtBoxPassword;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txtBoxTest;
+        private System.Windows.Forms.RichTextBox testresult;
     }
 }
 

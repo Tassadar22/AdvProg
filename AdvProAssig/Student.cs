@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AdvProAssig
 {
-    /*public enum GraduateLevel { Undergraduate = 1, Postgraduate }
-    public enum CourseLevel { Psychology=1, Business, Marketing, SoftwareDevelopment, DataAnalytics}*/
+    public enum GraduateLevel { Undergraduate = 1, Postgraduate }
+    public enum CourseLevel { Psychology=1, Business, Marketing, SoftwareDevelopment, DataAnalytics}
     class Student
     {
         public string FirstName { get; set; }
