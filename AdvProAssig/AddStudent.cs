@@ -20,6 +20,8 @@ namespace AdvProAssig
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
+            
+            
             /*//DataTable DTS;
             if(StudentDataSet == null)
             {
@@ -41,6 +43,10 @@ namespace AdvProAssig
             DataRow rowstu = DTS.NewRow();
             rowstu = */
         }
-       
+
+        private void AddStudent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
