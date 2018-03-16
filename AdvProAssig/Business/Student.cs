@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdvProAssig.DataAccess;
 
 namespace AdvProAssig
 {
@@ -10,6 +11,9 @@ namespace AdvProAssig
     public enum CourseLevel { Psychology=1, Business, Marketing, SoftwareDevelopment, DataAnalytics}
     class Student
     {
+        static List<Student> studentlist = new List<Student>();
+        static ModifyStudentRecord data = new ModifyStudentRecord();
+
         public string FirstName { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
@@ -56,7 +60,16 @@ namespace AdvProAssig
                 $"'{Courselevel}'," +
                 $"{StudentNumber}");
         }
-
+        public void addtoDB()
+        {
+            data.addtoDB(FirstName, Surname, Email, Phone, AddressLine1, AddressLine2, County, City, GraduateLevel, Courselevel, StudentNumber);
+        }
+        public static void addStudent(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
+        {
+            Student newstudent = new Student(firstname, surname, email, phone, addlin1, addlin2, county, city, gradlevel, cour, stunum);
+            studentlist.Add(newstudent);
+            newstudent.addtoDB();
+        }
     }
     
 }

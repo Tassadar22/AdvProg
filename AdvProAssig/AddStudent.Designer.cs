@@ -36,8 +36,8 @@
             this.txtBoxAdl1 = new System.Windows.Forms.TextBox();
             this.txtBoxAdl2 = new System.Windows.Forms.TextBox();
             this.txtBoxCity = new System.Windows.Forms.TextBox();
-            this.cbCourseLevel = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbCourse = new System.Windows.Forms.ComboBox();
+            this.panelCourseLevel = new System.Windows.Forms.Panel();
             this.rbPostGrad = new System.Windows.Forms.RadioButton();
             this.rbUnderGrad = new System.Windows.Forms.RadioButton();
             this.txtBoxStudentNumber = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.btnDelStu = new System.Windows.Forms.Button();
             this.btnEditStudent = new System.Windows.Forms.Button();
             this.btnExporttoXML = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.panelCourseLevel.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDetails
@@ -57,89 +57,89 @@
             this.lblDetails.Size = new System.Drawing.Size(87, 299);
             this.lblDetails.TabIndex = 0;
             this.lblDetails.Text = "First Name:\r\n\r\nSurname:\r\n\r\nEmail:\r\n\r\nPhone:\r\n\r\nAddress Line 1:\r\n\r\nAddress Line 2:" +
-    "\r\n\r\nCounty:\r\n\r\nCity:\r\n\r\nCourseLevel:\r\n\r\nCourse:\r\n\r\n\r\nStudent Number:\r\n\r\n";
+    "\r\n\r\nCounty:\r\n\r\nCity:\r\n\r\nCourse:\r\n\r\nCourseLevel:\r\n\r\n\r\nStudent Number:\r\n\r\n";
             // 
             // txtBoxFirstName
             // 
             this.txtBoxFirstName.Location = new System.Drawing.Point(136, 22);
             this.txtBoxFirstName.Name = "txtBoxFirstName";
-            this.txtBoxFirstName.Size = new System.Drawing.Size(170, 20);
+            this.txtBoxFirstName.Size = new System.Drawing.Size(199, 20);
             this.txtBoxFirstName.TabIndex = 1;
             // 
             // txtBoxSurname
             // 
             this.txtBoxSurname.Location = new System.Drawing.Point(136, 48);
             this.txtBoxSurname.Name = "txtBoxSurname";
-            this.txtBoxSurname.Size = new System.Drawing.Size(170, 20);
+            this.txtBoxSurname.Size = new System.Drawing.Size(199, 20);
             this.txtBoxSurname.TabIndex = 2;
             // 
             // txtBoxEmail
             // 
             this.txtBoxEmail.Location = new System.Drawing.Point(136, 74);
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(170, 20);
+            this.txtBoxEmail.Size = new System.Drawing.Size(199, 20);
             this.txtBoxEmail.TabIndex = 3;
             // 
             // txtBoxPhone
             // 
             this.txtBoxPhone.Location = new System.Drawing.Point(136, 100);
             this.txtBoxPhone.Name = "txtBoxPhone";
-            this.txtBoxPhone.Size = new System.Drawing.Size(170, 20);
+            this.txtBoxPhone.Size = new System.Drawing.Size(199, 20);
             this.txtBoxPhone.TabIndex = 4;
             // 
             // txtBoxAdl1
             // 
             this.txtBoxAdl1.Location = new System.Drawing.Point(136, 126);
             this.txtBoxAdl1.Name = "txtBoxAdl1";
-            this.txtBoxAdl1.Size = new System.Drawing.Size(170, 20);
+            this.txtBoxAdl1.Size = new System.Drawing.Size(199, 20);
             this.txtBoxAdl1.TabIndex = 5;
             // 
             // txtBoxAdl2
             // 
             this.txtBoxAdl2.Location = new System.Drawing.Point(136, 152);
             this.txtBoxAdl2.Name = "txtBoxAdl2";
-            this.txtBoxAdl2.Size = new System.Drawing.Size(170, 20);
+            this.txtBoxAdl2.Size = new System.Drawing.Size(199, 20);
             this.txtBoxAdl2.TabIndex = 6;
             // 
             // txtBoxCity
             // 
             this.txtBoxCity.Location = new System.Drawing.Point(136, 204);
             this.txtBoxCity.Name = "txtBoxCity";
-            this.txtBoxCity.Size = new System.Drawing.Size(170, 20);
+            this.txtBoxCity.Size = new System.Drawing.Size(199, 20);
             this.txtBoxCity.TabIndex = 8;
             // 
-            // cbCourseLevel
+            // cbCourse
             // 
-            this.cbCourseLevel.FormattingEnabled = true;
-            this.cbCourseLevel.Items.AddRange(new object[] {
+            this.cbCourse.FormattingEnabled = true;
+            this.cbCourse.Items.AddRange(new object[] {
             "Psychology",
             "Business ",
             "Marketing ",
             "Software Development ",
             "DataAnalytics"});
-            this.cbCourseLevel.Location = new System.Drawing.Point(136, 230);
-            this.cbCourseLevel.Name = "cbCourseLevel";
-            this.cbCourseLevel.Size = new System.Drawing.Size(170, 21);
-            this.cbCourseLevel.TabIndex = 9;
+            this.cbCourse.Location = new System.Drawing.Point(136, 230);
+            this.cbCourse.Name = "cbCourse";
+            this.cbCourse.Size = new System.Drawing.Size(199, 21);
+            this.cbCourse.TabIndex = 9;
             // 
-            // panel1
+            // panelCourseLevel
             // 
-            this.panel1.Controls.Add(this.rbPostGrad);
-            this.panel1.Controls.Add(this.rbUnderGrad);
-            this.panel1.Location = new System.Drawing.Point(137, 258);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(169, 29);
-            this.panel1.TabIndex = 10;
+            this.panelCourseLevel.Controls.Add(this.rbPostGrad);
+            this.panelCourseLevel.Controls.Add(this.rbUnderGrad);
+            this.panelCourseLevel.Location = new System.Drawing.Point(137, 258);
+            this.panelCourseLevel.Name = "panelCourseLevel";
+            this.panelCourseLevel.Size = new System.Drawing.Size(198, 29);
+            this.panelCourseLevel.TabIndex = 10;
             // 
             // rbPostGrad
             // 
             this.rbPostGrad.AutoSize = true;
-            this.rbPostGrad.Location = new System.Drawing.Point(84, 4);
+            this.rbPostGrad.Location = new System.Drawing.Point(105, 4);
             this.rbPostGrad.Name = "rbPostGrad";
-            this.rbPostGrad.Size = new System.Drawing.Size(69, 17);
+            this.rbPostGrad.Size = new System.Drawing.Size(90, 17);
             this.rbPostGrad.TabIndex = 1;
             this.rbPostGrad.TabStop = true;
-            this.rbPostGrad.Text = "PostGrad";
+            this.rbPostGrad.Text = "PostGraduate";
             this.rbPostGrad.UseVisualStyleBackColor = true;
             // 
             // rbUnderGrad
@@ -147,17 +147,17 @@
             this.rbUnderGrad.AutoSize = true;
             this.rbUnderGrad.Location = new System.Drawing.Point(4, 4);
             this.rbUnderGrad.Name = "rbUnderGrad";
-            this.rbUnderGrad.Size = new System.Drawing.Size(77, 17);
+            this.rbUnderGrad.Size = new System.Drawing.Size(98, 17);
             this.rbUnderGrad.TabIndex = 0;
             this.rbUnderGrad.TabStop = true;
-            this.rbUnderGrad.Text = "UnderGrad";
+            this.rbUnderGrad.Text = "UnderGraduate";
             this.rbUnderGrad.UseVisualStyleBackColor = true;
             // 
             // txtBoxStudentNumber
             // 
             this.txtBoxStudentNumber.Location = new System.Drawing.Point(136, 293);
             this.txtBoxStudentNumber.Name = "txtBoxStudentNumber";
-            this.txtBoxStudentNumber.Size = new System.Drawing.Size(170, 20);
+            this.txtBoxStudentNumber.Size = new System.Drawing.Size(199, 20);
             this.txtBoxStudentNumber.TabIndex = 11;
             // 
             // cbCounties
@@ -198,7 +198,7 @@
             "Wicklow"});
             this.cbCounties.Location = new System.Drawing.Point(136, 179);
             this.cbCounties.Name = "cbCounties";
-            this.cbCounties.Size = new System.Drawing.Size(170, 21);
+            this.cbCounties.Size = new System.Drawing.Size(199, 21);
             this.cbCounties.TabIndex = 12;
             // 
             // btnAddStudent
@@ -252,8 +252,8 @@
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.cbCounties);
             this.Controls.Add(this.txtBoxStudentNumber);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.cbCourseLevel);
+            this.Controls.Add(this.panelCourseLevel);
+            this.Controls.Add(this.cbCourse);
             this.Controls.Add(this.txtBoxCity);
             this.Controls.Add(this.txtBoxAdl2);
             this.Controls.Add(this.txtBoxAdl1);
@@ -264,8 +264,8 @@
             this.Controls.Add(this.lblDetails);
             this.Name = "AddStudent";
             this.Text = "Add Student Field";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelCourseLevel.ResumeLayout(false);
+            this.panelCourseLevel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,8 +281,8 @@
         private System.Windows.Forms.TextBox txtBoxAdl1;
         private System.Windows.Forms.TextBox txtBoxAdl2;
         private System.Windows.Forms.TextBox txtBoxCity;
-        private System.Windows.Forms.ComboBox cbCourseLevel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cbCourse;
+        private System.Windows.Forms.Panel panelCourseLevel;
         private System.Windows.Forms.RadioButton rbPostGrad;
         private System.Windows.Forms.RadioButton rbUnderGrad;
         private System.Windows.Forms.TextBox txtBoxStudentNumber;

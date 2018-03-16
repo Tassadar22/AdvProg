@@ -20,8 +20,8 @@ namespace AdvProAssig
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            
-          
+            Student.addStudent(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.SelectedText, txtBoxCity.Text, IsRadioButtonSelect(), cbCourse.SelectedText, int.Parse(txtBoxStudentNumber.Text));
+                      
         }
 
         private void btnEditStudent_Click(object sender, EventArgs e)
@@ -56,6 +56,14 @@ namespace AdvProAssig
             DTS = StudentDataSet.Tables["Student"];
             DataRow rowstu = DTS.NewRow();
             
+        }
+        public string IsRadioButtonSelect()
+        {
+            if (rbUnderGrad.Checked)
+                return rbUnderGrad.Text;
+            else if (rbPostGrad.Checked)
+                return rbPostGrad.Text;
+            else return string.Format("None selected");
         }
     }
 }

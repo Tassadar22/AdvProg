@@ -93,7 +93,7 @@ namespace AdvProAssig
                     Student student = new Student();
                     student.FirstName = reader[0].ToString();
                 }
-            }catch(Exception ex)
+            }catch
             {
 
             }
