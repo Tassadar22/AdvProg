@@ -9,6 +9,7 @@ StudentPhone VARCHAR (15),
 StudentAddLin1 VARCHAR (20),
 StudentAddLin2 VARCHAR (20),
 StudentCity VARCHAR (15),
+StudentCounty VARCHAR (20),
 StudentLevel VARCHAR (12),
 StudentCourse VARCHAR (15),
 StudentID INT,
@@ -30,10 +31,13 @@ INSERT INTO Student VALUES
 INSERT INTO Student Values
 (
 'Mary','Smith','Mary@DBS.com','0872146455',
-'20 the Green','Rathmines','Dublin 6','PostGraduate','Marketing',45678912)
+'20 the Green','Rathmines','Dublin 6','Dublin','PostGraduate','Marketing',45678912)
 INSERT INTO Student Values
 (
 'Max','Power','Max@DBS.com','0894561245',
-'54 Briarwood','StoneyBatter','Dublin 7','UnderGraduate','Business',78451254)
+'54 Briarwood','StoneyBatter','Dublin 7','Dublin','UnderGraduate','Business',78451254)
 
 SELECT * FROM Student
+
+SELECT * FROM Student
+WHERE StudentID=45645688;

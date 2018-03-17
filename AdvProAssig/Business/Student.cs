@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdvProAssig.DataAccess;
+using System.Data;
 
 namespace AdvProAssig
 {
@@ -13,6 +14,7 @@ namespace AdvProAssig
     {
         static List<Student> studentlist = new List<Student>();
         static ModifyStudentRecord data = new ModifyStudentRecord();
+        static private DataSet StudentDataSet;
 
         public string FirstName { get; set; }
         public string Surname { get; set; }
@@ -43,8 +45,8 @@ namespace AdvProAssig
         }
         public override string ToString()
         {
-            return string.Format($"FirstName: {FirstName} Surname: {Surname} Email: {Email} Phone: {Phone} AddressLine 1: {AddressLine1} AddressLine: {AddressLine2} City: {City} County: {County}" +
-                $"Graduate Level: {GraduateLevel} Course Level: {Courselevel} Student Number {StudentNumber}");
+            return string.Format($"FirstName: {FirstName}\nSurname: {Surname}\nEmail: {Email}\nPhone: {Phone}\nAddressLine 1: {AddressLine1}\nAddressLine: {AddressLine2}\nCity: {City}\nCounty: {County}\n" +
+                $"Graduate Level: {GraduateLevel}\nCourse Level: {Courselevel}\nStudent Number {StudentNumber}\n");
         }
         public string ToDatabaseString()
         {
@@ -56,13 +58,14 @@ namespace AdvProAssig
                 $"'{AddressLine1}'," +
                 $"'{AddressLine2}'," +
                 $"'{City}'," +
+                $"'{County}'," +
                 $"'{GraduateLevel}'," +
                 $"'{Courselevel}'," +
                 $"{StudentNumber}");
         }
         public void addtoDB()
         {
-            data.addtoDB(FirstName, Surname, Email, Phone, AddressLine1, AddressLine2, County, City, GraduateLevel, Courselevel, StudentNumber);
+            data.AddtoDB(FirstName, Surname, Email, Phone, AddressLine1, AddressLine2, County, City, GraduateLevel, Courselevel, StudentNumber);
         }
         public static void addStudent(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
         {
@@ -70,6 +73,48 @@ namespace AdvProAssig
             studentlist.Add(newstudent);
             newstudent.addtoDB();
         }
+        //Method takes values from Student object 
+        public void ExportToXml(Student student)
+        {
+            //Add student object to Dataset
+            DataTable DTS;
+            if (StudentDataSet == null)
+            {
+                StudentDataSet = new DataSet("Students");
+                DTS = new DataTable("Student");
+                DTS.Columns.Add("FirstName");
+                DTS.Columns.Add("Surname");
+                DTS.Columns.Add("Email");
+                DTS.Columns.Add("Phone");
+                DTS.Columns.Add("Address_Line_1");
+                DTS.Columns.Add("Address_Line_2");
+                DTS.Columns.Add("County");
+                DTS.Columns.Add("City");
+                DTS.Columns.Add("Graduatelevel");
+                DTS.Columns.Add("Course");
+                DTS.Columns.Add("StudentNumber");
+                StudentDataSet.Tables.Add(DTS);
+            }
+            DTS = StudentDataSet.Tables["Student"];
+            DataRow rowstu = DTS.NewRow();
+            rowstu["FirstName"] = student.FirstName;
+            rowstu["Surname"] = student.Surname;
+            rowstu["Email"] = student.Email;
+            rowstu["Phone"] = student.Phone;
+            rowstu["Address Line 1"] = student.AddressLine1;
+            rowstu["Address Line 2"] = student.AddressLine2;
+            rowstu["County"] = student.County;
+            rowstu["City"] = student.City;
+            rowstu["Graduatelevel"] = student.GraduateLevel;
+            rowstu["Course"] = student.Courselevel;
+            rowstu["StudentNumber"] = student.StudentNumber;
+            DTS.Rows.Add(rowstu);
+            DTS.AcceptChanges();
+
+            //To export to XML
+            StudentDataSet.WriteXml("Student.xml"); 
+        }
+
     }
     
 }

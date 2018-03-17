@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AdvProAssig
 {
     public partial class Form2 : Form
     {
+        DataAccess.ModifyStudentRecord teststu = new DataAccess.ModifyStudentRecord();
         public Form2()
         {
-           
+            
             InitializeComponent();
             
             
@@ -44,6 +46,11 @@ namespace AdvProAssig
         private void testresult_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTestServerCommand_Click(object sender, EventArgs e)
+        {
+            txtboxTest.Text = teststu.GetstringList();
         }
     }
 }

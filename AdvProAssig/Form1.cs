@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using AdvProAssig.DataAccess;
 
 namespace AdvProAssig
 {
@@ -15,6 +16,7 @@ namespace AdvProAssig
     {
         List<Staff> stafflist = new List<Staff>();
         DAO dao = new DAO();
+        ModifyStudentRecord findstu = new ModifyStudentRecord();
         string message;
         //Variable for passing values between both checker functions
         Staff loginstaff = new Staff();
@@ -102,6 +104,22 @@ namespace AdvProAssig
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            testresult.Text = "";
+            List<Student> iterative;
+            iterative = findstu.GetList();
+            foreach(Student istu in iterative)
+            {
+                testresult.Text += istu.ToString()+"\n";
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            findstu.DeleteRecord(int.Parse(txtBoxDelete.Text));
         }
     }
 }

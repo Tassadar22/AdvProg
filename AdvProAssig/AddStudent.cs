@@ -16,6 +16,8 @@ namespace AdvProAssig
         public AddStudent()
         {
             InitializeComponent();
+            Student teststudent = new Student("John", "w", "wad@awd.com", "4545", "45613", "456", "45", "dublin", "Postgraduate", "Psychology", 456464);
+            teststudent.ExportToXml(teststudent);
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
@@ -64,6 +66,11 @@ namespace AdvProAssig
             else if (rbPostGrad.Checked)
                 return rbPostGrad.Text;
             else return string.Format("None selected");
+        }
+
+        private void AddStudent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

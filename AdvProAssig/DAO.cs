@@ -26,24 +26,25 @@ namespace AdvProAssig
                     "StudentAddLin1 VARCHAR(20)," +
                     "StudentAddLin2 VARCHAR(20)," +
                     "StudentCity VARCHAR(20)," +
+                    "StudentCounty VARCHAR (20)," +
                     "StudentLevel VARCHAR(25)," +
                     "StudentCourse VARCHAR(20)," +
                     "StudentID INT)", conn);
             SqlCommand addStudent1 = new SqlCommand("INSERT INTO Student VALUES(" +
                 "'John','Smith','John@DBS.com','4159879','45 Merrion Square'," +
-                "'Dublin 2','Dublin','UnderGraduate','Psychology',45645688)", conn);
+                "'Dublin 2','Dublin','Dublin','UnderGraduate','Psychology',45645688)", conn);
             SqlCommand addStudent2 = new SqlCommand("INSERT INTO Student Values(" +
                  "'Mary', 'Smith', 'Mary@DBS.com', '0872146455'," +
-                 "'20 the Green', 'Rathmines', 'Dublin 10', 'PostGraduate', 'Marketing', 45678912)", conn);
+                 "'20 the Green', 'Rathmines', 'Dublin 10','Dublin','PostGraduate', 'Marketing', 45678912)", conn);
             SqlCommand addStudent3 = new SqlCommand("INSERT INTO Student Values(" +
                   "'Max', 'Power', 'Max@DBS.com', '0894561245'," +
-                 "'54 Briarwood', 'StoneyBatter', 'Dublin 7', 'UnderGraduate', 'Business', 78451254)", conn);
+                 "'54 Briarwood', 'StoneyBatter', 'Dublin 7', 'Dublin','UnderGraduate', 'Business', 78451254)", conn);
             try
             {
                 using (conn)
                 {
                     conn.Open();
-                    createStudentTable.ExecuteNonQuery();
+                    //createStudentTable.ExecuteNonQuery();
                     addStudent1.ExecuteNonQuery();
                     addStudent2.ExecuteNonQuery();
                     addStudent3.ExecuteNonQuery();
@@ -73,13 +74,7 @@ namespace AdvProAssig
                 return false;
             }
         }
-        //FINISH
-        public void Findstudent(int id)
-        {
-
-            //return Student
-        }
-        public List<Student> GetList()
+      public List<Student> GetList()
         {
             List<Student> list = new List<Student>();
             SqlCommand Getstudentlist = new SqlCommand("SELECT * FROM Student", conn);

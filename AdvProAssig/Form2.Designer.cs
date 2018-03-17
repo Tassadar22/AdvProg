@@ -33,6 +33,8 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtboxTest = new System.Windows.Forms.RichTextBox();
+            this.btnTestServerCommand = new System.Windows.Forms.Button();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,6 +102,24 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1063, 256);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // txtboxTest
+            // 
+            this.txtboxTest.Location = new System.Drawing.Point(704, 332);
+            this.txtboxTest.Name = "txtboxTest";
+            this.txtboxTest.Size = new System.Drawing.Size(525, 171);
+            this.txtboxTest.TabIndex = 5;
+            this.txtboxTest.Text = "";
+            // 
+            // btnTestServerCommand
+            // 
+            this.btnTestServerCommand.Location = new System.Drawing.Point(573, 357);
+            this.btnTestServerCommand.Name = "btnTestServerCommand";
+            this.btnTestServerCommand.Size = new System.Drawing.Size(75, 23);
+            this.btnTestServerCommand.TabIndex = 6;
+            this.btnTestServerCommand.Text = "button1";
+            this.btnTestServerCommand.UseVisualStyleBackColor = true;
+            this.btnTestServerCommand.Click += new System.EventHandler(this.btnTestServerCommand_Click);
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -178,6 +198,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1374, 575);
+            this.Controls.Add(this.btnTestServerCommand);
+            this.Controls.Add(this.txtboxTest);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.btnExit);
@@ -207,5 +229,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn courselevelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource studentBindingSource;
+        private System.Windows.Forms.RichTextBox txtboxTest;
+        private System.Windows.Forms.Button btnTestServerCommand;
     }
 }
