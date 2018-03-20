@@ -12,7 +12,7 @@ namespace AdvProAssig
     public enum CourseLevel { Psychology=1, Business, Marketing, SoftwareDevelopment, DataAnalytics}
     class Student
     {
-        static List<Student> studentlist = new List<Student>();
+        static public List<Student> studentlist = new List<Student>();
         static ModifyStudentRecord data = new ModifyStudentRecord();
         static private DataSet StudentDataSet;
 

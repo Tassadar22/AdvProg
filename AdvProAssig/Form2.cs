@@ -18,8 +18,12 @@ namespace AdvProAssig
         {
             
             InitializeComponent();
+
+            dataGridStudents.DataSource = Student.studentlist;
             
             
+
+
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -51,6 +55,11 @@ namespace AdvProAssig
         private void btnTestServerCommand_Click(object sender, EventArgs e)
         {
             txtboxTest.Text = teststu.GetstringList();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
