@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using AdvProAssig.DataAccess;
+using System.Security.Cryptography;
 
 namespace AdvProAssig
 {
     public partial class LoginForm : Form
     {
         List<Staff> stafflist = new List<Staff>();
-        DAO dao = new DAO();
         ModifyStudentRecord findstu = new ModifyStudentRecord();
         string message;
         //Variable for passing values between both checker functions
@@ -25,9 +25,8 @@ namespace AdvProAssig
             try
             {
                 InitializeComponent();
-                DummyStaffDataEntry();
+                //Add * character to password textbox
                 txtBoxPassword.PasswordChar = '*';
-                dao.AddServerData();
                 DAO testdao = new DAO();
                 List<Student> retrievedlist = new List<Student>();
                 retrievedlist = testdao.GetList();
@@ -54,7 +53,7 @@ namespace AdvProAssig
                 PasswordChecker(txtBoxPassword.Text);
             }*/
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -84,6 +83,7 @@ namespace AdvProAssig
         {
             if (pass == loginstaff.Password)
             {
+                //Code to pass to next page
                 this.Hide();
                 Form2 studentpage = new Form2();
                 studentpage.ShowDialog();
@@ -94,19 +94,8 @@ namespace AdvProAssig
                 MessageBox.Show("Incorrect password Entered");
             }
         }
-        private void DummyStaffDataEntry()
-        {
-            stafflist.Add(new Staff("Dhoot", "Trumpet"));
-            stafflist.Add(new Staff("Seamas", "password"));
-            stafflist.Add(new Staff("Staff", "Rod"));
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+    
+       private void button1_Click_1(object sender, EventArgs e)
         {
             testresult.Text = "";
             List<Student> iterative;
@@ -120,6 +109,11 @@ namespace AdvProAssig
         private void btnDelete_Click(object sender, EventArgs e)
         {
             findstu.DeleteRecord(int.Parse(txtBoxDelete.Text));
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

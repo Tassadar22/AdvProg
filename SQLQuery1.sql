@@ -1,4 +1,12 @@
-﻿CREATE PROC uspCreateStudent1
+﻿CREATE PROC uspCreateStaff
+AS 
+CREATE TABLE Staff(
+UserName VARCHAR(20),
+Password VARCHAR(100),
+)
+GO
+
+CREATE PROC uspCreateStudent1
 AS
 CREATE TABLE Student
 (

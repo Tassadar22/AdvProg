@@ -102,7 +102,6 @@
             this.dataGridStudents.Name = "dataGridStudents";
             this.dataGridStudents.Size = new System.Drawing.Size(1063, 256);
             this.dataGridStudents.TabIndex = 4;
-            this.dataGridStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
