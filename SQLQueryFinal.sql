@@ -1,7 +1,7 @@
 ﻿CREATE PROC uspCreateStudent
 AS
 CREATE TABLE Student(
-StudentFirstName VARCHAR(10), 
+StudentFirstName VARCHAR(20), 
 StudentSurName VARCHAR(20),
 StudentEmail VARCHAR(50),
 StudentPhone VARCHAR(20),
@@ -13,11 +13,17 @@ StudentLevel VARCHAR(25),
 StudentCourse VARCHAR(20),
 StudentID INT NOT NULL PRIMARY KEY) 
 
-EXEC uspCreateStudent
 
+
+CREATE PROC uspCreateDummyStudentData
+as
 INSERT INTO Student VALUES('John','Smith','John@DBS.com','4159879','45 Merrion Square','Dublin 2','Dublin','Dublin','UnderGraduate','Psychology',45645688)
 INSERT INTO Student Values('Mary','Smith','Mary@DBS.com','0872146455','20 the Green','Rathmines', 'Dublin 10','Dublin','PostGraduate', 'Marketing', 45678912)
 INSERT INTO Student Values('Max','Power','Max@DBS.com', '0894561245','54 Briarwood', 'StoneyBatter','Dublin 7','Dublin','UnderGraduate','Business', 78451254)
+GO
+
+EXEC uspCreateStudent
+EXEC uspCreateDummyStudentData
 
 CREATE PROC uspCreateStaff
 AS 
@@ -32,6 +38,7 @@ EXEC uspCreateStaff
 
 INSERT INTO Staff VALUES ('Seamas','Password')
 INSERT INTO Staff VALUES ('Dhoot','Trumpet')
+INSERT INTO Staff VALUES ('secure','swordfish')
 
 
 DELETE FROM Student WHERE StudentID=78451254

@@ -25,17 +25,31 @@ namespace AdvProAssig
             //Method to extract data from database and get student 
             Stafflist = StaffRecord.GetStaffList();
         }
-        public bool UserNameChecker(string username)
+        public char UserNamePasswordChecker(string username, string password)
         {
-            bool searchresult = false;
+            //Update Main staff list with updated staff list
+            GetDataBaseList();
+            //Default code if username or password are never found
+            char result = 'c';
             foreach(Staff user in Stafflist)
             {
                 if(username.ToLower()==user.UserName.ToLower())
                 {
-                    searchresult = true;
+                    if (password == user.Password)
+                    {
+                        //Character to represent proper username & password entered
+                        result = 'a';
+                        break;
+                    }
+                    else
+                    {
+                        //Character returned when username exists but incorrect password entered
+                        result = 'b';
+                        break;
+                    }
                 }
             }
-            return searchresult;
+            return result;
         }
         
     }

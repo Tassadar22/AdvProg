@@ -34,10 +34,7 @@
             this.txtBoxUserName = new System.Windows.Forms.TextBox();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.txtBoxDelete = new System.Windows.Forms.TextBox();
-            this.testresult = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnQkLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -92,50 +89,22 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // txtBoxDelete
+            // btnQkLogin
             // 
-            this.txtBoxDelete.Location = new System.Drawing.Point(342, 62);
-            this.txtBoxDelete.Name = "txtBoxDelete";
-            this.txtBoxDelete.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxDelete.TabIndex = 6;
-            // 
-            // testresult
-            // 
-            this.testresult.Location = new System.Drawing.Point(46, 162);
-            this.testresult.Name = "testresult";
-            this.testresult.Size = new System.Drawing.Size(465, 166);
-            this.testresult.TabIndex = 7;
-            this.testresult.Text = "";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(308, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "test pull object";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(440, 98);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnQkLogin.Location = new System.Drawing.Point(152, 142);
+            this.btnQkLogin.Name = "btnQkLogin";
+            this.btnQkLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnQkLogin.TabIndex = 6;
+            this.btnQkLogin.Text = "quick login";
+            this.btnQkLogin.UseVisualStyleBackColor = true;
+            this.btnQkLogin.Click += new System.EventHandler(this.btnQkLogin_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 427);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.testresult);
-            this.Controls.Add(this.txtBoxDelete);
+            this.ClientSize = new System.Drawing.Size(322, 194);
+            this.Controls.Add(this.btnQkLogin);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtBoxPassword);
             this.Controls.Add(this.txtBoxUserName);
@@ -144,7 +113,6 @@
             this.Controls.Add(this.btnLogin);
             this.Name = "LoginForm";
             this.Text = "Login Menu";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,10 +126,7 @@
         private System.Windows.Forms.TextBox txtBoxUserName;
         private System.Windows.Forms.TextBox txtBoxPassword;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox txtBoxDelete;
-        private System.Windows.Forms.RichTextBox testresult;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnQkLogin;
     }
 }
 

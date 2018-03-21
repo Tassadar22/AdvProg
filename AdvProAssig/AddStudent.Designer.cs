@@ -219,7 +219,6 @@
             this.btnDelStu.TabIndex = 14;
             this.btnDelStu.Text = "Delete Student";
             this.btnDelStu.UseVisualStyleBackColor = true;
-            this.btnDelStu.Click += new System.EventHandler(this.btnDelStu_Click);
             // 
             // btnEditStudent
             // 
@@ -229,7 +228,6 @@
             this.btnEditStudent.TabIndex = 15;
             this.btnEditStudent.Text = "btnEditStudent";
             this.btnEditStudent.UseVisualStyleBackColor = true;
-            this.btnEditStudent.Click += new System.EventHandler(this.btnEditStudent_Click);
             // 
             // btnExporttoXML
             // 
@@ -264,7 +262,6 @@
             this.Controls.Add(this.lblDetails);
             this.Name = "AddStudent";
             this.Text = "Add Student Field";
-            this.Load += new System.EventHandler(this.AddStudent_Load);
             this.panelCourseLevel.ResumeLayout(false);
             this.panelCourseLevel.PerformLayout();
             this.ResumeLayout(false);

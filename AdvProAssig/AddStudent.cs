@@ -22,18 +22,9 @@ namespace AdvProAssig
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            Student.addStudent(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.SelectedText, txtBoxCity.Text, IsRadioButtonSelect(), cbCourse.SelectedText, int.Parse(txtBoxStudentNumber.Text));
-                      
-        }
-
-        private void btnEditStudent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDelStu_Click(object sender, EventArgs e)
-        {
-
+            Student.addStudent(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, IsRadioButtonSelect(), cbCourse.Text, int.Parse(txtBoxStudentNumber.Text));
+            Student newstudent = new Student(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, IsRadioButtonSelect(), cbCourse.Text, int.Parse(txtBoxStudentNumber.Text));
+            newstudent.ExportToXml(newstudent);
         }
 
         private void btnExporttoXML_Click(object sender, EventArgs e)
@@ -54,10 +45,10 @@ namespace AdvProAssig
                 DTS.Columns.Add("Courselevel");
                 DTS.Columns.Add("Course");
                 DTS.Columns.Add("StuNum");
+                StudentDataSet.Tables.Add(DTS);
             }
             DTS = StudentDataSet.Tables["Student"];
             DataRow rowstu = DTS.NewRow();
-            
         }
         public string IsRadioButtonSelect()
         {
@@ -66,11 +57,6 @@ namespace AdvProAssig
             else if (rbPostGrad.Checked)
                 return rbPostGrad.Text;
             else return string.Format("None selected");
-        }
-
-        private void AddStudent_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

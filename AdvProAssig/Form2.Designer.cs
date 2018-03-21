@@ -32,28 +32,17 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.dataGridStudents = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressLine1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressLine2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.graduateLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courselevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtboxTest = new System.Windows.Forms.RichTextBox();
             this.btnTestServerCommand = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
+            this.dataGridStudents = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(197, 413);
+            this.btnLogOut.Location = new System.Drawing.Point(93, 12);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(75, 23);
             this.btnLogOut.TabIndex = 1;
@@ -63,7 +52,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(310, 413);
+            this.btnExit.Location = new System.Drawing.Point(12, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 2;
@@ -73,103 +62,13 @@
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(413, 413);
+            this.btnAddStudent.Location = new System.Drawing.Point(184, 12);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
             this.btnAddStudent.TabIndex = 3;
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
-            // 
-            // dataGridStudents
-            // 
-            this.dataGridStudents.AutoGenerateColumns = false;
-            this.dataGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn,
-            this.addressLine1DataGridViewTextBoxColumn,
-            this.addressLine2DataGridViewTextBoxColumn,
-            this.cityDataGridViewTextBoxColumn,
-            this.countyDataGridViewTextBoxColumn,
-            this.graduateLevelDataGridViewTextBoxColumn,
-            this.courselevelDataGridViewTextBoxColumn,
-            this.studentNumberDataGridViewTextBoxColumn});
-            this.dataGridStudents.DataSource = this.studentBindingSource;
-            this.dataGridStudents.Location = new System.Drawing.Point(31, 47);
-            this.dataGridStudents.Name = "dataGridStudents";
-            this.dataGridStudents.Size = new System.Drawing.Size(1063, 256);
-            this.dataGridStudents.TabIndex = 4;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
-            // addressLine1DataGridViewTextBoxColumn
-            // 
-            this.addressLine1DataGridViewTextBoxColumn.DataPropertyName = "AddressLine1";
-            this.addressLine1DataGridViewTextBoxColumn.HeaderText = "AddressLine1";
-            this.addressLine1DataGridViewTextBoxColumn.Name = "addressLine1DataGridViewTextBoxColumn";
-            // 
-            // addressLine2DataGridViewTextBoxColumn
-            // 
-            this.addressLine2DataGridViewTextBoxColumn.DataPropertyName = "AddressLine2";
-            this.addressLine2DataGridViewTextBoxColumn.HeaderText = "AddressLine2";
-            this.addressLine2DataGridViewTextBoxColumn.Name = "addressLine2DataGridViewTextBoxColumn";
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            // 
-            // countyDataGridViewTextBoxColumn
-            // 
-            this.countyDataGridViewTextBoxColumn.DataPropertyName = "County";
-            this.countyDataGridViewTextBoxColumn.HeaderText = "County";
-            this.countyDataGridViewTextBoxColumn.Name = "countyDataGridViewTextBoxColumn";
-            // 
-            // graduateLevelDataGridViewTextBoxColumn
-            // 
-            this.graduateLevelDataGridViewTextBoxColumn.DataPropertyName = "GraduateLevel";
-            this.graduateLevelDataGridViewTextBoxColumn.HeaderText = "GraduateLevel";
-            this.graduateLevelDataGridViewTextBoxColumn.Name = "graduateLevelDataGridViewTextBoxColumn";
-            // 
-            // courselevelDataGridViewTextBoxColumn
-            // 
-            this.courselevelDataGridViewTextBoxColumn.DataPropertyName = "Courselevel";
-            this.courselevelDataGridViewTextBoxColumn.HeaderText = "Courselevel";
-            this.courselevelDataGridViewTextBoxColumn.Name = "courselevelDataGridViewTextBoxColumn";
-            // 
-            // studentNumberDataGridViewTextBoxColumn
-            // 
-            this.studentNumberDataGridViewTextBoxColumn.DataPropertyName = "StudentNumber";
-            this.studentNumberDataGridViewTextBoxColumn.HeaderText = "StudentNumber";
-            this.studentNumberDataGridViewTextBoxColumn.Name = "studentNumberDataGridViewTextBoxColumn";
             // 
             // studentBindingSource
             // 
@@ -193,21 +92,29 @@
             this.btnTestServerCommand.UseVisualStyleBackColor = true;
             this.btnTestServerCommand.Click += new System.EventHandler(this.btnTestServerCommand_Click);
             // 
+            // dataGridStudents
+            // 
+            this.dataGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridStudents.Location = new System.Drawing.Point(242, 59);
+            this.dataGridStudents.Name = "dataGridStudents";
+            this.dataGridStudents.Size = new System.Drawing.Size(731, 150);
+            this.dataGridStudents.TabIndex = 7;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1374, 575);
+            this.Controls.Add(this.dataGridStudents);
             this.Controls.Add(this.btnTestServerCommand);
             this.Controls.Add(this.txtboxTest);
-            this.Controls.Add(this.dataGridStudents);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogOut);
             this.Name = "Form2";
             this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,20 +123,9 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.DataGridView dataGridStudents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressLine1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressLine2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn graduateLevelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courselevelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource studentBindingSource;
         private System.Windows.Forms.RichTextBox txtboxTest;
         private System.Windows.Forms.Button btnTestServerCommand;
+        private System.Windows.Forms.DataGridView dataGridStudents;
     }
 }

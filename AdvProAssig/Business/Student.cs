@@ -16,6 +16,7 @@ namespace AdvProAssig
         static ModifyStudentRecord data = new ModifyStudentRecord();
         static private DataSet StudentDataSet;
 
+        //Constructors
         public string FirstName { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
@@ -86,8 +87,8 @@ namespace AdvProAssig
                 DTS.Columns.Add("Surname");
                 DTS.Columns.Add("Email");
                 DTS.Columns.Add("Phone");
-                DTS.Columns.Add("Address_Line_1");
-                DTS.Columns.Add("Address_Line_2");
+                DTS.Columns.Add("AddressLine1");
+                DTS.Columns.Add("AddressLine2");
                 DTS.Columns.Add("County");
                 DTS.Columns.Add("City");
                 DTS.Columns.Add("Graduatelevel");
@@ -101,8 +102,8 @@ namespace AdvProAssig
             rowstu["Surname"] = student.Surname;
             rowstu["Email"] = student.Email;
             rowstu["Phone"] = student.Phone;
-            rowstu["Address Line 1"] = student.AddressLine1;
-            rowstu["Address Line 2"] = student.AddressLine2;
+            rowstu["AddressLine1"] = student.AddressLine1;
+            rowstu["AddressLine2"] = student.AddressLine2;
             rowstu["County"] = student.County;
             rowstu["City"] = student.City;
             rowstu["Graduatelevel"] = student.GraduateLevel;
@@ -114,7 +115,11 @@ namespace AdvProAssig
             //To export to XML
             StudentDataSet.WriteXml("Student.xml"); 
         }
-
+        public List<Student> Exportlist(List<Student> inputlist)
+        {
+            inputlist = studentlist;
+            return inputlist;
+        }
     }
     
 }
