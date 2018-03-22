@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 575);
+            this.ClientSize = new System.Drawing.Size(1370, 575);
             this.Controls.Add(this.dataGridStudents);
             this.Controls.Add(this.btnTestServerCommand);
             this.Controls.Add(this.txtboxTest);
@@ -113,6 +113,7 @@
             this.Controls.Add(this.btnLogOut);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);

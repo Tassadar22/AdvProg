@@ -1,4 +1,4 @@
-﻿CREATE PROC uspCreateStudent
+﻿CREATE PROC uspCreateStudent23
 AS
 CREATE TABLE Student(
 StudentFirstName VARCHAR(20), 
@@ -13,7 +13,7 @@ StudentLevel VARCHAR(25),
 StudentCourse VARCHAR(20),
 StudentID INT NOT NULL PRIMARY KEY) 
 
-
+EXEC uspCreateStudent23
 
 CREATE PROC uspCreateDummyStudentData
 as
@@ -41,4 +41,8 @@ INSERT INTO Staff VALUES ('Dhoot','Trumpet')
 INSERT INTO Staff VALUES ('secure','swordfish')
 
 
-DELETE FROM Student WHERE StudentID=78451254
+CREATE PROC uspGetStudentList
+AS
+SELECT * FROM Student
+
+EXEC uspGetStudentList

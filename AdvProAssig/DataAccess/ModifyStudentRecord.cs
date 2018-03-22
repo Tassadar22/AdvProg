@@ -33,12 +33,13 @@ namespace AdvProAssig.DataAccess
         public List<Student> GetList()
         {
             List<Student> updatedList = new List<Student>();
-            Student foundstudent = new Student();
-            SqlCommand GetCurrentStudentList = new SqlCommand("SELECT * FROM Student", openConnection());
+            
+            SqlCommand GetCurrentStudentList = new SqlCommand("uspGetStudentList", openConnection());
             SqlDataReader reader;
             reader = GetCurrentStudentList.ExecuteReader();
             while(reader.Read())
-            {
+            { 
+                Student foundstudent = new Student();
                 foundstudent.FirstName = reader[0].ToString();
                 foundstudent.Surname = reader[1].ToString();
                 foundstudent.Email = reader[2].ToString();

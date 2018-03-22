@@ -25,6 +25,12 @@ namespace AdvProAssig
             Student.addStudent(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, IsRadioButtonSelect(), cbCourse.Text, int.Parse(txtBoxStudentNumber.Text));
             Student newstudent = new Student(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, IsRadioButtonSelect(), cbCourse.Text, int.Parse(txtBoxStudentNumber.Text));
             newstudent.ExportToXml(newstudent);
+            Clearfields()
+        }
+
+        private void Clearfields()
+        {
+            txtBoxFirstName.Clear(), txtBoxSurname.Clear(), txtBoxEmail.Clear(), txtBoxPhone.Clear(), txtBoxAdl1.Clear(), txtBoxAdl2.Clear(), cbCounties.Clear(), txtBoxCity.Clear(), , cbCourse.Text, int.Parse(txtBoxStudentNumber.Text)
         }
 
         private void btnExporttoXML_Click(object sender, EventArgs e)

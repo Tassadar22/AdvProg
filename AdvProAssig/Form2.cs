@@ -19,14 +19,21 @@ namespace AdvProAssig
         public Form2()
         {
             InitializeComponent();
+            updatedlist = teststu.GetList();
+            //updatedlist = student.Exportlist(updatedlist);
             LoadDataGrid();
 
-            updatedlist=student.Exportlist(updatedlist);
+            
         }
 
         private void LoadDataGrid()
         {
-            dataGridStudents.ColumnCount = 11;
+            var list = new BindingList<Student>(updatedlist);
+            dataGridStudents.DataSource = list;
+
+            //dataGridStudents.DataSource = updatedlist;
+            //Create Columns
+            //dataGridStudents.ColumnCount = 11;
             dataGridStudents.Columns[0].Name = "First Name";
             dataGridStudents.Columns[1].Name = "Surname";
             dataGridStudents.Columns[2].Name = "Email";
@@ -38,11 +45,24 @@ namespace AdvProAssig
             dataGridStudents.Columns[8].Name = "Graduate Level";
             dataGridStudents.Columns[9].Name = "Course level";
             dataGridStudents.Columns[10].Name = "Student Number";
-            
-            foreach (Student student in updatedlist)
+            dataGridStudents.AutoSize = true;
+            dataGridStudents.AutoGenerateColumns = false;
+            /*for (int i = 0; i < 9; i++)
             {
-                DataGridViewRow row = (DataGridViewRow)dataGridStudents.Rows[0].Clone();
-                row.Cells[0].Value = student.FirstName;
+                DataGridViewRow testrow = dataGridStudents.Rows[0];
+                
+                testrow.Cells[i].Value = "TEST";
+                testrow2.Cells[i].Value = "TEST2";
+            }*/
+            /*for (int i = 0; i < updatedlist.Count; i++)
+            {
+                //dataGridStudents.Rows[i].Cells[0].Value = updatedlist[i].FirstName;
+                dataGridStudents.Rows[0].Cells[0].Value = updatedlist[i].FirstName;
+            }*/
+            /*foreach (Student student in updatedlist)
+            {
+                DataGridViewRow row = dataGridStudents.Rows[0];
+                row.Cells[0].Value = student.FirstName.ToString();
                 row.Cells[1].Value = student.Surname;
                 row.Cells[2].Value = student.Email;
                 row.Cells[3].Value = student.Phone;
@@ -54,7 +74,8 @@ namespace AdvProAssig
                 row.Cells[9].Value = student.Courselevel;
                 row.Cells[10].Value = student.StudentNumber;
                 dataGridStudents.Rows.Add(row);
-            }
+                
+            }*/
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -80,12 +101,16 @@ namespace AdvProAssig
        private void btnTestServerCommand_Click(object sender, EventArgs e)
        {
             string output="";
-            foreach(Student student in updatedlist)
+            foreach(Student outputstu in updatedlist)
             {
-                output += student.ToString();
+                output += outputstu.ToString();
             }
             txtboxTest.Text = output; 
        }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
