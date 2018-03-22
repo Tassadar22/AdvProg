@@ -13,17 +13,4 @@
     <Course>Psychology</Course>
     <StudentNumber>456464</StudentNumber>
   </Student>
-  <Student>
-    <FirstName>87</FirstName>
-    <Surname>87</Surname>
-    <Email>87</Email>
-    <Phone>87</Phone>
-    <AddressLine1>78</AddressLine1>
-    <AddressLine2>87</AddressLine2>
-    <County>Cork</County>
-    <City>34</City>
-    <Graduatelevel>PostGraduate</Graduatelevel>
-    <Course>Software Development </Course>
-    <StudentNumber>34</StudentNumber>
-  </Student>
 </Students>

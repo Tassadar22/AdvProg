@@ -21,13 +21,12 @@ namespace AdvProAssig
             InitializeComponent();
             LoadDataGrid();
 
-            student.Exportlist(updatedlist);
+            updatedlist=student.Exportlist(updatedlist);
         }
 
         private void LoadDataGrid()
         {
             dataGridStudents.ColumnCount = 11;
-
             dataGridStudents.Columns[0].Name = "First Name";
             dataGridStudents.Columns[1].Name = "Surname";
             dataGridStudents.Columns[2].Name = "Email";
@@ -40,13 +39,22 @@ namespace AdvProAssig
             dataGridStudents.Columns[9].Name = "Course level";
             dataGridStudents.Columns[10].Name = "Student Number";
             
-            foreach(Student student in updatedlist)
+            foreach (Student student in updatedlist)
             {
-                dataGridStudents.Rows.Add(student.FirstName, student.Surname, student.Email, student.Phone, student.AddressLine1,
-                    student.AddressLine2, student.City, student.County, student.GraduateLevel, student.Courselevel, student.StudentNumber);
+                DataGridViewRow row = (DataGridViewRow)dataGridStudents.Rows[0].Clone();
+                row.Cells[0].Value = student.FirstName;
+                row.Cells[1].Value = student.Surname;
+                row.Cells[2].Value = student.Email;
+                row.Cells[3].Value = student.Phone;
+                row.Cells[4].Value = student.AddressLine1;
+                row.Cells[5].Value = student.AddressLine2;
+                row.Cells[6].Value = student.City;
+                row.Cells[7].Value = student.County;
+                row.Cells[8].Value = student.GraduateLevel;
+                row.Cells[9].Value = student.Courselevel;
+                row.Cells[10].Value = student.StudentNumber;
+                dataGridStudents.Rows.Add(row);
             }
-            
-
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -71,7 +79,12 @@ namespace AdvProAssig
         }
        private void btnTestServerCommand_Click(object sender, EventArgs e)
        {
-            txtboxTest.Text = teststu.GetstringList();
+            string output="";
+            foreach(Student student in updatedlist)
+            {
+                output += student.ToString();
+            }
+            txtboxTest.Text = output; 
        }
 
     }

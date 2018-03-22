@@ -10,7 +10,7 @@ namespace AdvProAssig
 {
     public enum GraduateLevel { Undergraduate = 1, Postgraduate }
     public enum CourseLevel { Psychology=1, Business, Marketing, SoftwareDevelopment, DataAnalytics}
-    class Student
+    class Student:ModifyStudentRecord
     {
         static public List<Student> studentlist = new List<Student>();
         static ModifyStudentRecord data = new ModifyStudentRecord();
@@ -117,8 +117,14 @@ namespace AdvProAssig
         }
         public List<Student> Exportlist(List<Student> inputlist)
         {
+            PullInforfromDB();
             inputlist = studentlist;
             return inputlist;
+        }
+        public void PullInforfromDB()
+        {
+            ModifyStudentRecord sturecord = new ModifyStudentRecord();
+            studentlist = sturecord.GetList();
         }
     }
     

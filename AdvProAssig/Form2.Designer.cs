@@ -32,12 +32,12 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtboxTest = new System.Windows.Forms.RichTextBox();
             this.btnTestServerCommand = new System.Windows.Forms.Button();
             this.dataGridStudents = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogOut
@@ -70,10 +70,6 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(AdvProAssig.Student);
-            // 
             // txtboxTest
             // 
             this.txtboxTest.Location = new System.Drawing.Point(704, 332);
@@ -97,8 +93,12 @@
             this.dataGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridStudents.Location = new System.Drawing.Point(242, 59);
             this.dataGridStudents.Name = "dataGridStudents";
-            this.dataGridStudents.Size = new System.Drawing.Size(731, 150);
+            this.dataGridStudents.Size = new System.Drawing.Size(731, 267);
             this.dataGridStudents.TabIndex = 7;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(AdvProAssig.Student);
             // 
             // Form2
             // 
@@ -113,8 +113,8 @@
             this.Controls.Add(this.btnLogOut);
             this.Name = "Form2";
             this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
