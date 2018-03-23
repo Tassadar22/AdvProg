@@ -33,7 +33,7 @@ namespace AdvProAssig
         {
             Clearfields();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void butFindStu_Click(object sender, EventArgs e)
         {
             //Update List from database
             Student.PullInfofromDB();
@@ -47,7 +47,20 @@ namespace AdvProAssig
             }
             else
                 MessageBox.Show("Student Not Found");
-
+        }
+        private void btnEditDetails_Click(object sender, EventArgs e)
+        {
+            string result;
+            result = Student.EditStudentValidator(txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), txtBoxStudentNumber.Text);
+            if (result == "Data Succesfully Updated")
+            {
+                MessageBox.Show(result);
+                Clearfields();
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
         }
         private void PopulateFieldswithResults(Student student)
         {//Function populate fields with results 
@@ -68,16 +81,19 @@ namespace AdvProAssig
         }
         private void Clearfields()
         {
-            txtBoxFirstName.Clear(); txtBoxSurname.Clear(); txtBoxEmail.Clear(); txtBoxPhone.Clear(); txtBoxAdl1.Clear(); txtBoxAdl2.Clear(); txtBoxCity.Clear(); txtBoxStudentNumber.Clear();
-            cbCounties.Text = string.Empty;
-            txtBoxCourse.Text = string.Empty;
+            txtBoxFirstName.Clear(); txtBoxSurname.Clear(); txtBoxEmail.Clear(); txtBoxPhone.Clear(); txtBoxAdl1.Clear(); txtBoxAdl2.Clear(); txtBoxCity.Clear(); txtBoxStudentNumber.Clear(); txtBoxCourse.Clear();
+            cbCounties.Text = " ";
             rbPostGrad.Checked = false;
             rbUnderGrad.Checked = false;
         }
-
-        private void btnEditDetails_Click(object sender, EventArgs e)
+        
+        public string SelectedRadioButton()
         {
-
+            if (rbUnderGrad.Checked)
+                return rbUnderGrad.Text;
+            else if (rbPostGrad.Checked)
+                return rbPostGrad.Text;
+            else return string.Format("None selected");
         }
     }
 }

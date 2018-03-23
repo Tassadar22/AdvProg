@@ -12,22 +12,9 @@ namespace AdvProAssig.DataAccess
         public void AddtoDB(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
         {
             //CONSIDER DELETING
-            /*SqlCommand addcmd = new SqlCommand($"INSERT INTO Student VALUES ('{firstname}', '{surname}', '{email}'," +
-                $"'{phone}', '{addlin1}', '{addlin2}', '{city}', '{county}', '{gradlevel}', '{cour}', {stunum})", openConnection());*/
+            SqlCommand addcmd = new SqlCommand($"INSERT INTO Student VALUES ('{firstname}', '{surname}', '{email}'," +
+                $"'{phone}', '{addlin1}', '{addlin2}', '{city}', '{county}', '{gradlevel}', '{cour}', {stunum})", openConnection());
 
-            SqlCommand addcmd = new SqlCommand("INSERT INTO Student VALUES ('@StudentFirstName', '@StudentSurName', '@StudentEmail'," +
-                "'@StudentPhone', '@StudentAddLin1', '@StudentAddLin2', '@StudentCity', '@StudentCounty', '@StudentLevel', '@StudentCourse', @StudentID)", openConnection());
-            addcmd.Parameters.AddWithValue("@StudentFirstName", firstname);
-            addcmd.Parameters.AddWithValue("@StudentSurName",surname);
-            addcmd.Parameters.AddWithValue("@StudentEmail",email);
-            addcmd.Parameters.AddWithValue("@StudentPhone",phone);
-            addcmd.Parameters.AddWithValue("@StudentAllLin1",addlin1);
-            addcmd.Parameters.AddWithValue("@StudentAllLin2", addlin2);
-            addcmd.Parameters.AddWithValue("@StudentCounty",county);
-            addcmd.Parameters.AddWithValue("@StudentCity", city);
-            addcmd.Parameters.AddWithValue("@StudentLevel",gradlevel);
-            addcmd.Parameters.AddWithValue("@StudentCourse",cour);
-            addcmd.Parameters.AddWithValue("@StudentID", stunum);
             addcmd.ExecuteNonQuery();
             closeConnection();
         }

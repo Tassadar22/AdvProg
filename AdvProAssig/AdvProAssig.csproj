@@ -53,7 +53,7 @@
     </Compile>
     <Compile Include="DAO.cs" />
     <Compile Include="DataAccess\DAO.cs" />
-    <Compile Include="DataAccess\ModifyStaffRecord.cs" />
+    <Compile Include="DataAccess\AccessStaffRecord.cs" />
     <Compile Include="DataAccess\ModifyStudentRecord.cs" />
     <Compile Include="EditStudent.cs">
       <SubType>Form</SubType>

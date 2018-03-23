@@ -58,6 +58,9 @@ namespace AdvProAssig
             this.Close();
         }
 
-      
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

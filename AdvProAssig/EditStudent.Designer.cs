@@ -43,11 +43,9 @@
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.lblDetails = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbParameterSearch = new System.Windows.Forms.ComboBox();
             this.btnFindStudent = new System.Windows.Forms.Button();
             this.txtBoxSearchable = new System.Windows.Forms.TextBox();
-            this.lblSearchString = new System.Windows.Forms.Label();
+            this.lblSearchStudentID = new System.Windows.Forms.Label();
             this.panelFirstName = new System.Windows.Forms.Panel();
             this.panelSurname = new System.Windows.Forms.Panel();
             this.panelEmail = new System.Windows.Forms.Panel();
@@ -222,60 +220,31 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 365);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 13);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Select Parameter to find Student By:";
-            // 
-            // cmbParameterSearch
-            // 
-            this.cmbParameterSearch.FormattingEnabled = true;
-            this.cmbParameterSearch.Items.AddRange(new object[] {
-            "First Name",
-            "Surname",
-            "Email",
-            "Phone",
-            "Address Line 1",
-            "Address Line 2",
-            "County",
-            "City",
-            "Course",
-            "CourseLevel",
-            "Student Number"});
-            this.cmbParameterSearch.Location = new System.Drawing.Point(285, 362);
-            this.cmbParameterSearch.Name = "cmbParameterSearch";
-            this.cmbParameterSearch.Size = new System.Drawing.Size(121, 21);
-            this.cmbParameterSearch.TabIndex = 31;
-            // 
             // btnFindStudent
             // 
-            this.btnFindStudent.Location = new System.Drawing.Point(303, 427);
+            this.btnFindStudent.Location = new System.Drawing.Point(397, 401);
             this.btnFindStudent.Name = "btnFindStudent";
             this.btnFindStudent.Size = new System.Drawing.Size(75, 23);
             this.btnFindStudent.TabIndex = 34;
             this.btnFindStudent.Text = "Find Student";
             this.btnFindStudent.UseVisualStyleBackColor = true;
-            this.btnFindStudent.Click += new System.EventHandler(this.button1_Click);
+            this.btnFindStudent.Click += new System.EventHandler(this.butFindStu_Click);
             // 
             // txtBoxSearchable
             // 
-            this.txtBoxSearchable.Location = new System.Drawing.Point(285, 401);
+            this.txtBoxSearchable.Location = new System.Drawing.Point(262, 401);
             this.txtBoxSearchable.Name = "txtBoxSearchable";
             this.txtBoxSearchable.Size = new System.Drawing.Size(121, 20);
             this.txtBoxSearchable.TabIndex = 35;
             // 
-            // lblSearchString
+            // lblSearchStudentID
             // 
-            this.lblSearchString.AutoSize = true;
-            this.lblSearchString.Location = new System.Drawing.Point(97, 401);
-            this.lblSearchString.Name = "lblSearchString";
-            this.lblSearchString.Size = new System.Drawing.Size(123, 13);
-            this.lblSearchString.TabIndex = 36;
-            this.lblSearchString.Text = "Enter value to search for";
+            this.lblSearchStudentID.AutoSize = true;
+            this.lblSearchStudentID.Location = new System.Drawing.Point(51, 401);
+            this.lblSearchStudentID.Name = "lblSearchStudentID";
+            this.lblSearchStudentID.Size = new System.Drawing.Size(195, 13);
+            this.lblSearchStudentID.TabIndex = 36;
+            this.lblSearchStudentID.Text = "Enter Student ID of Student to be found";
             // 
             // panelFirstName
             // 
@@ -389,11 +358,9 @@
             this.Controls.Add(this.panelEmail);
             this.Controls.Add(this.panelSurname);
             this.Controls.Add(this.panelFirstName);
-            this.Controls.Add(this.lblSearchString);
+            this.Controls.Add(this.lblSearchStudentID);
             this.Controls.Add(this.txtBoxSearchable);
             this.Controls.Add(this.btnFindStudent);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbParameterSearch);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.cbCounties);
             this.Controls.Add(this.txtBoxStudentNumber);
@@ -433,11 +400,9 @@
         private System.Windows.Forms.TextBox txtBoxFirstName;
         private System.Windows.Forms.Label lblDetails;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbParameterSearch;
         private System.Windows.Forms.Button btnFindStudent;
         private System.Windows.Forms.TextBox txtBoxSearchable;
-        private System.Windows.Forms.Label lblSearchString;
+        private System.Windows.Forms.Label lblSearchStudentID;
         private System.Windows.Forms.Panel panelFirstName;
         private System.Windows.Forms.Panel panelSurname;
         private System.Windows.Forms.Panel panelEmail;

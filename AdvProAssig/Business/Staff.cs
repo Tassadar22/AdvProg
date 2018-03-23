@@ -10,7 +10,7 @@ namespace AdvProAssig
     class Staff
     {
         static List<Staff> Stafflist = new List<Staff>();
-        static ModifyStaffRecord StaffRecord = new ModifyStaffRecord();
+        static AccessStaffRecord StaffRecord = new AccessStaffRecord();
         
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -22,7 +22,7 @@ namespace AdvProAssig
         }
         public void GetDataBaseList()
         {
-            //Method to extract data from database and get student 
+            //Method to extract data from database and get stafflist 
             Stafflist = StaffRecord.GetStaffList();
         }
         public char UserNamePasswordChecker(string username, string password)

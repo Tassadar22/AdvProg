@@ -124,7 +124,7 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogOut);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Main Screen";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);

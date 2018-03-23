@@ -110,8 +110,10 @@
             // 
             // cbCourse
             // 
+            this.cbCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCourse.FormattingEnabled = true;
             this.cbCourse.Items.AddRange(new object[] {
+            " ",
             "Psychology",
             "Business",
             "Marketing",
@@ -162,8 +164,10 @@
             // 
             // cbCounties
             // 
+            this.cbCounties.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCounties.FormattingEnabled = true;
             this.cbCounties.Items.AddRange(new object[] {
+            " ",
             "Antrim",
             "Armagh",
             "Carlow",
@@ -264,6 +268,7 @@
             this.Controls.Add(this.lblDetails);
             this.Name = "AddStudent";
             this.Text = "Add Student Field";
+            this.Load += new System.EventHandler(this.AddStudent_Load);
             this.panelCourseLevel.ResumeLayout(false);
             this.panelCourseLevel.PerformLayout();
             this.ResumeLayout(false);

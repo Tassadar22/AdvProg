@@ -8,14 +8,14 @@ using System.Data;
 
 namespace AdvProAssig
 {
-    public enum GraduateLevel { Undergraduate = 1, Postgraduate }
-    public enum CourseLevel { Psychology=1, Business, Marketing, SoftwareDevelopment, DataAnalytics}
+    //Consider deleting
+    //public enum GraduateLevel { Undergraduate = 1, Postgraduate }
+    //public enum CourseLevel { Psychology=1, Business, Marketing, SoftwareDevelopment, DataAnalytics}
     class Student:ModifyStudentRecord
     {
         static public List<Student> studentlist = new List<Student>();
         static ModifyStudentRecord data = new ModifyStudentRecord();
         static private DataSet StudentDataSet;
-        
         
         //Constructors
         public string FirstName { get; set; }
@@ -46,12 +46,12 @@ namespace AdvProAssig
             StudentNumber = stunum;
         }
         //Function to insure that valid inputs are entered
-        public static string StudentAddingValidator(string firstnamein, string surnamein, string emailin, string phonein, string addlin1in, string addlin2in, string countyin, string cityin, string gradlevelin, string courin, string stunumin)
+        public static string AddStudentValidator(string firstnamein, string surnamein, string emailin, string phonein, string addlin1in, string addlin2in, string countyin, string cityin, string gradlevelin, string courin, string stunumin)
         {
             //Outcome message to be passed to program
             string outcome="";
-            //Boolean toggle to indicate whether the passed values meet validation requirements
-            bool makeobject = true,checkdatabase=true;
+            //Boolean toggle to indicate whether the passed values meet validation requirements and boolean toggle to see if ID is correct
+            bool makeobject = true, checkdatabase=true;
             int studentnumber;
             //Check Length of integer
             if(stunumin.Length!=8)
@@ -90,11 +90,53 @@ namespace AdvProAssig
                 outcome += "You must select a course value\n";
                 makeobject = false;
             }
-            if(!EmptyChecker(firstnamein,surnamein,emailin,phonein,addlin1in,addlin2in,cityin))
+            if(!EmptyChecker(firstnamein,surnamein,emailin,phonein,addlin1in,cityin,countyin, gradlevelin))
             {
-                outcome += "No Field can be left empty\n";
+                outcome += "Please complete these fields\n";
             }
             if(makeobject)
+            {//Object meets validation 
+                outcome = "Data Succesfully Added";
+                Student.addStudent(firstnamein, surnamein, emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, courin, studentnumber);
+            }
+            return outcome;
+        }
+        public static string EditStudentValidator(string emailin, string phonein, string addlin1in, string addlin2in, string countyin, string cityin, string gradlevelin, string stunumin)
+        {
+            //Outcome message to be passed to program
+            string outcome = "";
+            //Boolean toggle to indicate whether the passed values meet validation requirements and boolean toggle to see if ID is correct
+            bool updateobject = true;
+            int studentnumber;
+            //Check Length of integer
+            if (stunumin.Length != 8)
+            {
+                outcome += "Student Number can only be eight digits long\n";
+                updateobject = false;
+                
+            }//Check if integer value is 
+            if (!int.TryParse(stunumin, out studentnumber))
+            {
+                outcome += "Student Number must only contain an integer\n";
+                updateobject = false;
+           
+            }
+           //Check if proper county name is entered
+            if (!CheckCountyList(countyin))
+            {
+                outcome += "Improper county named entered\n";
+                updateobject = false;
+            }
+            if (gradlevelin == "None selected")
+            {
+                outcome += "You must select the Graduate status of the student\n";
+                updateobject = false;
+            }
+            if (!EmptyChecker(emailin, phonein, addlin1in, cityin, countyin, gradlevelin))
+            {
+                outcome += "Please complete these fields\n";
+            }
+            if (updateobject)
             {//Object meets validation 
                 outcome = "Data Succesfully Added";
                 Student.addStudent(firstnamein, surnamein, emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, courin, studentnumber);
@@ -183,6 +225,7 @@ namespace AdvProAssig
             ModifyStudentRecord sturecord = new ModifyStudentRecord();
             studentlist = sturecord.GetList();
         }
+        //Consider deleting
         static bool CheckCountyList(string countynameinput)
         {
             bool result = false;
@@ -228,6 +271,7 @@ namespace AdvProAssig
             }
             return result;
         }
+        
         static bool CourseChecker(string coursenamechecking)
         {
             bool result = false;
@@ -242,15 +286,22 @@ namespace AdvProAssig
             }
             return result;
         }
-        static bool EmptyChecker(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string city)
+        static bool EmptyChecker(string firstname, string surname, string email, string phone, string addlin1, string city, string county, string gradlevelin)
         {
-            if(string.IsNullOrEmpty(firstname)|| string.IsNullOrEmpty(surname)|| string.IsNullOrEmpty(phone)|| string.IsNullOrEmpty(addlin1)|| string.IsNullOrEmpty(addlin2) || string.IsNullOrEmpty(city))
+            int truecounter=0;
+            if (gradlevelin == " " || county == "")
+                truecounter++;
+            if(!(string.IsNullOrEmpty(firstname)|| string.IsNullOrEmpty(surname)|| string.IsNullOrEmpty(phone)|| string.IsNullOrEmpty(addlin1) || string.IsNullOrEmpty(city)))
             {
-                return false;
+                truecounter++;
+            }
+            if(truecounter==2)
+            {
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
         }
         public static bool CheckDBforStudentID(int id)

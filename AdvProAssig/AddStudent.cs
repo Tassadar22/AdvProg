@@ -23,7 +23,7 @@ namespace AdvProAssig
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             string result;
-            result =Student.StudentAddingValidator(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), cbCourse.Text, txtBoxStudentNumber.Text);
+            result = Student.AddStudentValidator(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), cbCourse.Text, txtBoxStudentNumber.Text);
             if(result=="Data Succesfully Added")
             {
                 MessageBox.Show(result);
@@ -40,8 +40,8 @@ namespace AdvProAssig
         {
             //function to clear all fields 
             txtBoxFirstName.Clear(); txtBoxSurname.Clear(); txtBoxEmail.Clear(); txtBoxPhone.Clear(); txtBoxAdl1.Clear(); txtBoxAdl2.Clear(); txtBoxCity.Clear(); txtBoxStudentNumber.Clear();
-            cbCounties.Text = string.Empty;
-            cbCourse.Text = string.Empty;
+            cbCounties.Text = " ";
+            cbCourse.Text = " ";
             rbPostGrad.Checked = false;
             rbUnderGrad.Checked = false;
         }
@@ -70,7 +70,6 @@ namespace AdvProAssig
             DataRow rowstu = DTS.NewRow();
         }
 
-        //Consider deleting
         public string SelectedRadioButton()
         {
             if (rbUnderGrad.Checked)
@@ -91,6 +90,11 @@ namespace AdvProAssig
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clearfields();
+        }
+
+        private void AddStudent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AdvProAssig.DataAccess
 {
-    class ModifyStaffRecord : DAO
+    class AccessStaffRecord : DAO
     {
         //Method to get all contents from Staff Database
         public List<Staff> GetStaffList()
