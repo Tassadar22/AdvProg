@@ -56,8 +56,8 @@ namespace AdvProAssig
                 return false;
             }
         }
-
-        public bool AddStudent(Student student)
+        //Consider deleting
+        /*public bool AddStudent(Student student)
         {
             SqlCommand addstudent = new SqlCommand(student.ToDatabaseString(),conn);
             try
@@ -73,7 +73,7 @@ namespace AdvProAssig
             {
                 return false;
             }
-        }
+        }*/
       public List<Student> GetList()
         {
             List<Student> list = new List<Student>();

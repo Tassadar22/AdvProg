@@ -11,10 +11,11 @@ namespace AdvProAssig.DataAccess
     {
         public void AddtoDB(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
         {
-            SqlCommand addcmd = new SqlCommand($"INSERT INTO Student VALUES ('{firstname}', '{surname}', '{email}'," +
-                $"'{phone}', '{addlin1}', '{addlin2}', '{city}', '{county}', '{gradlevel}', '{cour}', {stunum})", openConnection());
+            //CONSIDER DELETING
+            /*SqlCommand addcmd = new SqlCommand($"INSERT INTO Student VALUES ('{firstname}', '{surname}', '{email}'," +
+                $"'{phone}', '{addlin1}', '{addlin2}', '{city}', '{county}', '{gradlevel}', '{cour}', {stunum})", openConnection());*/
 
-            /*SqlCommand addcmd = new SqlCommand("INSERT INTO Student VALUES ('@StudentFirstName', '@StudentSurName', '@StudentEmail'," +
+            SqlCommand addcmd = new SqlCommand("INSERT INTO Student VALUES ('@StudentFirstName', '@StudentSurName', '@StudentEmail'," +
                 "'@StudentPhone', '@StudentAddLin1', '@StudentAddLin2', '@StudentCity', '@StudentCounty', '@StudentLevel', '@StudentCourse', @StudentID)", openConnection());
             addcmd.Parameters.AddWithValue("@StudentFirstName", firstname);
             addcmd.Parameters.AddWithValue("@StudentSurName",surname);
@@ -26,14 +27,13 @@ namespace AdvProAssig.DataAccess
             addcmd.Parameters.AddWithValue("@StudentCity", city);
             addcmd.Parameters.AddWithValue("@StudentLevel",gradlevel);
             addcmd.Parameters.AddWithValue("@StudentCourse",cour);
-            addcmd.Parameters.AddWithValue("@StudentID", stunum);*/
+            addcmd.Parameters.AddWithValue("@StudentID", stunum);
             addcmd.ExecuteNonQuery();
             closeConnection();
         }
         public List<Student> GetList()
         {
             List<Student> updatedList = new List<Student>();
-            
             SqlCommand GetCurrentStudentList = new SqlCommand("uspGetStudentList", openConnection());
             SqlDataReader reader;
             reader = GetCurrentStudentList.ExecuteReader();
@@ -49,13 +49,14 @@ namespace AdvProAssig.DataAccess
                 foundstudent.City = reader[6].ToString();
                 foundstudent.County = reader[7].ToString();
                 foundstudent.GraduateLevel = reader[8].ToString();
-                foundstudent.Courselevel = reader[9].ToString();
+                foundstudent.Course = reader[9].ToString();
                 foundstudent.StudentNumber = int.Parse(reader[10].ToString());
                 updatedList.Add(foundstudent);
             }
             closeConnection();
             return updatedList;
         }
+        //CONSIDER REMOVING
         public string GetstringList()
         {
             string results="please be full";
@@ -90,7 +91,7 @@ namespace AdvProAssig.DataAccess
                 foundstudent.City = reader[6].ToString();
                 foundstudent.County = reader[7].ToString();
                 foundstudent.GraduateLevel = reader[8].ToString();
-                foundstudent.Courselevel = reader[9].ToString();
+                foundstudent.Course = reader[9].ToString();
                 foundstudent.StudentNumber = int.Parse(reader[10].ToString());
             }
             closeConnection();
@@ -99,7 +100,9 @@ namespace AdvProAssig.DataAccess
         public void DeleteRecord(int id)
         {
             SqlCommand IdSearch = new SqlCommand($"DELETE * FROM Student WHERE StudentID={id}", openConnection());
+            openConnection();
             IdSearch.BeginExecuteNonQuery();
+            closeConnection();
         }
     }
 }

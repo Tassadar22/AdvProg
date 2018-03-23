@@ -19,13 +19,9 @@ namespace AdvProAssig
         public Form2()
         {
             InitializeComponent();
-            updatedlist = teststu.GetList();
-            //updatedlist = student.Exportlist(updatedlist);
+            updatedlist = student.Exportlist(updatedlist);
             LoadDataGrid();
-
-            
         }
-
         private void LoadDataGrid()
         {
             var list = new BindingList<Student>(updatedlist);
@@ -77,7 +73,6 @@ namespace AdvProAssig
                 
             }*/
         }
-
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -85,12 +80,10 @@ namespace AdvProAssig
             studentpage.ShowDialog();
             this.Close();
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -98,19 +91,12 @@ namespace AdvProAssig
             studentpage.ShowDialog();
             this.Close();
         }
-       private void btnTestServerCommand_Click(object sender, EventArgs e)
-       {
-            string output="";
-            foreach(Student outputstu in updatedlist)
-            {
-                output += outputstu.ToString();
-            }
-            txtboxTest.Text = output; 
-       }
-
-        private void Form2_Load(object sender, EventArgs e)
+        private void btnEditStu_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            EditStudent editpage = new EditStudent();
+            editpage.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -22,6 +22,11 @@ INSERT INTO Student Values('Mary','Smith','Mary@DBS.com','0872146455','20 the Gr
 INSERT INTO Student Values('Max','Power','Max@DBS.com', '0894561245','54 Briarwood', 'StoneyBatter','Dublin 7','Dublin','UnderGraduate','Business', 78451254)
 GO
 
+CREATE PROC uspGetStudentList
+AS
+SELECT * FROM Student
+
+EXEC uspGetStudentList
 EXEC uspCreateStudent
 EXEC uspCreateDummyStudentData
 
@@ -33,16 +38,18 @@ Password VARCHAR(100),
 )
 GO
 
+CREATE PROC uspGetStaffList
+AS
+SELECT * From Staff
+GO
+
+EXEC uspGetStaffList
+
 EXEC uspCreateStaff
-
-
+CREATE PROC uspMakeDummyStaffData
+AS
 INSERT INTO Staff VALUES ('Seamas','Password')
 INSERT INTO Staff VALUES ('Dhoot','Trumpet')
 INSERT INTO Staff VALUES ('secure','swordfish')
-
-
-CREATE PROC uspGetStudentList
-AS
-SELECT * FROM Student
-
-EXEC uspGetStudentList
+GO
+EXEC uspMakeDummyStaffData

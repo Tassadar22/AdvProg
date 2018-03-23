@@ -14,12 +14,12 @@ namespace AdvProAssig.DataAccess
         public List<Staff> GetStaffList()
         {
             List<Staff> updatedList = new List<Staff>();
-            Staff staffmember = new Staff();
-            SqlCommand GetCurrentStaffList = new SqlCommand("SELECT * FROM Staff", openConnection());
+            SqlCommand GetCurrentStaffList = new SqlCommand("uspGetStaffList", openConnection());
             SqlDataReader reader;
             reader = GetCurrentStaffList.ExecuteReader();
             while (reader.Read())
             {
+                Staff staffmember = new Staff();
                 staffmember.UserName = reader[0].ToString();
                 staffmember.Password = reader[1].ToString();
                 updatedList.Add(staffmember);

@@ -22,15 +22,28 @@ namespace AdvProAssig
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            Student.addStudent(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, IsRadioButtonSelect(), cbCourse.Text, int.Parse(txtBoxStudentNumber.Text));
-            Student newstudent = new Student(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, IsRadioButtonSelect(), cbCourse.Text, int.Parse(txtBoxStudentNumber.Text));
-            newstudent.ExportToXml(newstudent);
-            Clearfields()
+            string result;
+            result =Student.StudentAddingValidator(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), cbCourse.Text, txtBoxStudentNumber.Text);
+            if(result=="Data Succesfully Added")
+            {
+                MessageBox.Show(result);
+                Clearfields();
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
+            
         }
 
         private void Clearfields()
         {
-            txtBoxFirstName.Clear(), txtBoxSurname.Clear(), txtBoxEmail.Clear(), txtBoxPhone.Clear(), txtBoxAdl1.Clear(), txtBoxAdl2.Clear(), cbCounties.Clear(), txtBoxCity.Clear(), , cbCourse.Text, int.Parse(txtBoxStudentNumber.Text)
+            //function to clear all fields 
+            txtBoxFirstName.Clear(); txtBoxSurname.Clear(); txtBoxEmail.Clear(); txtBoxPhone.Clear(); txtBoxAdl1.Clear(); txtBoxAdl2.Clear(); txtBoxCity.Clear(); txtBoxStudentNumber.Clear();
+            cbCounties.Text = string.Empty;
+            cbCourse.Text = string.Empty;
+            rbPostGrad.Checked = false;
+            rbUnderGrad.Checked = false;
         }
 
         private void btnExporttoXML_Click(object sender, EventArgs e)
@@ -56,13 +69,28 @@ namespace AdvProAssig
             DTS = StudentDataSet.Tables["Student"];
             DataRow rowstu = DTS.NewRow();
         }
-        public string IsRadioButtonSelect()
+
+        //Consider deleting
+        public string SelectedRadioButton()
         {
             if (rbUnderGrad.Checked)
                 return rbUnderGrad.Text;
             else if (rbPostGrad.Checked)
                 return rbPostGrad.Text;
             else return string.Format("None selected");
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 mainscreenturnon = new Form2();
+            mainscreenturnon.ShowDialog();
+            this.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clearfields();
         }
     }
 }

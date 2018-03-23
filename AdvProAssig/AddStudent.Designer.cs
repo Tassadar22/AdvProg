@@ -43,16 +43,16 @@
             this.txtBoxStudentNumber = new System.Windows.Forms.TextBox();
             this.cbCounties = new System.Windows.Forms.ComboBox();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.btnDelStu = new System.Windows.Forms.Button();
-            this.btnEditStudent = new System.Windows.Forms.Button();
             this.btnExporttoXML = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDetails
             // 
             this.lblDetails.AutoSize = true;
-            this.lblDetails.Location = new System.Drawing.Point(43, 25);
+            this.lblDetails.Location = new System.Drawing.Point(24, 57);
             this.lblDetails.Name = "lblDetails";
             this.lblDetails.Size = new System.Drawing.Size(87, 299);
             this.lblDetails.TabIndex = 0;
@@ -61,49 +61,49 @@
             // 
             // txtBoxFirstName
             // 
-            this.txtBoxFirstName.Location = new System.Drawing.Point(136, 22);
+            this.txtBoxFirstName.Location = new System.Drawing.Point(117, 54);
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(199, 20);
             this.txtBoxFirstName.TabIndex = 1;
             // 
             // txtBoxSurname
             // 
-            this.txtBoxSurname.Location = new System.Drawing.Point(136, 48);
+            this.txtBoxSurname.Location = new System.Drawing.Point(117, 80);
             this.txtBoxSurname.Name = "txtBoxSurname";
             this.txtBoxSurname.Size = new System.Drawing.Size(199, 20);
             this.txtBoxSurname.TabIndex = 2;
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(136, 74);
+            this.txtBoxEmail.Location = new System.Drawing.Point(117, 106);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(199, 20);
             this.txtBoxEmail.TabIndex = 3;
             // 
             // txtBoxPhone
             // 
-            this.txtBoxPhone.Location = new System.Drawing.Point(136, 100);
+            this.txtBoxPhone.Location = new System.Drawing.Point(117, 132);
             this.txtBoxPhone.Name = "txtBoxPhone";
             this.txtBoxPhone.Size = new System.Drawing.Size(199, 20);
             this.txtBoxPhone.TabIndex = 4;
             // 
             // txtBoxAdl1
             // 
-            this.txtBoxAdl1.Location = new System.Drawing.Point(136, 126);
+            this.txtBoxAdl1.Location = new System.Drawing.Point(117, 158);
             this.txtBoxAdl1.Name = "txtBoxAdl1";
             this.txtBoxAdl1.Size = new System.Drawing.Size(199, 20);
             this.txtBoxAdl1.TabIndex = 5;
             // 
             // txtBoxAdl2
             // 
-            this.txtBoxAdl2.Location = new System.Drawing.Point(136, 152);
+            this.txtBoxAdl2.Location = new System.Drawing.Point(117, 184);
             this.txtBoxAdl2.Name = "txtBoxAdl2";
             this.txtBoxAdl2.Size = new System.Drawing.Size(199, 20);
             this.txtBoxAdl2.TabIndex = 6;
             // 
             // txtBoxCity
             // 
-            this.txtBoxCity.Location = new System.Drawing.Point(136, 204);
+            this.txtBoxCity.Location = new System.Drawing.Point(117, 236);
             this.txtBoxCity.Name = "txtBoxCity";
             this.txtBoxCity.Size = new System.Drawing.Size(199, 20);
             this.txtBoxCity.TabIndex = 8;
@@ -113,11 +113,11 @@
             this.cbCourse.FormattingEnabled = true;
             this.cbCourse.Items.AddRange(new object[] {
             "Psychology",
-            "Business ",
-            "Marketing ",
-            "Software Development ",
+            "Business",
+            "Marketing",
+            "Software Development",
             "DataAnalytics"});
-            this.cbCourse.Location = new System.Drawing.Point(136, 230);
+            this.cbCourse.Location = new System.Drawing.Point(117, 262);
             this.cbCourse.Name = "cbCourse";
             this.cbCourse.Size = new System.Drawing.Size(199, 21);
             this.cbCourse.TabIndex = 9;
@@ -126,7 +126,7 @@
             // 
             this.panelCourseLevel.Controls.Add(this.rbPostGrad);
             this.panelCourseLevel.Controls.Add(this.rbUnderGrad);
-            this.panelCourseLevel.Location = new System.Drawing.Point(137, 258);
+            this.panelCourseLevel.Location = new System.Drawing.Point(118, 290);
             this.panelCourseLevel.Name = "panelCourseLevel";
             this.panelCourseLevel.Size = new System.Drawing.Size(198, 29);
             this.panelCourseLevel.TabIndex = 10;
@@ -155,7 +155,7 @@
             // 
             // txtBoxStudentNumber
             // 
-            this.txtBoxStudentNumber.Location = new System.Drawing.Point(136, 293);
+            this.txtBoxStudentNumber.Location = new System.Drawing.Point(117, 325);
             this.txtBoxStudentNumber.Name = "txtBoxStudentNumber";
             this.txtBoxStudentNumber.Size = new System.Drawing.Size(199, 20);
             this.txtBoxStudentNumber.TabIndex = 11;
@@ -196,14 +196,14 @@
             "Westmeath",
             "Wexford",
             "Wicklow"});
-            this.cbCounties.Location = new System.Drawing.Point(136, 179);
+            this.cbCounties.Location = new System.Drawing.Point(117, 211);
             this.cbCounties.Name = "cbCounties";
             this.cbCounties.Size = new System.Drawing.Size(199, 21);
             this.cbCounties.TabIndex = 12;
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(88, 354);
+            this.btnAddStudent.Location = new System.Drawing.Point(24, 12);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
             this.btnAddStudent.TabIndex = 13;
@@ -211,27 +211,9 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // btnDelStu
-            // 
-            this.btnDelStu.Location = new System.Drawing.Point(189, 354);
-            this.btnDelStu.Name = "btnDelStu";
-            this.btnDelStu.Size = new System.Drawing.Size(101, 23);
-            this.btnDelStu.TabIndex = 14;
-            this.btnDelStu.Text = "Delete Student";
-            this.btnDelStu.UseVisualStyleBackColor = true;
-            // 
-            // btnEditStudent
-            // 
-            this.btnEditStudent.Location = new System.Drawing.Point(304, 354);
-            this.btnEditStudent.Name = "btnEditStudent";
-            this.btnEditStudent.Size = new System.Drawing.Size(95, 23);
-            this.btnEditStudent.TabIndex = 15;
-            this.btnEditStudent.Text = "btnEditStudent";
-            this.btnEditStudent.UseVisualStyleBackColor = true;
-            // 
             // btnExporttoXML
             // 
-            this.btnExporttoXML.Location = new System.Drawing.Point(429, 354);
+            this.btnExporttoXML.Location = new System.Drawing.Point(352, 12);
             this.btnExporttoXML.Name = "btnExporttoXML";
             this.btnExporttoXML.Size = new System.Drawing.Size(75, 23);
             this.btnExporttoXML.TabIndex = 16;
@@ -239,14 +221,34 @@
             this.btnExporttoXML.UseVisualStyleBackColor = true;
             this.btnExporttoXML.Click += new System.EventHandler(this.btnExporttoXML_Click);
             // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(122, 12);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(118, 23);
+            this.btnReturn.TabIndex = 17;
+            this.btnReturn.Text = "Return to Main Menu";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(255, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 18;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 459);
+            this.ClientSize = new System.Drawing.Size(484, 462);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnExporttoXML);
-            this.Controls.Add(this.btnEditStudent);
-            this.Controls.Add(this.btnDelStu);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.cbCounties);
             this.Controls.Add(this.txtBoxStudentNumber);
@@ -286,8 +288,8 @@
         private System.Windows.Forms.TextBox txtBoxStudentNumber;
         private System.Windows.Forms.ComboBox cbCounties;
         private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.Button btnDelStu;
-        private System.Windows.Forms.Button btnEditStudent;
         private System.Windows.Forms.Button btnExporttoXML;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnClear;
     }
 }

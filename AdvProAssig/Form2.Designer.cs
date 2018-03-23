@@ -32,10 +32,11 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.txtboxTest = new System.Windows.Forms.RichTextBox();
-            this.btnTestServerCommand = new System.Windows.Forms.Button();
             this.dataGridStudents = new System.Windows.Forms.DataGridView();
+            this.btnEditStu = new System.Windows.Forms.Button();
+            this.btnDbHis = new System.Windows.Forms.Button();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDeleteStudent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(184, 12);
+            this.btnAddStudent.Location = new System.Drawing.Point(174, 12);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
             this.btnAddStudent.TabIndex = 3;
@@ -70,50 +71,60 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // txtboxTest
-            // 
-            this.txtboxTest.Location = new System.Drawing.Point(704, 332);
-            this.txtboxTest.Name = "txtboxTest";
-            this.txtboxTest.Size = new System.Drawing.Size(525, 171);
-            this.txtboxTest.TabIndex = 5;
-            this.txtboxTest.Text = "";
-            // 
-            // btnTestServerCommand
-            // 
-            this.btnTestServerCommand.Location = new System.Drawing.Point(573, 357);
-            this.btnTestServerCommand.Name = "btnTestServerCommand";
-            this.btnTestServerCommand.Size = new System.Drawing.Size(75, 23);
-            this.btnTestServerCommand.TabIndex = 6;
-            this.btnTestServerCommand.Text = "button1";
-            this.btnTestServerCommand.UseVisualStyleBackColor = true;
-            this.btnTestServerCommand.Click += new System.EventHandler(this.btnTestServerCommand_Click);
-            // 
             // dataGridStudents
             // 
             this.dataGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridStudents.Location = new System.Drawing.Point(242, 59);
+            this.dataGridStudents.Location = new System.Drawing.Point(12, 41);
             this.dataGridStudents.Name = "dataGridStudents";
-            this.dataGridStudents.Size = new System.Drawing.Size(731, 267);
+            this.dataGridStudents.Size = new System.Drawing.Size(599, 267);
             this.dataGridStudents.TabIndex = 7;
+            // 
+            // btnEditStu
+            // 
+            this.btnEditStu.Location = new System.Drawing.Point(255, 12);
+            this.btnEditStu.Name = "btnEditStu";
+            this.btnEditStu.Size = new System.Drawing.Size(75, 23);
+            this.btnEditStu.TabIndex = 8;
+            this.btnEditStu.Text = "Edit Student";
+            this.btnEditStu.UseVisualStyleBackColor = true;
+            this.btnEditStu.Click += new System.EventHandler(this.btnEditStu_Click);
+            // 
+            // btnDbHis
+            // 
+            this.btnDbHis.Location = new System.Drawing.Point(432, 12);
+            this.btnDbHis.Name = "btnDbHis";
+            this.btnDbHis.Size = new System.Drawing.Size(133, 23);
+            this.btnDbHis.TabIndex = 10;
+            this.btnDbHis.Text = "View DataBase History";
+            this.btnDbHis.UseVisualStyleBackColor = true;
             // 
             // studentBindingSource
             // 
             this.studentBindingSource.DataSource = typeof(AdvProAssig.Student);
+            // 
+            // btnDeleteStudent
+            // 
+            this.btnDeleteStudent.Location = new System.Drawing.Point(336, 12);
+            this.btnDeleteStudent.Name = "btnDeleteStudent";
+            this.btnDeleteStudent.Size = new System.Drawing.Size(90, 23);
+            this.btnDeleteStudent.TabIndex = 9;
+            this.btnDeleteStudent.Text = "Delete Student";
+            this.btnDeleteStudent.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 575);
+            this.Controls.Add(this.btnDbHis);
+            this.Controls.Add(this.btnDeleteStudent);
+            this.Controls.Add(this.btnEditStu);
             this.Controls.Add(this.dataGridStudents);
-            this.Controls.Add(this.btnTestServerCommand);
-            this.Controls.Add(this.txtboxTest);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogOut);
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -125,8 +136,9 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private System.Windows.Forms.RichTextBox txtboxTest;
-        private System.Windows.Forms.Button btnTestServerCommand;
         private System.Windows.Forms.DataGridView dataGridStudents;
+        private System.Windows.Forms.Button btnEditStu;
+        private System.Windows.Forms.Button btnDbHis;
+        private System.Windows.Forms.Button btnDeleteStudent;
     }
 }

@@ -56,3 +56,4 @@ C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.csproj.GenerateResource.Cache
 C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.csproj.CoreCompileInputs.cache
 C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.exe
 C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.pdb
+C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.EditStudent.resources
