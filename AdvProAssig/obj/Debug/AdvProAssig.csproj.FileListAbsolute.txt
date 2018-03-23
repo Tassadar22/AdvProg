@@ -59,3 +59,4 @@ C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.pdb
 C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.EditStudent.resources
 R:\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.EditStudent.resources
 R:\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.DeleteStudent.resources
+C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.DeleteStudent.resources

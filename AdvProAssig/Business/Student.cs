@@ -8,9 +8,6 @@ using System.Data;
 
 namespace AdvProAssig
 {
-    //Consider deleting
-    //public enum GraduateLevel { Undergraduate = 1, Postgraduate }
-    //public enum CourseLevel { Psychology=1, Business, Marketing, SoftwareDevelopment, DataAnalytics}
     class Student:ModifyStudentRecord
     {
         static public List<Student> studentlist = new List<Student>();
@@ -148,30 +145,40 @@ namespace AdvProAssig
             return string.Format($"FirstName: {FirstName}\nSurname: {Surname}\nEmail: {Email}\nPhone: {Phone}\nAddressLine 1: {AddressLine1}\nAddressLine: {AddressLine2}\nCity: {City}\nCounty: {County}\n" +
                 $"Graduate Level: {GraduateLevel}\nCourse Level: {Course}\nStudent Number {StudentNumber}\n");
         }
-        /*public string ToDatabaseString()
-        {
-            return string.Format($"INSERT INTO Student VALUES(" +
-                $"'{FirstName}'," +
-                $"'{Surname}'," +
-                $"'{Email}'," +
-                $"'{Phone}'," +
-                $"'{AddressLine1}'," +
-                $"'{AddressLine2}'," +
-                $"'{City}'," +
-                $"'{County}'," +
-                $"'{GraduateLevel}'," +
-                $"'{Course}'," +
-                $"{StudentNumber}");
-        }*/
         public void addtoDB()
         {
             data.AddtoDB(FirstName, Surname, Email, Phone, AddressLine1, AddressLine2, County, City, GraduateLevel, Course, StudentNumber);
         }
+       
         public static void addStudent(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
         {
             Student newstudent = new Student(firstname, surname, email, phone, addlin1, addlin2, county, city, gradlevel, cour, stunum);
             studentlist.Add(newstudent);
             newstudent.addtoDB();
+        }
+        public static string RemoveStudent(int studentid)
+        {
+            string message;
+            try
+            {
+                if (StudentFinder(studentid) == null)
+                {
+                    message = "Student Not found within the records";
+                }
+                else
+                {
+                    Student removingstudent = new Student();
+                    studentlist.Remove(removingstudent);
+                    data.DeleteRecord(studentid);
+                    PullInfofromDB();
+                    message = $"This record has been deleted succesfully";
+                }
+            }
+            catch(Exception ex)
+            {
+                message = ex.Message; 
+            }
+            return message;
         }
         //Method takes values from Student object 
         public void ExportToXml(Student student)

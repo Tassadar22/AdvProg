@@ -46,17 +46,6 @@
             this.btnFindStudent = new System.Windows.Forms.Button();
             this.txtBoxSearchable = new System.Windows.Forms.TextBox();
             this.lblSearchStudentID = new System.Windows.Forms.Label();
-            this.panelFirstName = new System.Windows.Forms.Panel();
-            this.panelSurname = new System.Windows.Forms.Panel();
-            this.panelEmail = new System.Windows.Forms.Panel();
-            this.panelPhone = new System.Windows.Forms.Panel();
-            this.panelAddLin1 = new System.Windows.Forms.Panel();
-            this.panelAddLin2 = new System.Windows.Forms.Panel();
-            this.panelCounty = new System.Windows.Forms.Panel();
-            this.panelCity = new System.Windows.Forms.Panel();
-            this.PanelCourse = new System.Windows.Forms.Panel();
-            this.PanelCourselvl = new System.Windows.Forms.Panel();
-            this.PanelStudentID = new System.Windows.Forms.Panel();
             this.txtBoxCourse = new System.Windows.Forms.TextBox();
             this.btnEditDetails = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
@@ -246,83 +235,6 @@
             this.lblSearchStudentID.TabIndex = 36;
             this.lblSearchStudentID.Text = "Enter Student ID of Student to be found";
             // 
-            // panelFirstName
-            // 
-            this.panelFirstName.Location = new System.Drawing.Point(329, 55);
-            this.panelFirstName.Name = "panelFirstName";
-            this.panelFirstName.Size = new System.Drawing.Size(289, 20);
-            this.panelFirstName.TabIndex = 37;
-            // 
-            // panelSurname
-            // 
-            this.panelSurname.Location = new System.Drawing.Point(329, 81);
-            this.panelSurname.Name = "panelSurname";
-            this.panelSurname.Size = new System.Drawing.Size(289, 20);
-            this.panelSurname.TabIndex = 38;
-            // 
-            // panelEmail
-            // 
-            this.panelEmail.Location = new System.Drawing.Point(329, 107);
-            this.panelEmail.Name = "panelEmail";
-            this.panelEmail.Size = new System.Drawing.Size(289, 20);
-            this.panelEmail.TabIndex = 39;
-            // 
-            // panelPhone
-            // 
-            this.panelPhone.Location = new System.Drawing.Point(329, 130);
-            this.panelPhone.Name = "panelPhone";
-            this.panelPhone.Size = new System.Drawing.Size(289, 20);
-            this.panelPhone.TabIndex = 38;
-            // 
-            // panelAddLin1
-            // 
-            this.panelAddLin1.Location = new System.Drawing.Point(329, 156);
-            this.panelAddLin1.Name = "panelAddLin1";
-            this.panelAddLin1.Size = new System.Drawing.Size(289, 20);
-            this.panelAddLin1.TabIndex = 38;
-            // 
-            // panelAddLin2
-            // 
-            this.panelAddLin2.Location = new System.Drawing.Point(329, 182);
-            this.panelAddLin2.Name = "panelAddLin2";
-            this.panelAddLin2.Size = new System.Drawing.Size(289, 20);
-            this.panelAddLin2.TabIndex = 38;
-            // 
-            // panelCounty
-            // 
-            this.panelCounty.Location = new System.Drawing.Point(329, 208);
-            this.panelCounty.Name = "panelCounty";
-            this.panelCounty.Size = new System.Drawing.Size(289, 20);
-            this.panelCounty.TabIndex = 38;
-            // 
-            // panelCity
-            // 
-            this.panelCity.Location = new System.Drawing.Point(329, 234);
-            this.panelCity.Name = "panelCity";
-            this.panelCity.Size = new System.Drawing.Size(289, 20);
-            this.panelCity.TabIndex = 38;
-            // 
-            // PanelCourse
-            // 
-            this.PanelCourse.Location = new System.Drawing.Point(329, 260);
-            this.PanelCourse.Name = "PanelCourse";
-            this.PanelCourse.Size = new System.Drawing.Size(289, 20);
-            this.PanelCourse.TabIndex = 38;
-            // 
-            // PanelCourselvl
-            // 
-            this.PanelCourselvl.Location = new System.Drawing.Point(329, 286);
-            this.PanelCourselvl.Name = "PanelCourselvl";
-            this.PanelCourselvl.Size = new System.Drawing.Size(289, 31);
-            this.PanelCourselvl.TabIndex = 38;
-            // 
-            // PanelStudentID
-            // 
-            this.PanelStudentID.Location = new System.Drawing.Point(329, 323);
-            this.PanelStudentID.Name = "PanelStudentID";
-            this.PanelStudentID.Size = new System.Drawing.Size(289, 20);
-            this.PanelStudentID.TabIndex = 38;
-            // 
             // txtBoxCourse
             // 
             this.txtBoxCourse.Location = new System.Drawing.Point(111, 260);
@@ -347,17 +259,6 @@
             this.ClientSize = new System.Drawing.Size(484, 462);
             this.Controls.Add(this.btnEditDetails);
             this.Controls.Add(this.txtBoxCourse);
-            this.Controls.Add(this.PanelStudentID);
-            this.Controls.Add(this.PanelCourselvl);
-            this.Controls.Add(this.PanelCourse);
-            this.Controls.Add(this.panelCity);
-            this.Controls.Add(this.panelCounty);
-            this.Controls.Add(this.panelAddLin2);
-            this.Controls.Add(this.panelAddLin1);
-            this.Controls.Add(this.panelPhone);
-            this.Controls.Add(this.panelEmail);
-            this.Controls.Add(this.panelSurname);
-            this.Controls.Add(this.panelFirstName);
             this.Controls.Add(this.lblSearchStudentID);
             this.Controls.Add(this.txtBoxSearchable);
             this.Controls.Add(this.btnFindStudent);
@@ -403,17 +304,6 @@
         private System.Windows.Forms.Button btnFindStudent;
         private System.Windows.Forms.TextBox txtBoxSearchable;
         private System.Windows.Forms.Label lblSearchStudentID;
-        private System.Windows.Forms.Panel panelFirstName;
-        private System.Windows.Forms.Panel panelSurname;
-        private System.Windows.Forms.Panel panelEmail;
-        private System.Windows.Forms.Panel panelPhone;
-        private System.Windows.Forms.Panel panelAddLin1;
-        private System.Windows.Forms.Panel panelAddLin2;
-        private System.Windows.Forms.Panel panelCounty;
-        private System.Windows.Forms.Panel panelCity;
-        private System.Windows.Forms.Panel PanelCourse;
-        private System.Windows.Forms.Panel PanelCourselvl;
-        private System.Windows.Forms.Panel PanelStudentID;
         private System.Windows.Forms.TextBox txtBoxCourse;
         private System.Windows.Forms.Button btnEditDetails;
     }

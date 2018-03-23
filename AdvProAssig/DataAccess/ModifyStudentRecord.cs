@@ -86,9 +86,8 @@ namespace AdvProAssig.DataAccess
         }
         public void DeleteRecord(int id)
         {
-            SqlCommand IdSearch = new SqlCommand($"DELETE * FROM Student WHERE StudentID={id}", openConnection());
-            openConnection();
-            IdSearch.BeginExecuteNonQuery();
+            SqlCommand IDdelete = new SqlCommand($"DELETE FROM Student WHERE StudentID={id}", openConnection());
+            IDdelete.ExecuteNonQuery();
             closeConnection();
         }
     }

@@ -23,10 +23,7 @@ namespace AdvProAssig
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 mainscreenturnon = new Form2();
-            mainscreenturnon.ShowDialog();
-            this.Close();
+            ReturntoMainScreen();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -50,8 +47,15 @@ namespace AdvProAssig
         }
         private void btnEditDetails_Click(object sender, EventArgs e)
         {
-            string result;
-            /*result = Student.EditStudentValidator(txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), txtBoxStudentNumber.Text);
+            //Delete Method to first Delete Record 
+            string result, outcome;
+
+            outcome = Student.RemoveStudent(int.Parse(txtBoxSearchable.Text));
+            if (outcome != "This record has been deleted succesfully")
+            {
+                result = "Student ID could not be found";
+            }
+            result = Student.EditStudentValidator(txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), txtBoxStudentNumber.Text);
             if (result == "Data Succesfully Updated")
             {
                 MessageBox.Show(result);
@@ -60,8 +64,17 @@ namespace AdvProAssig
             else
             {
                 MessageBox.Show(result);
-            }*/
+            }
         }
+
+        private void ReturntoMainScreen()
+        {
+            this.Hide();
+            Form2 mainscreenturnon = new Form2();
+            mainscreenturnon.ShowDialog();
+            this.Close();
+        }
+
         private void PopulateFieldswithResults(Student student)
         {//Function populate fields with results 
             txtBoxFirstName.Text = student.FirstName;
@@ -86,7 +99,6 @@ namespace AdvProAssig
             rbPostGrad.Checked = false;
             rbUnderGrad.Checked = false;
         }
-        
         public string SelectedRadioButton()
         {
             if (rbUnderGrad.Checked)

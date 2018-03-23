@@ -31,7 +31,6 @@
             this.txtBoxCourse = new System.Windows.Forms.TextBox();
             this.lblSearchStudentID = new System.Windows.Forms.Label();
             this.txtBoxSearchable = new System.Windows.Forms.TextBox();
-            this.cbCounties = new System.Windows.Forms.ComboBox();
             this.txtBoxStudentNumber = new System.Windows.Forms.TextBox();
             this.panelCourseLevel = new System.Windows.Forms.Panel();
             this.rbPostGrad = new System.Windows.Forms.RadioButton();
@@ -46,6 +45,9 @@
             this.lblDetails = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnFindStudent = new System.Windows.Forms.Button();
+            this.txtBoxCounty = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,48 +74,7 @@
             this.txtBoxSearchable.Name = "txtBoxSearchable";
             this.txtBoxSearchable.Size = new System.Drawing.Size(121, 20);
             this.txtBoxSearchable.TabIndex = 54;
-            // 
-            // cbCounties
-            // 
-            this.cbCounties.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCounties.FormattingEnabled = true;
-            this.cbCounties.Items.AddRange(new object[] {
-            "Antrim",
-            "Armagh",
-            "Carlow",
-            "Cavan",
-            "Clare",
-            "Cork",
-            "Derry",
-            "Donegal",
-            "Down",
-            "Dublin",
-            "Fermanagh",
-            "Galway",
-            "Kerry",
-            "Kildare",
-            "Kilkenny",
-            "Laois",
-            "Leitrim",
-            "Limerick",
-            "Longford",
-            "Louth",
-            "Mayo",
-            "Meath",
-            "Monaghan",
-            "Offaly",
-            "Roscommon",
-            "Sligo",
-            "Tipperary",
-            "Tyrone",
-            "Waterford",
-            "Westmeath",
-            "Wexford",
-            "Wicklow"});
-            this.cbCounties.Location = new System.Drawing.Point(106, 212);
-            this.cbCounties.Name = "cbCounties";
-            this.cbCounties.Size = new System.Drawing.Size(199, 21);
-            this.cbCounties.TabIndex = 52;
+            this.txtBoxSearchable.TextChanged += new System.EventHandler(this.UndoChanges);
             // 
             // txtBoxStudentNumber
             // 
@@ -234,23 +195,54 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(397, 396);
+            this.btnDelete.Location = new System.Drawing.Point(397, 356);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 57;
             this.btnDelete.Text = "Delete Student";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnFindStudent
+            // 
+            this.btnFindStudent.Location = new System.Drawing.Point(397, 399);
+            this.btnFindStudent.Name = "btnFindStudent";
+            this.btnFindStudent.Size = new System.Drawing.Size(75, 23);
+            this.btnFindStudent.TabIndex = 58;
+            this.btnFindStudent.Text = "Find Student";
+            this.btnFindStudent.UseVisualStyleBackColor = true;
+            this.btnFindStudent.Click += new System.EventHandler(this.btnFindStudent_Click);
+            // 
+            // txtBoxCounty
+            // 
+            this.txtBoxCounty.Location = new System.Drawing.Point(106, 211);
+            this.txtBoxCounty.Name = "txtBoxCounty";
+            this.txtBoxCounty.ReadOnly = true;
+            this.txtBoxCounty.Size = new System.Drawing.Size(196, 20);
+            this.txtBoxCounty.TabIndex = 59;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(148, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 60;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // DeleteStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.txtBoxCounty);
+            this.Controls.Add(this.btnFindStudent);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtBoxCourse);
             this.Controls.Add(this.lblSearchStudentID);
             this.Controls.Add(this.txtBoxSearchable);
-            this.Controls.Add(this.cbCounties);
             this.Controls.Add(this.txtBoxStudentNumber);
             this.Controls.Add(this.panelCourseLevel);
             this.Controls.Add(this.txtBoxCity);
@@ -277,7 +269,6 @@
         private System.Windows.Forms.TextBox txtBoxCourse;
         private System.Windows.Forms.Label lblSearchStudentID;
         private System.Windows.Forms.TextBox txtBoxSearchable;
-        private System.Windows.Forms.ComboBox cbCounties;
         private System.Windows.Forms.TextBox txtBoxStudentNumber;
         private System.Windows.Forms.Panel panelCourseLevel;
         private System.Windows.Forms.RadioButton rbPostGrad;
@@ -292,5 +283,8 @@
         private System.Windows.Forms.Label lblDetails;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnFindStudent;
+        private System.Windows.Forms.TextBox txtBoxCounty;
+        private System.Windows.Forms.Button btnClear;
     }
 }

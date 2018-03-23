@@ -8,3 +8,4 @@ EXEC	@return_value = [dbo].[uspCreateDummyStudentData]
 SELECT	@return_value as 'Return Value'
 
 GO
+

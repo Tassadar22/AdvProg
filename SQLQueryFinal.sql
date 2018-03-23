@@ -22,7 +22,7 @@ INSERT INTO Student Values('Mary','Smith','Mary@DBS.com','0872146455','20 the Gr
 INSERT INTO Student Values('Max','Power','Max@DBS.com', '0894561245','54 Briarwood', 'StoneyBatter','Dublin 7','Dublin','UnderGraduate','Business', 78451254)
 GO
 
-EXEC uspCrea
+EXEC uspCreateDummyStudentData
 
 CREATE PROC uspGetStudentList
 AS
@@ -56,3 +56,4 @@ INSERT INTO Staff VALUES ('secure','swordfish')
 GO
 EXEC uspMakeDummyStaffData
 
+DELETE FROM Student WHERE StudentID=12345678
