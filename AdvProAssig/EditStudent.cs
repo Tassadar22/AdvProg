@@ -49,7 +49,6 @@ namespace AdvProAssig
                 MessageBox.Show("Student Not Found");
 
         }
-
         private void PopulateFieldswithResults(Student student)
         {//Function populate fields with results 
             txtBoxFirstName.Text = student.FirstName;
