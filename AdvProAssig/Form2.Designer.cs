@@ -110,6 +110,7 @@
             this.btnDeleteStudent.TabIndex = 9;
             this.btnDeleteStudent.Text = "Delete Student";
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
             // 
             // Form2
             // 
@@ -125,6 +126,7 @@
             this.Controls.Add(this.btnLogOut);
             this.Name = "Form2";
             this.Text = "Main Screen";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -43,35 +43,6 @@ namespace AdvProAssig
             dataGridStudents.Columns[10].Name = "Student Number";
             dataGridStudents.AutoSize = true;
             dataGridStudents.AutoGenerateColumns = false;
-            /*for (int i = 0; i < 9; i++)
-            {
-                DataGridViewRow testrow = dataGridStudents.Rows[0];
-                
-                testrow.Cells[i].Value = "TEST";
-                testrow2.Cells[i].Value = "TEST2";
-            }*/
-            /*for (int i = 0; i < updatedlist.Count; i++)
-            {
-                //dataGridStudents.Rows[i].Cells[0].Value = updatedlist[i].FirstName;
-                dataGridStudents.Rows[0].Cells[0].Value = updatedlist[i].FirstName;
-            }*/
-            /*foreach (Student student in updatedlist)
-            {
-                DataGridViewRow row = dataGridStudents.Rows[0];
-                row.Cells[0].Value = student.FirstName.ToString();
-                row.Cells[1].Value = student.Surname;
-                row.Cells[2].Value = student.Email;
-                row.Cells[3].Value = student.Phone;
-                row.Cells[4].Value = student.AddressLine1;
-                row.Cells[5].Value = student.AddressLine2;
-                row.Cells[6].Value = student.City;
-                row.Cells[7].Value = student.County;
-                row.Cells[8].Value = student.GraduateLevel;
-                row.Cells[9].Value = student.Courselevel;
-                row.Cells[10].Value = student.StudentNumber;
-                dataGridStudents.Rows.Add(row);
-                
-            }*/
         }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
@@ -96,6 +67,19 @@ namespace AdvProAssig
             this.Hide();
             EditStudent editpage = new EditStudent();
             editpage.ShowDialog();
+            this.Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteStudent_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DeleteStudent deletepage = new DeleteStudent();
+            deletepage.ShowDialog();
             this.Close();
         }
     }

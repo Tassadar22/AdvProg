@@ -101,7 +101,7 @@ namespace AdvProAssig
             }
             return outcome;
         }
-        public static string EditStudentValidator(string emailin, string phonein, string addlin1in, string addlin2in, string countyin, string cityin, string gradlevelin, string stunumin)
+        /*public static string EditStudentValidator(string emailin, string phonein, string addlin1in, string addlin2in, string countyin, string cityin, string gradlevelin, string stunumin)
         {
             //Outcome message to be passed to program
             string outcome = "";
@@ -142,7 +142,7 @@ namespace AdvProAssig
                 Student.addStudent(firstnamein, surnamein, emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, courin, studentnumber);
             }
             return outcome;
-        }
+        }*/
         public override string ToString()
         {
             return string.Format($"FirstName: {FirstName}\nSurname: {Surname}\nEmail: {Email}\nPhone: {Phone}\nAddressLine 1: {AddressLine1}\nAddressLine: {AddressLine2}\nCity: {City}\nCounty: {County}\n" +

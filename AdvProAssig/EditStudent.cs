@@ -51,7 +51,7 @@ namespace AdvProAssig
         private void btnEditDetails_Click(object sender, EventArgs e)
         {
             string result;
-            result = Student.EditStudentValidator(txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), txtBoxStudentNumber.Text);
+            /*result = Student.EditStudentValidator(txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), txtBoxStudentNumber.Text);
             if (result == "Data Succesfully Updated")
             {
                 MessageBox.Show(result);
@@ -60,7 +60,7 @@ namespace AdvProAssig
             else
             {
                 MessageBox.Show(result);
-            }
+            }*/
         }
         private void PopulateFieldswithResults(Student student)
         {//Function populate fields with results 
