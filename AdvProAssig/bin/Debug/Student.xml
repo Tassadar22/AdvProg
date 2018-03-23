@@ -13,4 +13,17 @@
     <Course>Psychology</Course>
     <StudentNumber>456464</StudentNumber>
   </Student>
+  <Student>
+    <FirstName>John</FirstName>
+    <Surname>w</Surname>
+    <Email>wad@awd.com</Email>
+    <Phone>4545</Phone>
+    <AddressLine1>45613</AddressLine1>
+    <AddressLine2>456</AddressLine2>
+    <County>45</County>
+    <City>dublin</City>
+    <Graduatelevel>Postgraduate</Graduatelevel>
+    <Course>Psychology</Course>
+    <StudentNumber>456464</StudentNumber>
+  </Student>
 </Students>

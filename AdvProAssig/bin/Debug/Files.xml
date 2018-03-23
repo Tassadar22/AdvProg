@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<Students>
+  <Student>
+    <FirstName>wad</FirstName>
+    <Surname>awd</Surname>
+    <Email />
+    <Phone />
+    <AddressLine1 />
+    <AddressLine2 />
+    <County>Cavan</County>
+    <City />
+    <Graduatelevel>UnderGraduate</Graduatelevel>
+    <Course>Marketing</Course>
+    <StudentNumber>45678915</StudentNumber>
+  </Student>
+</Students>

@@ -76,22 +76,22 @@
             this.dataGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridStudents.Location = new System.Drawing.Point(12, 41);
             this.dataGridStudents.Name = "dataGridStudents";
-            this.dataGridStudents.Size = new System.Drawing.Size(599, 267);
+            this.dataGridStudents.Size = new System.Drawing.Size(637, 267);
             this.dataGridStudents.TabIndex = 7;
             // 
             // btnEditStu
             // 
             this.btnEditStu.Location = new System.Drawing.Point(255, 12);
             this.btnEditStu.Name = "btnEditStu";
-            this.btnEditStu.Size = new System.Drawing.Size(75, 23);
+            this.btnEditStu.Size = new System.Drawing.Size(159, 23);
             this.btnEditStu.TabIndex = 8;
-            this.btnEditStu.Text = "Edit Student";
+            this.btnEditStu.Text = "Edit Student/Export To XML";
             this.btnEditStu.UseVisualStyleBackColor = true;
             this.btnEditStu.Click += new System.EventHandler(this.btnEditStu_Click);
             // 
             // btnDbHis
             // 
-            this.btnDbHis.Location = new System.Drawing.Point(432, 12);
+            this.btnDbHis.Location = new System.Drawing.Point(516, 12);
             this.btnDbHis.Name = "btnDbHis";
             this.btnDbHis.Size = new System.Drawing.Size(133, 23);
             this.btnDbHis.TabIndex = 10;
@@ -104,7 +104,7 @@
             // 
             // btnDeleteStudent
             // 
-            this.btnDeleteStudent.Location = new System.Drawing.Point(336, 12);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(420, 12);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.Size = new System.Drawing.Size(90, 23);
             this.btnDeleteStudent.TabIndex = 9;

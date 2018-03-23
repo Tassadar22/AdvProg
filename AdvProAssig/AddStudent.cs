@@ -12,12 +12,11 @@ namespace AdvProAssig
 {
     public partial class AddStudent : Form
     {
-        private DataSet StudentDataSet;
+        
         public AddStudent()
         {
             InitializeComponent();
             Student teststudent = new Student("John", "w", "wad@awd.com", "4545", "45613", "456", "45", "dublin", "Postgraduate", "Psychology", 456464);
-            teststudent.ExportToXml(teststudent);
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
@@ -46,30 +45,7 @@ namespace AdvProAssig
             rbUnderGrad.Checked = false;
         }
 
-        private void btnExporttoXML_Click(object sender, EventArgs e)
-        {
-            DataTable DTS;
-            if(StudentDataSet == null)
-            {
-                StudentDataSet = new DataSet("Students");
-                DTS = new DataTable("Student");
-                DTS.Columns.Add("FirstName");
-                DTS.Columns.Add("Surname");
-                DTS.Columns.Add("Email");
-                DTS.Columns.Add("Phone");
-                DTS.Columns.Add("AddLin1");
-                DTS.Columns.Add("AddLin2");
-                DTS.Columns.Add("County");
-                DTS.Columns.Add("City");
-                DTS.Columns.Add("Courselevel");
-                DTS.Columns.Add("Course");
-                DTS.Columns.Add("StuNum");
-                StudentDataSet.Tables.Add(DTS);
-            }
-            DTS = StudentDataSet.Tables["Student"];
-            DataRow rowstu = DTS.NewRow();
-        }
-
+       
         public string SelectedRadioButton()
         {
             if (rbUnderGrad.Checked)
@@ -90,11 +66,6 @@ namespace AdvProAssig
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clearfields();
-        }
-
-        private void AddStudent_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

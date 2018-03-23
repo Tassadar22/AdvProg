@@ -90,5 +90,13 @@ namespace AdvProAssig.DataAccess
             IDdelete.ExecuteNonQuery();
             closeConnection();
         }
+        public void ChangeStudentRecord(string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, int oldstunum, int newstunum)
+        {
+            SqlCommand modifycmd = new SqlCommand($"UPDATE Student SET StudentEmail = '{email}', StudentPhone = '{phone}'," +
+                $"StudentAddLin1 = '{addlin1}', StudentAddLin2 = '{addlin2}', StudentCity = '{city}', StudentCounty = '{county}', StudentLevel = '{gradlevel}',"
+                + $"StudentID ={newstunum} WHERE StudentID ={oldstunum}", openConnection());
+            modifycmd.ExecuteNonQuery();
+            closeConnection();
+        }
     }
 }

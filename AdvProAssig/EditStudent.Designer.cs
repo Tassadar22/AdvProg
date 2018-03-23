@@ -48,12 +48,20 @@
             this.lblSearchStudentID = new System.Windows.Forms.Label();
             this.txtBoxCourse = new System.Windows.Forms.TextBox();
             this.btnEditDetails = new System.Windows.Forms.Button();
+            this.btnXMLExport = new System.Windows.Forms.Button();
+            this.btnLoadXML = new System.Windows.Forms.Button();
+            this.txtboxXMLFileName = new System.Windows.Forms.TextBox();
+            this.btnToggleXML = new System.Windows.Forms.Button();
+            this.pnlXML = new System.Windows.Forms.Panel();
+            this.lblFileName = new System.Windows.Forms.Label();
+            this.btnAddStudent = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
+            this.pnlXML.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(17, 12);
+            this.btnReturn.Location = new System.Drawing.Point(12, 12);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(118, 23);
             this.btnReturn.TabIndex = 18;
@@ -201,7 +209,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(145, 12);
+            this.btnClear.Location = new System.Drawing.Point(136, 12);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 32;
@@ -211,7 +219,7 @@
             // 
             // btnFindStudent
             // 
-            this.btnFindStudent.Location = new System.Drawing.Point(397, 401);
+            this.btnFindStudent.Location = new System.Drawing.Point(385, 376);
             this.btnFindStudent.Name = "btnFindStudent";
             this.btnFindStudent.Size = new System.Drawing.Size(75, 23);
             this.btnFindStudent.TabIndex = 34;
@@ -221,15 +229,16 @@
             // 
             // txtBoxSearchable
             // 
-            this.txtBoxSearchable.Location = new System.Drawing.Point(262, 401);
+            this.txtBoxSearchable.Location = new System.Drawing.Point(250, 376);
             this.txtBoxSearchable.Name = "txtBoxSearchable";
             this.txtBoxSearchable.Size = new System.Drawing.Size(121, 20);
             this.txtBoxSearchable.TabIndex = 35;
+            this.txtBoxSearchable.TextChanged += new System.EventHandler(this.txtBoxSearchable_TextChanged);
             // 
             // lblSearchStudentID
             // 
             this.lblSearchStudentID.AutoSize = true;
-            this.lblSearchStudentID.Location = new System.Drawing.Point(51, 401);
+            this.lblSearchStudentID.Location = new System.Drawing.Point(39, 376);
             this.lblSearchStudentID.Name = "lblSearchStudentID";
             this.lblSearchStudentID.Size = new System.Drawing.Size(195, 13);
             this.lblSearchStudentID.TabIndex = 36;
@@ -244,7 +253,7 @@
             // 
             // btnEditDetails
             // 
-            this.btnEditDetails.Location = new System.Drawing.Point(227, 12);
+            this.btnEditDetails.Location = new System.Drawing.Point(217, 12);
             this.btnEditDetails.Name = "btnEditDetails";
             this.btnEditDetails.Size = new System.Drawing.Size(75, 23);
             this.btnEditDetails.TabIndex = 41;
@@ -252,11 +261,80 @@
             this.btnEditDetails.UseVisualStyleBackColor = true;
             this.btnEditDetails.Click += new System.EventHandler(this.btnEditDetails_Click);
             // 
+            // btnXMLExport
+            // 
+            this.btnXMLExport.Location = new System.Drawing.Point(3, 32);
+            this.btnXMLExport.Name = "btnXMLExport";
+            this.btnXMLExport.Size = new System.Drawing.Size(86, 23);
+            this.btnXMLExport.TabIndex = 42;
+            this.btnXMLExport.Text = "Export to XML";
+            this.btnXMLExport.UseVisualStyleBackColor = true;
+            this.btnXMLExport.Click += new System.EventHandler(this.btnXMLExport_Click);
+            // 
+            // btnLoadXML
+            // 
+            this.btnLoadXML.Location = new System.Drawing.Point(3, 3);
+            this.btnLoadXML.Name = "btnLoadXML";
+            this.btnLoadXML.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadXML.TabIndex = 43;
+            this.btnLoadXML.Text = "Load XML File";
+            this.btnLoadXML.UseVisualStyleBackColor = true;
+            this.btnLoadXML.Click += new System.EventHandler(this.btnLoadXML_Click);
+            // 
+            // txtboxXMLFileName
+            // 
+            this.txtboxXMLFileName.Location = new System.Drawing.Point(3, 79);
+            this.txtboxXMLFileName.Name = "txtboxXMLFileName";
+            this.txtboxXMLFileName.Size = new System.Drawing.Size(170, 20);
+            this.txtboxXMLFileName.TabIndex = 44;
+            // 
+            // btnToggleXML
+            // 
+            this.btnToggleXML.Location = new System.Drawing.Point(298, 12);
+            this.btnToggleXML.Name = "btnToggleXML";
+            this.btnToggleXML.Size = new System.Drawing.Size(109, 23);
+            this.btnToggleXML.TabIndex = 45;
+            this.btnToggleXML.Text = "Toggle XML View";
+            this.btnToggleXML.UseVisualStyleBackColor = true;
+            this.btnToggleXML.Click += new System.EventHandler(this.btnToggleXML_Click);
+            // 
+            // pnlXML
+            // 
+            this.pnlXML.Controls.Add(this.btnAddStudent);
+            this.pnlXML.Controls.Add(this.lblFileName);
+            this.pnlXML.Controls.Add(this.btnLoadXML);
+            this.pnlXML.Controls.Add(this.txtboxXMLFileName);
+            this.pnlXML.Controls.Add(this.btnXMLExport);
+            this.pnlXML.Location = new System.Drawing.Point(382, 55);
+            this.pnlXML.Name = "pnlXML";
+            this.pnlXML.Size = new System.Drawing.Size(190, 202);
+            this.pnlXML.TabIndex = 46;
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.AutoSize = true;
+            this.lblFileName.Location = new System.Drawing.Point(3, 59);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(52, 13);
+            this.lblFileName.TabIndex = 45;
+            this.lblFileName.Text = "Filename:";
+            // 
+            // btnAddStudent
+            // 
+            this.btnAddStudent.Location = new System.Drawing.Point(98, 3);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
+            this.btnAddStudent.TabIndex = 46;
+            this.btnAddStudent.Text = "Add Student";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 462);
+            this.ClientSize = new System.Drawing.Size(584, 462);
+            this.Controls.Add(this.pnlXML);
+            this.Controls.Add(this.btnToggleXML);
             this.Controls.Add(this.btnEditDetails);
             this.Controls.Add(this.txtBoxCourse);
             this.Controls.Add(this.lblSearchStudentID);
@@ -277,8 +355,11 @@
             this.Controls.Add(this.btnReturn);
             this.Name = "EditStudent";
             this.Text = "Edit Student";
+            this.Load += new System.EventHandler(this.EditStudent_Load);
             this.panelCourseLevel.ResumeLayout(false);
             this.panelCourseLevel.PerformLayout();
+            this.pnlXML.ResumeLayout(false);
+            this.pnlXML.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +387,12 @@
         private System.Windows.Forms.Label lblSearchStudentID;
         private System.Windows.Forms.TextBox txtBoxCourse;
         private System.Windows.Forms.Button btnEditDetails;
+        private System.Windows.Forms.Button btnXMLExport;
+        private System.Windows.Forms.Button btnLoadXML;
+        private System.Windows.Forms.TextBox txtboxXMLFileName;
+        private System.Windows.Forms.Button btnToggleXML;
+        private System.Windows.Forms.Panel pnlXML;
+        private System.Windows.Forms.Label lblFileName;
+        private System.Windows.Forms.Button btnAddStudent;
     }
 }

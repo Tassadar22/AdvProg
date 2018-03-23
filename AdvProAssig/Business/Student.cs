@@ -94,31 +94,50 @@ namespace AdvProAssig
             if(makeobject)
             {//Object meets validation 
                 outcome = "Data Succesfully Added";
-                Student.addStudent(firstnamein, surnamein, emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, courin, studentnumber);
+                Student.AddStudent(firstnamein, surnamein, emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, courin, studentnumber);
             }
             return outcome;
         }
-        /*public static string EditStudentValidator(string emailin, string phonein, string addlin1in, string addlin2in, string countyin, string cityin, string gradlevelin, string stunumin)
+        public static string EditStudentValidator(string emailin, string phonein, string addlin1in, string addlin2in, string countyin, string cityin, string gradlevelin, string oldstunumin, string newstunum)
         {
             //Outcome message to be passed to program
             string outcome = "";
             //Boolean toggle to indicate whether the passed values meet validation requirements and boolean toggle to see if ID is correct
-            bool updateobject = true;
-            int studentnumber;
+            bool updateobject = true, checkdatabase1 = true;
+            int studentnumberfinal; 
             //Check Length of integer
-            if (stunumin.Length != 8)
+            if (oldstunumin.Length != 8)
+            {
+                outcome += "Student Number must be eight digits long\n";
+                updateobject = false;
+                checkdatabase1 = false;
+            }
+            int oldstudnumber;
+            if (!int.TryParse(oldstunumin, out oldstudnumber))
             {
                 outcome += "Student Number can only be eight digits long\n";
                 updateobject = false;
-                
-            }//Check if integer value is 
-            if (!int.TryParse(stunumin, out studentnumber))
+
+            }
+            if (checkdatabase1)
+            {
+                if (!CheckDBforStudentID(oldstudnumber))
+                {
+                    updateobject = false;
+                    outcome += "Student number cannot be found\n";
+                }
+            }
+            if (newstunum.Length != 8)
+            {
+                outcome += "Student Number can only be eight digits long\n";
+                updateobject = false;
+            }//Check if integer value will parse 
+            if (!int.TryParse(newstunum, out studentnumberfinal))
             {
                 outcome += "Student Number must only contain an integer\n";
                 updateobject = false;
-           
             }
-           //Check if proper county name is entered
+            //Check if proper county name is entered
             if (!CheckCountyList(countyin))
             {
                 outcome += "Improper county named entered\n";
@@ -131,30 +150,38 @@ namespace AdvProAssig
             }
             if (!EmptyChecker(emailin, phonein, addlin1in, cityin, countyin, gradlevelin))
             {
-                outcome += "Please complete these fields\n";
+                outcome += "Please complete every field field except for Address Line 2\n";
+                updateobject = false;
             }
             if (updateobject)
-            {//Object meets validation 
-                outcome = "Data Succesfully Added";
-                Student.addStudent(firstnamein, surnamein, emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, courin, studentnumber);
+            {//Object meets validation requirements and can be parsed
+                outcome = "Data Succesfully updated";
+                UpdateStudent(emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, oldstudnumber, studentnumberfinal);
             }
             return outcome;
-        }*/
+        }
         public override string ToString()
         {
             return string.Format($"FirstName: {FirstName}\nSurname: {Surname}\nEmail: {Email}\nPhone: {Phone}\nAddressLine 1: {AddressLine1}\nAddressLine: {AddressLine2}\nCity: {City}\nCounty: {County}\n" +
                 $"Graduate Level: {GraduateLevel}\nCourse Level: {Course}\nStudent Number {StudentNumber}\n");
         }
-        public void addtoDB()
-        {
-            data.AddtoDB(FirstName, Surname, Email, Phone, AddressLine1, AddressLine2, County, City, GraduateLevel, Course, StudentNumber);
-        }
+      
        
-        public static void addStudent(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
+        public static void AddStudent(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
         {
             Student newstudent = new Student(firstname, surname, email, phone, addlin1, addlin2, county, city, gradlevel, cour, stunum);
             studentlist.Add(newstudent);
             newstudent.addtoDB();
+        }
+        public static void UpdateStudent(string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, int existingstunum, int newstunum)
+        {
+            //After Succesful validation the data is sent to the Database to be updated.
+            data.ChangeStudentRecord(email, phone, addlin1, addlin2, county, city, gradlevel,  existingstunum, newstunum);
+            //PullInfofromDB();//The existing studentlist is refreshed to reflect the new database change
+        }
+        public void addtoDB()
+        {
+            data.AddtoDB(FirstName, Surname, Email, Phone, AddressLine1, AddressLine2, County, City, GraduateLevel, Course, StudentNumber);
         }
         public static string RemoveStudent(int studentid)
         {
@@ -181,7 +208,7 @@ namespace AdvProAssig
             return message;
         }
         //Method takes values from Student object 
-        public void ExportToXml(Student student)
+        public void ExportToXml(Student student, string filename)
         {
             //Add student object to Dataset
             DataTable DTS;
@@ -219,7 +246,7 @@ namespace AdvProAssig
             DTS.AcceptChanges();
 
             //To export to XML
-            StudentDataSet.WriteXml("Student.xml"); 
+            StudentDataSet.WriteXml($"{filename}.xml"); 
         }
         public List<Student> Exportlist(List<Student> inputlist)
         {
@@ -296,16 +323,27 @@ namespace AdvProAssig
         static bool EmptyChecker(string firstname, string surname, string email, string phone, string addlin1, string city, string county, string gradlevelin)
         {
             int truecounter=0;
-            if (gradlevelin == " " || county == "")
+            if (gradlevelin == "None selected" || county == " ")
                 truecounter++;
-            if(!(string.IsNullOrEmpty(firstname)|| string.IsNullOrEmpty(surname)|| string.IsNullOrEmpty(phone)|| string.IsNullOrEmpty(addlin1) || string.IsNullOrEmpty(city)))
+            if(string.IsNullOrEmpty(firstname)|| string.IsNullOrEmpty(surname)|| string.IsNullOrEmpty(phone)|| string.IsNullOrEmpty(addlin1) || string.IsNullOrEmpty(city))
             {
                 truecounter++;
             }
-            if(truecounter==2)
+            if(truecounter>0)
             {
                 return true;
             }
+            else
+            {
+                return false;
+            }
+        }
+        static bool EmptyChecker(string emailin, string phonein, string addlin1in, string cityin, string countyin, string gradlevelin)
+        {
+            if (string.IsNullOrEmpty(emailin)||string.IsNullOrEmpty(phonein) || string.IsNullOrEmpty(addlin1in) || string.IsNullOrEmpty(cityin)||gradlevelin=="None selected")
+            {
+                return true;
+            }           
             else
             {
                 return false;
@@ -330,6 +368,7 @@ namespace AdvProAssig
         {
             return studentlist.Find(x => x.StudentNumber == id);
         }
+        
     }
     
 }

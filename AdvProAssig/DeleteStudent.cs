@@ -60,6 +60,7 @@ namespace AdvProAssig
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             string result;
             result = Student.RemoveStudent(int.Parse(txtBoxSearchable.Text));
             if (result == "This record has been deleted succesfully")

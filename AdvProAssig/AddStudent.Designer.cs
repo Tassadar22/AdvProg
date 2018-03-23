@@ -43,7 +43,6 @@
             this.txtBoxStudentNumber = new System.Windows.Forms.TextBox();
             this.cbCounties = new System.Windows.Forms.ComboBox();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.btnExporttoXML = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
@@ -215,16 +214,6 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // btnExporttoXML
-            // 
-            this.btnExporttoXML.Location = new System.Drawing.Point(352, 12);
-            this.btnExporttoXML.Name = "btnExporttoXML";
-            this.btnExporttoXML.Size = new System.Drawing.Size(75, 23);
-            this.btnExporttoXML.TabIndex = 16;
-            this.btnExporttoXML.Text = "XML Export";
-            this.btnExporttoXML.UseVisualStyleBackColor = true;
-            this.btnExporttoXML.Click += new System.EventHandler(this.btnExporttoXML_Click);
-            // 
             // btnReturn
             // 
             this.btnReturn.Location = new System.Drawing.Point(122, 12);
@@ -252,7 +241,6 @@
             this.ClientSize = new System.Drawing.Size(484, 462);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.btnExporttoXML);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.cbCounties);
             this.Controls.Add(this.txtBoxStudentNumber);
@@ -268,7 +256,6 @@
             this.Controls.Add(this.lblDetails);
             this.Name = "AddStudent";
             this.Text = "Add Student Field";
-            this.Load += new System.EventHandler(this.AddStudent_Load);
             this.panelCourseLevel.ResumeLayout(false);
             this.panelCourseLevel.PerformLayout();
             this.ResumeLayout(false);
@@ -293,7 +280,6 @@
         private System.Windows.Forms.TextBox txtBoxStudentNumber;
         private System.Windows.Forms.ComboBox cbCounties;
         private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.Button btnExporttoXML;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnClear;
     }
