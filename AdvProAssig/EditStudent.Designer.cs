@@ -355,7 +355,6 @@
             this.Controls.Add(this.btnReturn);
             this.Name = "EditStudent";
             this.Text = "Edit Student";
-            this.Load += new System.EventHandler(this.EditStudent_Load);
             this.panelCourseLevel.ResumeLayout(false);
             this.panelCourseLevel.PerformLayout();
             this.pnlXML.ResumeLayout(false);

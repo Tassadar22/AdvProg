@@ -153,10 +153,6 @@ namespace AdvProAssig
         {
             
         }
-
-        private void EditStudent_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

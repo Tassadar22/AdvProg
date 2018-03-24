@@ -67,5 +67,10 @@ namespace AdvProAssig
         {
             Clearfields();
         }
+
+        private void AddStudent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

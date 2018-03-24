@@ -50,6 +50,7 @@ namespace AdvProAssig
             //Boolean toggle to indicate whether the passed values meet validation requirements and boolean toggle to see if ID is correct
             bool makeobject = true, checkdatabase=true;
             int studentnumber;
+            string[] textboxstringlist = { firstnamein, surnamein, emailin, phonein, addlin1in, cityin, countyin, gradlevelin };
             //Check Length of integer
             if(stunumin.Length!=8)
             {
@@ -87,9 +88,10 @@ namespace AdvProAssig
                 outcome += "You must select a course value\n";
                 makeobject = false;
             }
-            if(!EmptyChecker(firstnamein,surnamein,emailin,phonein,addlin1in,cityin,countyin, gradlevelin))
+            if (!IsArrayStringEmptyorNull(textboxstringlist))
             {
                 outcome += "Please complete these fields\n";
+                makeobject = false;
             }
             if(makeobject)
             {//Object meets validation 
@@ -102,9 +104,11 @@ namespace AdvProAssig
         {
             //Outcome message to be passed to program
             string outcome = "";
+            string[] stringlist = { emailin, phonein, addlin1in, cityin, countyin, gradlevelin };
             //Boolean toggle to indicate whether the passed values meet validation requirements and boolean toggle to see if ID is correct
             bool updateobject = true, checkdatabase1 = true;
             int studentnumberfinal; 
+            
             //Check Length of integer
             if (oldstunumin.Length != 8)
             {
@@ -148,7 +152,7 @@ namespace AdvProAssig
                 outcome += "You must select the Graduate status of the student\n";
                 updateobject = false;
             }
-            if (!EmptyChecker(emailin, phonein, addlin1in, cityin, countyin, gradlevelin))
+            if (!IsArrayStringEmptyorNull(stringlist))
             {
                 outcome += "Please complete every field field except for Address Line 2\n";
                 updateobject = false;
@@ -320,7 +324,25 @@ namespace AdvProAssig
             }
             return result;
         }
-        static bool EmptyChecker(string firstname, string surname, string email, string phone, string addlin1, string city, string county, string gradlevelin)
+        static bool IsArrayStringEmptyorNull(string[] textboxes)
+        {
+            bool emptystringfound=false;
+            foreach(string textbox in textboxes)
+            {
+                if(textbox==""||textbox==null)
+                {
+                    emptystringfound = true;
+                    break;
+                }
+            }
+            if (emptystringfound)
+            {
+                throw new ArgumentNullException();
+            }
+            else
+                return emptystringfound;
+        }
+        /*static bool EmptyChecker(string firstname, string surname, string email, string phone, string addlin1, string city, string county, string gradlevelin)
         {
             int truecounter=0;
             if (gradlevelin == "None selected" || county == " ")
@@ -348,7 +370,7 @@ namespace AdvProAssig
             {
                 return false;
             }
-        }
+        }*/
         public static bool CheckDBforStudentID(int id)
         {
             //Function to check local list to see if similar ID already exists

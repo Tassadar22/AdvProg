@@ -60,7 +60,6 @@ namespace AdvProAssig
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
             string result;
             result = Student.RemoveStudent(int.Parse(txtBoxSearchable.Text));
             if (result == "This record has been deleted succesfully")
@@ -73,6 +72,7 @@ namespace AdvProAssig
                 MessageBox.Show(result);
             }
         }
+
 
         private void ClearFields()
         {
@@ -109,5 +109,6 @@ namespace AdvProAssig
             ClearFields();
         }
 
+      
     }
 }

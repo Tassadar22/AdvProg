@@ -51,7 +51,6 @@
     <Compile Include="AddStudent.Designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAO.cs" />
     <Compile Include="DataAccess\DAO.cs" />
     <Compile Include="DataAccess\AccessStaffRecord.cs" />
     <Compile Include="DataAccess\ModifyStudentRecord.cs" />
