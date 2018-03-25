@@ -31,7 +31,7 @@ namespace AdvProAssig
                 case 'a':
                     //Upon succesful login
                     this.Hide();
-                    Form2 studentpage = new Form2();
+                    MainForm studentpage = new MainForm();
                     studentpage.ShowDialog();
                     this.Close();
                     break;
@@ -52,7 +52,7 @@ namespace AdvProAssig
         {
             
             this.Hide();
-            Form2 studentpage = new Form2();
+            MainForm studentpage = new MainForm();
             studentpage.ShowDialog();
             this.Close();
         }

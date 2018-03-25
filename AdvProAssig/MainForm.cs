@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace AdvProAssig
 {
-    public partial class Form2 : Form
+    public partial class MainForm : Form
     {
         DataAccess.ModifyStudentRecord teststu = new DataAccess.ModifyStudentRecord();
         Student student = new Student();
         List<Student> updatedlist = new List<Student>();
-        public Form2()
+        public MainForm()
         {
             InitializeComponent();
             updatedlist = student.Exportlist(updatedlist);
@@ -69,17 +69,18 @@ namespace AdvProAssig
             editpage.ShowDialog();
             this.Close();
         }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDeleteStudent_Click(object sender, EventArgs e)
         {
             this.Hide();
             DeleteStudent deletepage = new DeleteStudent();
             deletepage.ShowDialog();
+            this.Close();
+        }
+        private void btnDbHis_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DatabaseHistory databaseHistory = new DatabaseHistory();
+            databaseHistory.ShowDialog();
             this.Close();
         }
     }

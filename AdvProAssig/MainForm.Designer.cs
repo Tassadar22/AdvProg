@@ -1,6 +1,6 @@
 ﻿namespace AdvProAssig
 {
-    partial class Form2
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,15 +35,15 @@
             this.dataGridStudents = new System.Windows.Forms.DataGridView();
             this.btnEditStu = new System.Windows.Forms.Button();
             this.btnDbHis = new System.Windows.Forms.Button();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDeleteStudent = new System.Windows.Forms.Button();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(93, 12);
+            this.btnLogOut.Location = new System.Drawing.Point(114, 12);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(75, 23);
             this.btnLogOut.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(12, 12);
+            this.btnExit.Location = new System.Drawing.Point(33, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(174, 12);
+            this.btnAddStudent.Location = new System.Drawing.Point(195, 12);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
             this.btnAddStudent.TabIndex = 3;
@@ -74,14 +74,14 @@
             // dataGridStudents
             // 
             this.dataGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridStudents.Location = new System.Drawing.Point(12, 41);
+            this.dataGridStudents.Location = new System.Drawing.Point(33, 41);
             this.dataGridStudents.Name = "dataGridStudents";
             this.dataGridStudents.Size = new System.Drawing.Size(637, 267);
             this.dataGridStudents.TabIndex = 7;
             // 
             // btnEditStu
             // 
-            this.btnEditStu.Location = new System.Drawing.Point(255, 12);
+            this.btnEditStu.Location = new System.Drawing.Point(276, 12);
             this.btnEditStu.Name = "btnEditStu";
             this.btnEditStu.Size = new System.Drawing.Size(159, 23);
             this.btnEditStu.TabIndex = 8;
@@ -91,20 +91,17 @@
             // 
             // btnDbHis
             // 
-            this.btnDbHis.Location = new System.Drawing.Point(516, 12);
+            this.btnDbHis.Location = new System.Drawing.Point(537, 12);
             this.btnDbHis.Name = "btnDbHis";
             this.btnDbHis.Size = new System.Drawing.Size(133, 23);
             this.btnDbHis.TabIndex = 10;
             this.btnDbHis.Text = "View DataBase History";
             this.btnDbHis.UseVisualStyleBackColor = true;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(AdvProAssig.Student);
+            this.btnDbHis.Click += new System.EventHandler(this.btnDbHis_Click);
             // 
             // btnDeleteStudent
             // 
-            this.btnDeleteStudent.Location = new System.Drawing.Point(420, 12);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(441, 12);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.Size = new System.Drawing.Size(90, 23);
             this.btnDeleteStudent.TabIndex = 9;
@@ -112,11 +109,15 @@
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
             this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
             // 
-            // Form2
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(AdvProAssig.Student);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 575);
+            this.ClientSize = new System.Drawing.Size(1234, 562);
             this.Controls.Add(this.btnDbHis);
             this.Controls.Add(this.btnDeleteStudent);
             this.Controls.Add(this.btnEditStu);
@@ -124,7 +125,7 @@
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogOut);
-            this.Name = "Form2";
+            this.Name = "MainForm";
             this.Text = "Main Screen";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();

@@ -55,7 +55,7 @@ namespace AdvProAssig
         private void ReturntoMainScreen()
         {
             this.Hide();
-            Form2 mainscreenturnon = new Form2();
+            MainForm mainscreenturnon = new MainForm();
             mainscreenturnon.ShowDialog();
             this.Close();
         }
@@ -200,6 +200,9 @@ namespace AdvProAssig
             }
         }
 
-       
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -43,24 +43,6 @@ namespace AdvProAssig.DataAccess
             closeConnection();
             return updatedList;
         }
-        //CONSIDER REMOVING
-        public string GetstringList()
-        {
-            string results="please be full";
-            SqlCommand basicstring;
-            SqlDataReader reader;
-            basicstring = new SqlCommand("SELECT * FROM Student", openConnection());
-            reader = basicstring.ExecuteReader();
-            while(reader.Read())
-            {
-                results += reader[0].ToString();
-                results += reader[1].ToString();
-                results += reader[2].ToString();
-                results += reader[3].ToString();
-            }
-            closeConnection();
-            return results;
-        }
         public Student FindRecord(int id)
         {
             Student foundstudent = new Student();

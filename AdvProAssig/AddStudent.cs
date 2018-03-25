@@ -64,7 +64,7 @@ namespace AdvProAssig
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 mainscreenturnon = new Form2();
+            MainForm mainscreenturnon = new MainForm();
             mainscreenturnon.ShowDialog();
             this.Close();
         }
@@ -88,6 +88,11 @@ namespace AdvProAssig
             if (txtBoxCity.Text == "")
                 allFieldsFull = false;
             return allFieldsFull;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
