@@ -26,7 +26,6 @@ namespace AdvProAssig
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //CONSIDER PASSWORD HASHING FOR INNOVATION
             switch(loginstaff.UserNamePasswordChecker(txtBoxUserName.Text, txtBoxPassword.Text))
             {
                 case 'a':

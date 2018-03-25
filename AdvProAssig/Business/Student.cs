@@ -12,7 +12,7 @@ namespace AdvProAssig
     {
         static public List<Student> studentlist = new List<Student>();
         static ModifyStudentRecord data = new ModifyStudentRecord();
-        static private DataSet StudentDataSet;
+        static public DataSet StudentDataSet;
         
         //Constructors
         public string FirstName { get; set; }
@@ -62,7 +62,7 @@ namespace AdvProAssig
             {
                 outcome += "Student Number must only contain an integer\n";
                 makeobject = false;
-                checkdatabase = false;//boolean flag which performs prevalidation check to see if database should be checked
+                checkdatabase = false;//boolean flag which performs prevalidation check to see if database should be checked 
             }
             if (checkdatabase)
             {
@@ -88,11 +88,7 @@ namespace AdvProAssig
                 outcome += "You must select a course value\n";
                 makeobject = false;
             }
-            if (!IsArrayStringEmptyorNull(textboxstringlist))
-            {
-                outcome += "Please complete these fields\n";
-                makeobject = false;
-            }
+          
             if(makeobject)
             {//Object meets validation 
                 outcome = "Data Succesfully Added";
@@ -104,10 +100,9 @@ namespace AdvProAssig
         {
             //Outcome message to be passed to program
             string outcome = "";
-            string[] stringlist = { emailin, phonein, addlin1in, cityin, countyin, gradlevelin };
             //Boolean toggle to indicate whether the passed values meet validation requirements and boolean toggle to see if ID is correct
             bool updateobject = true, checkdatabase1 = true;
-            int studentnumberfinal; 
+            int studentnumberfinal, oldstudnumber; 
             
             //Check Length of integer
             if (oldstunumin.Length != 8)
@@ -116,12 +111,10 @@ namespace AdvProAssig
                 updateobject = false;
                 checkdatabase1 = false;
             }
-            int oldstudnumber;
             if (!int.TryParse(oldstunumin, out oldstudnumber))
             {
                 outcome += "Student Number can only be eight digits long\n";
                 updateobject = false;
-
             }
             if (checkdatabase1)
             {
@@ -141,6 +134,11 @@ namespace AdvProAssig
                 outcome += "Student Number must only contain an integer\n";
                 updateobject = false;
             }
+            if(studentnumberfinal!=oldstudnumber)
+            {
+                outcome += "You cannot overwrite to an existing student ID\n";
+                updateobject = false;
+            }
             //Check if proper county name is entered
             if (!CheckCountyList(countyin))
             {
@@ -152,13 +150,8 @@ namespace AdvProAssig
                 outcome += "You must select the Graduate status of the student\n";
                 updateobject = false;
             }
-            if (!IsArrayStringEmptyorNull(stringlist))
-            {
-                outcome += "Please complete every field field except for Address Line 2\n";
-                updateobject = false;
-            }
             if (updateobject)
-            {//Object meets validation requirements and can be parsed
+            {//if data meets validation requirements and can be parsed it will be 
                 outcome = "Data Succesfully updated";
                 UpdateStudent(emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, oldstudnumber, studentnumberfinal);
             }
@@ -169,8 +162,6 @@ namespace AdvProAssig
             return string.Format($"FirstName: {FirstName}\nSurname: {Surname}\nEmail: {Email}\nPhone: {Phone}\nAddressLine 1: {AddressLine1}\nAddressLine: {AddressLine2}\nCity: {City}\nCounty: {County}\n" +
                 $"Graduate Level: {GraduateLevel}\nCourse Level: {Course}\nStudent Number {StudentNumber}\n");
         }
-      
-       
         public static void AddStudent(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
         {
             Student newstudent = new Student(firstname, surname, email, phone, addlin1, addlin2, county, city, gradlevel, cour, stunum);
@@ -212,7 +203,7 @@ namespace AdvProAssig
             return message;
         }
         //Method takes values from Student object 
-        public void ExportToXml(Student student, string filename)
+        public void ExportToXml(Student student, string filename, bool alsoread)
         {
             //Add student object to Dataset
             DataTable DTS;
@@ -248,9 +239,16 @@ namespace AdvProAssig
             rowstu["StudentNumber"] = student.StudentNumber;
             DTS.Rows.Add(rowstu);
             DTS.AcceptChanges();
-
             //To export to XML
-            StudentDataSet.WriteXml($"{filename}.xml"); 
+            if (alsoread)
+            {
+                StudentDataSet.ReadXml(filename, XmlReadMode.InferSchema);
+            }
+            StudentDataSet.WriteXml($"{filename}"); 
+        }
+        public void DeleteDataset()
+        {
+            StudentDataSet.Clear();
         }
         public List<Student> Exportlist(List<Student> inputlist)
         {
@@ -309,7 +307,6 @@ namespace AdvProAssig
             }
             return result;
         }
-        
         static bool CourseChecker(string coursenamechecking)
         {
             bool result = false;
@@ -324,53 +321,6 @@ namespace AdvProAssig
             }
             return result;
         }
-        static bool IsArrayStringEmptyorNull(string[] textboxes)
-        {
-            bool emptystringfound=false;
-            foreach(string textbox in textboxes)
-            {
-                if(textbox==""||textbox==null)
-                {
-                    emptystringfound = true;
-                    break;
-                }
-            }
-            if (emptystringfound)
-            {
-                throw new ArgumentNullException();
-            }
-            else
-                return emptystringfound;
-        }
-        /*static bool EmptyChecker(string firstname, string surname, string email, string phone, string addlin1, string city, string county, string gradlevelin)
-        {
-            int truecounter=0;
-            if (gradlevelin == "None selected" || county == " ")
-                truecounter++;
-            if(string.IsNullOrEmpty(firstname)|| string.IsNullOrEmpty(surname)|| string.IsNullOrEmpty(phone)|| string.IsNullOrEmpty(addlin1) || string.IsNullOrEmpty(city))
-            {
-                truecounter++;
-            }
-            if(truecounter>0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        static bool EmptyChecker(string emailin, string phonein, string addlin1in, string cityin, string countyin, string gradlevelin)
-        {
-            if (string.IsNullOrEmpty(emailin)||string.IsNullOrEmpty(phonein) || string.IsNullOrEmpty(addlin1in) || string.IsNullOrEmpty(cityin)||gradlevelin=="None selected")
-            {
-                return true;
-            }           
-            else
-            {
-                return false;
-            }
-        }*/
         public static bool CheckDBforStudentID(int id)
         {
             //Function to check local list to see if similar ID already exists
@@ -390,7 +340,5 @@ namespace AdvProAssig
         {
             return studentlist.Find(x => x.StudentNumber == id);
         }
-        
     }
-    
 }

@@ -39,3 +39,10 @@ StudentLevel ='',
 StudentID =45678333
 WHERE StudentID =45678912
 
+CREATE TRIGGER tr_DatabaseChanges
+ON ALL SERVER
+FOR SELECT * FROM Student,
+AS 
+BEGIN 
+	Select EVENTDATA()
+END

@@ -28,10 +28,13 @@ namespace AdvProAssig
         {
            //Update List from database
            Student.PullInfofromDB();
-           bool stuidfound;
-           stuidfound = Student.CheckDBforStudentID(int.Parse(txtBoxSearchable.Text));
+           bool stuidfound, notnull;
+            int validintnumber;
+           notnull = int.TryParse(txtBoxSearchable.Text, out validintnumber);
            
-           if (stuidfound)
+           stuidfound = Student.CheckDBforStudentID(validintnumber);
+           
+           if (stuidfound&&notnull)
            {
                 Student foundstudent = Student.StudentFinder(int.Parse(txtBoxSearchable.Text));
                 PopulateFieldswithResults(foundstudent);
@@ -72,7 +75,7 @@ namespace AdvProAssig
                 MessageBox.Show(result);
             }
         }
-
+        
 
         private void ClearFields()
         {

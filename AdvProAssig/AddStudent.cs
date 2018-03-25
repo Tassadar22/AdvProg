@@ -21,20 +21,28 @@ namespace AdvProAssig
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            string result;
-            result = Student.AddStudentValidator(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), cbCourse.Text, txtBoxStudentNumber.Text);
-            if(result=="Data Succesfully Added")
+            //Form Checker which checks certain broad fields for null values before entry
+            if (FullFieldChecker())
             {
-                MessageBox.Show(result);
-                Clearfields();
+                string result = Student.AddStudentValidator(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), cbCourse.Text, txtBoxStudentNumber.Text);
+                if (result == "Data Succesfully Added")
+                {
+                    MessageBox.Show(result);
+                    Clearfields();
+                }
+                else
+                {
+                    MessageBox.Show(result);
+                }
             }
             else
             {
-                MessageBox.Show(result);
+                MessageBox.Show("Please Complete the following fields:\n" +
+                    "First Name, Surname, Email, Phone, Address Line 1\n" +
+                    "and City");
             }
-            
-        }
 
+        }
         private void Clearfields()
         {
             //function to clear all fields 
@@ -44,8 +52,6 @@ namespace AdvProAssig
             rbPostGrad.Checked = false;
             rbUnderGrad.Checked = false;
         }
-
-       
         public string SelectedRadioButton()
         {
             if (rbUnderGrad.Checked)
@@ -62,15 +68,26 @@ namespace AdvProAssig
             mainscreenturnon.ShowDialog();
             this.Close();
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clearfields();
         }
-
-        private void AddStudent_Load(object sender, EventArgs e)
+        private bool FullFieldChecker()
         {
-
+            bool allFieldsFull = true;
+            if (txtBoxFirstName.Text == "")
+                allFieldsFull = false;
+            if (txtBoxSurname.Text == "")
+                allFieldsFull = false;
+            if (txtBoxEmail.Text == "")
+                allFieldsFull = false;
+            if (txtBoxPhone.Text == "")
+                allFieldsFull = false;
+            if (txtBoxAdl1.Text == "")
+                allFieldsFull = false;
+            if (txtBoxCity.Text == "")
+                allFieldsFull = false;
+            return allFieldsFull;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace AdvProAssig.DataAccess
 {
     class AccessStaffRecord : DAO
     {
-        //Method to get all contents from Staff Database
+        //Method to get all contents from Staff Database at login
         public List<Staff> GetStaffList()
         {
             List<Staff> updatedList = new List<Staff>();

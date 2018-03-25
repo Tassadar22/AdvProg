@@ -49,12 +49,13 @@
             this.txtBoxCourse = new System.Windows.Forms.TextBox();
             this.btnEditDetails = new System.Windows.Forms.Button();
             this.btnXMLExport = new System.Windows.Forms.Button();
-            this.btnLoadXML = new System.Windows.Forms.Button();
             this.txtboxXMLFileName = new System.Windows.Forms.TextBox();
             this.btnToggleXML = new System.Windows.Forms.Button();
             this.pnlXML = new System.Windows.Forms.Panel();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.lblFileName = new System.Windows.Forms.Label();
-            this.btnAddStudent = new System.Windows.Forms.Button();
+            this.pnlEditStudent = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelCourseLevel.SuspendLayout();
             this.pnlXML.SuspendLayout();
             this.SuspendLayout();
@@ -263,7 +264,7 @@
             // 
             // btnXMLExport
             // 
-            this.btnXMLExport.Location = new System.Drawing.Point(3, 32);
+            this.btnXMLExport.Location = new System.Drawing.Point(3, 66);
             this.btnXMLExport.Name = "btnXMLExport";
             this.btnXMLExport.Size = new System.Drawing.Size(86, 23);
             this.btnXMLExport.TabIndex = 42;
@@ -271,19 +272,9 @@
             this.btnXMLExport.UseVisualStyleBackColor = true;
             this.btnXMLExport.Click += new System.EventHandler(this.btnXMLExport_Click);
             // 
-            // btnLoadXML
-            // 
-            this.btnLoadXML.Location = new System.Drawing.Point(3, 3);
-            this.btnLoadXML.Name = "btnLoadXML";
-            this.btnLoadXML.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadXML.TabIndex = 43;
-            this.btnLoadXML.Text = "Load XML File";
-            this.btnLoadXML.UseVisualStyleBackColor = true;
-            this.btnLoadXML.Click += new System.EventHandler(this.btnLoadXML_Click);
-            // 
             // txtboxXMLFileName
             // 
-            this.txtboxXMLFileName.Location = new System.Drawing.Point(3, 79);
+            this.txtboxXMLFileName.Location = new System.Drawing.Point(0, 125);
             this.txtboxXMLFileName.Name = "txtboxXMLFileName";
             this.txtboxXMLFileName.Size = new System.Drawing.Size(170, 20);
             this.txtboxXMLFileName.TabIndex = 44;
@@ -300,39 +291,59 @@
             // 
             // pnlXML
             // 
-            this.pnlXML.Controls.Add(this.btnAddStudent);
+            this.pnlXML.Controls.Add(this.label1);
+            this.pnlXML.Controls.Add(this.btnBrowse);
             this.pnlXML.Controls.Add(this.lblFileName);
-            this.pnlXML.Controls.Add(this.btnLoadXML);
             this.pnlXML.Controls.Add(this.txtboxXMLFileName);
             this.pnlXML.Controls.Add(this.btnXMLExport);
-            this.pnlXML.Location = new System.Drawing.Point(382, 55);
+            this.pnlXML.Location = new System.Drawing.Point(351, 41);
             this.pnlXML.Name = "pnlXML";
-            this.pnlXML.Size = new System.Drawing.Size(190, 202);
+            this.pnlXML.Size = new System.Drawing.Size(190, 164);
             this.pnlXML.TabIndex = 46;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(58, 95);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(86, 23);
+            this.btnBrowse.TabIndex = 47;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // lblFileName
             // 
             this.lblFileName.AutoSize = true;
-            this.lblFileName.Location = new System.Drawing.Point(3, 59);
+            this.lblFileName.Location = new System.Drawing.Point(0, 105);
             this.lblFileName.Name = "lblFileName";
             this.lblFileName.Size = new System.Drawing.Size(52, 13);
             this.lblFileName.TabIndex = 45;
             this.lblFileName.Text = "Filename:";
             // 
-            // btnAddStudent
+            // pnlEditStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(98, 3);
-            this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
-            this.btnAddStudent.TabIndex = 46;
-            this.btnAddStudent.Text = "Add Student";
-            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.pnlEditStudent.Location = new System.Drawing.Point(14, 41);
+            this.pnlEditStudent.Name = "pnlEditStudent";
+            this.pnlEditStudent.Size = new System.Drawing.Size(321, 316);
+            this.pnlEditStudent.TabIndex = 47;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 39);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Click Browse to find an existing \r\nXML file or Export to generate \r\none based off" +
+    " of the Student Name";
             // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 462);
+            this.Controls.Add(this.pnlEditStudent);
             this.Controls.Add(this.pnlXML);
             this.Controls.Add(this.btnToggleXML);
             this.Controls.Add(this.btnEditDetails);
@@ -387,11 +398,12 @@
         private System.Windows.Forms.TextBox txtBoxCourse;
         private System.Windows.Forms.Button btnEditDetails;
         private System.Windows.Forms.Button btnXMLExport;
-        private System.Windows.Forms.Button btnLoadXML;
         private System.Windows.Forms.TextBox txtboxXMLFileName;
         private System.Windows.Forms.Button btnToggleXML;
         private System.Windows.Forms.Panel pnlXML;
         private System.Windows.Forms.Label lblFileName;
-        private System.Windows.Forms.Button btnAddStudent;
+        private System.Windows.Forms.Panel pnlEditStudent;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.Label label1;
     }
 }
