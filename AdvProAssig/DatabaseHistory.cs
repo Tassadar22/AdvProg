@@ -16,5 +16,25 @@ namespace AdvProAssig
         {
             InitializeComponent();
         }
+
+        private void menuAddStu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuEditStu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuDelStu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuDataHis_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

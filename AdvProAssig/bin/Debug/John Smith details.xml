@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="yes"?>
+<Students>
+  <Student>
+    <FirstName>John</FirstName>
+    <Surname>Smith</Surname>
+    <Email>John@DBS.com</Email>
+    <Phone>4159879</Phone>
+    <AddressLine1>45 Merrion Square</AddressLine1>
+    <AddressLine2>Dublin 2</AddressLine2>
+    <County>Dublin</County>
+    <City>Dublin</City>
+    <Graduatelevel>UnderGraduate</Graduatelevel>
+    <Course>Psychology</Course>
+    <StudentNumber>45645688</StudentNumber>
+  </Student>
+  <Student>
+    <FirstName>John</FirstName>
+    <Surname>Smith</Surname>
+    <Email>John@DBS.com</Email>
+    <Phone>4159879</Phone>
+    <AddressLine1>45 Merrion Square</AddressLine1>
+    <AddressLine2>Dublin 2</AddressLine2>
+    <County>Dublin</County>
+    <City>Dublin</City>
+    <Graduatelevel>UnderGraduate</Graduatelevel>
+    <Course>Psychology</Course>
+    <StudentNumber>45645688</StudentNumber>
+  </Student>
+  <Student>
+    <FirstName>John</FirstName>
+    <Surname>Smith</Surname>
+    <Email>John@DBS.com</Email>
+    <Phone>4159879</Phone>
+    <AddressLine1>45 Merrion Square</AddressLine1>
+    <AddressLine2>Dublin 2</AddressLine2>
+    <County>Dublin</County>
+    <City>Dublin</City>
+    <Graduatelevel>UnderGraduate</Graduatelevel>
+    <Course>Psychology</Course>
+    <StudentNumber>45645688</StudentNumber>
+  </Student>
+</Students>

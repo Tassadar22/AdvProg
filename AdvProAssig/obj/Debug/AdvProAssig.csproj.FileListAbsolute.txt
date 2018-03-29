@@ -26,7 +26,6 @@ C:\Code\AdvProg\AdvProAssig\bin\Debug\AdvProAssig.pdb
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.csprojResolveAssemblyReference.cache
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.AddStudent.resources
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.LoginForm.resources
-C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.Form2.resources
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.Properties.Resources.resources
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.csproj.GenerateResource.Cache
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.csproj.CoreCompileInputs.cache
@@ -74,3 +73,7 @@ C:\Users\10379375\code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.csproj.CoreComp
 C:\Users\10379375\code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.exe
 C:\Users\10379375\code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.pdb
 C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.MainForm.resources
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.DatabaseHistory.resources
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.DeleteStudent.resources
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.EditStudent.resources
+C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.MainForm.resources

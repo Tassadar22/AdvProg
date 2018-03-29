@@ -23,10 +23,22 @@ namespace AdvProAssig
                 //Add * character to password textbox
                 txtBoxPassword.PasswordChar = '*';
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        //Quick login button added for testing purposes
+        private void btnQkLogin_Click(object sender, EventArgs e)
         {
-            switch(loginstaff.UserNamePasswordChecker(txtBoxUserName.Text, txtBoxPassword.Text))
+            this.Hide();
+            MainForm studentpage = new MainForm();
+            studentpage.ShowDialog();
+            this.Close();
+        }
+        private void menuLogin_Click(object sender, EventArgs e)
+        {
+            Login();
+
+        }
+        private void Login()
+        {
+            switch (loginstaff.UserNamePasswordChecker(txtBoxUserName.Text, txtBoxPassword.Text))
             {
                 case 'a':
                     //Upon succesful login
@@ -43,23 +55,15 @@ namespace AdvProAssig
                     break;
             }
         }
-        private void btnExit_Click(object sender, EventArgs e)
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        //Quick login button added for testing purposes
-        private void btnQkLogin_Click(object sender, EventArgs e)
-        {
-            
-            this.Hide();
-            MainForm studentpage = new MainForm();
-            studentpage.ShowDialog();
-            this.Close();
-        }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            Login();
         }
     }
 }

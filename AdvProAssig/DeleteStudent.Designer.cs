@@ -49,7 +49,17 @@
             this.txtBoxCounty = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEditStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.panelCourseLevel.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBoxCourse
@@ -186,7 +196,7 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(12, 12);
+            this.btnReturn.Location = new System.Drawing.Point(15, 26);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(118, 23);
             this.btnReturn.TabIndex = 41;
@@ -224,7 +234,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(148, 12);
+            this.btnClear.Location = new System.Drawing.Point(151, 26);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 60;
@@ -234,13 +244,82 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(230, 12);
+            this.btnExit.Location = new System.Drawing.Point(233, 26);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 61;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.studentToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(484, 24);
+            this.menuStrip1.TabIndex = 62;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuLogout,
+            this.menuExit});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // menuLogout
+            // 
+            this.menuLogout.Name = "menuLogout";
+            this.menuLogout.Size = new System.Drawing.Size(152, 22);
+            this.menuLogout.Text = "Log Out";
+            this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
+            // 
+            // menuExit
+            // 
+            this.menuExit.Name = "menuExit";
+            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Text = "Exit";
+            this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
+            // 
+            // studentToolStripMenuItem
+            // 
+            this.studentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAddStu,
+            this.menuEditStu,
+            this.menuDelStu,
+            this.menuDataHis});
+            this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
+            this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.studentToolStripMenuItem.Text = "Student";
+            // 
+            // menuAddStu
+            // 
+            this.menuAddStu.Name = "menuAddStu";
+            this.menuAddStu.Size = new System.Drawing.Size(217, 22);
+            this.menuAddStu.Text = "New Student";
+            // 
+            // menuEditStu
+            // 
+            this.menuEditStu.Name = "menuEditStu";
+            this.menuEditStu.Size = new System.Drawing.Size(217, 22);
+            this.menuEditStu.Text = "Edit Student/Export to XML";
+            // 
+            // menuDelStu
+            // 
+            this.menuDelStu.Name = "menuDelStu";
+            this.menuDelStu.Size = new System.Drawing.Size(217, 22);
+            this.menuDelStu.Text = "Delete Student";
+            // 
+            // menuDataHis
+            // 
+            this.menuDataHis.Name = "menuDataHis";
+            this.menuDataHis.Size = new System.Drawing.Size(217, 22);
+            this.menuDataHis.Text = "View Database History";
             // 
             // DeleteStudent
             // 
@@ -266,11 +345,15 @@
             this.Controls.Add(this.txtBoxFirstName);
             this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "DeleteStudent";
             this.Text = "Delete Student";
             this.panelCourseLevel.ResumeLayout(false);
             this.panelCourseLevel.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +382,14 @@
         private System.Windows.Forms.TextBox txtBoxCounty;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuLogout;
+        private System.Windows.Forms.ToolStripMenuItem menuExit;
+        private System.Windows.Forms.ToolStripMenuItem studentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuAddStu;
+        private System.Windows.Forms.ToolStripMenuItem menuEditStu;
+        private System.Windows.Forms.ToolStripMenuItem menuDelStu;
+        private System.Windows.Forms.ToolStripMenuItem menuDataHis;
     }
 }

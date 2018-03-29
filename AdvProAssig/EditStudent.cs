@@ -111,32 +111,7 @@ namespace AdvProAssig
                 pnlXML.Visible = false;
             }
         }
-        private void btnEditDetails_Click(object sender, EventArgs e)
-        {
-            //Form Checker which checks certain broad fields for null values before entry
-            if (FullFieldChecker())
-            {
-                string result;
-                result = Student.EditStudentValidator(txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), txtBoxSearchable.Text, txtBoxStudentNumber.Text);
-                if (result == "Data Succesfully updated")
-                {
-                    MessageBox.Show(result);
-                    Clearfields();
-                    Displaystudent = null;
-
-                }
-                else
-                {
-                    MessageBox.Show(result);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please Complete the following fields:\n" +
-                    "First Name, Surname, Email, Phone, Address Line 1\n" +
-                    "and City");
-            }
-        }
+       
         private void btnXMLExport_Click(object sender, EventArgs e)
         {
             if (Displaystudent != null)
@@ -203,6 +178,78 @@ namespace AdvProAssig
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void menuLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainscreenturnon = new MainForm();
+            mainscreenturnon.ShowDialog();
+            this.Close();
+        }
+
+        private void menuExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuAddStu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddStudent studentpage = new AddStudent();
+            studentpage.ShowDialog();
+            this.Close();
+        }
+
+        private void menuReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainscreenturnon = new MainForm();
+            mainscreenturnon.ShowDialog();
+            this.Close();
+        }
+
+        private void menuDelStu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DeleteStudent deletepage = new DeleteStudent();
+            deletepage.ShowDialog();
+            this.Close();
+        }
+
+        private void menuDataHis_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DatabaseHistory databaseHistory = new DatabaseHistory();
+            databaseHistory.ShowDialog();
+            this.Close();
+        }
+
+        private void menuEditStu_Click(object sender, EventArgs e)
+        {
+            //Form Checker which checks certain broad fields for null values before entry
+            if (FullFieldChecker())
+            {
+                string result;
+                result = Student.EditStudentValidator(txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), txtBoxSearchable.Text, txtBoxStudentNumber.Text);
+                if (result == "Data Succesfully updated")
+                {
+                    MessageBox.Show(result);
+                    Clearfields();
+                    Displaystudent = null;
+
+                }
+                else
+                {
+                    MessageBox.Show(result);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Complete the following fields:\n" +
+                    "First Name, Surname, Email, Phone, Address Line 1\n" +
+                    "and City");
+            }
         }
     }
 }

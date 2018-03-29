@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnReturn = new System.Windows.Forms.Button();
             this.cbCounties = new System.Windows.Forms.ComboBox();
             this.txtBoxStudentNumber = new System.Windows.Forms.TextBox();
             this.panelCourseLevel = new System.Windows.Forms.Panel();
@@ -42,34 +41,31 @@
             this.txtBoxSurname = new System.Windows.Forms.TextBox();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.lblDetails = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnFindStudent = new System.Windows.Forms.Button();
             this.txtBoxSearchable = new System.Windows.Forms.TextBox();
             this.lblSearchStudentID = new System.Windows.Forms.Label();
             this.txtBoxCourse = new System.Windows.Forms.TextBox();
-            this.btnEditDetails = new System.Windows.Forms.Button();
             this.btnXMLExport = new System.Windows.Forms.Button();
             this.txtboxXMLFileName = new System.Windows.Forms.TextBox();
-            this.btnToggleXML = new System.Windows.Forms.Button();
             this.pnlXML = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.lblFileName = new System.Windows.Forms.Label();
             this.pnlEditStudent = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEditStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
             this.panelCourseLevel.SuspendLayout();
             this.pnlXML.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.Location = new System.Drawing.Point(12, 12);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(118, 23);
-            this.btnReturn.TabIndex = 18;
-            this.btnReturn.Text = "Return to Main Menu";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // cbCounties
             // 
@@ -209,16 +205,6 @@
             this.lblDetails.Text = "First Name:\r\n\r\nSurname:\r\n\r\nEmail:\r\n\r\nPhone:\r\n\r\nAddress Line 1:\r\n\r\nAddress Line 2:" +
     "\r\n\r\nCounty:\r\n\r\nCity:\r\n\r\nCourse:\r\n\r\nCourseLevel:\r\n\r\n\r\nStudent Number:\r\n\r\n";
             // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(136, 12);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 32;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // btnFindStudent
             // 
             this.btnFindStudent.Location = new System.Drawing.Point(385, 376);
@@ -253,16 +239,6 @@
             this.txtBoxCourse.Size = new System.Drawing.Size(199, 20);
             this.txtBoxCourse.TabIndex = 40;
             // 
-            // btnEditDetails
-            // 
-            this.btnEditDetails.Location = new System.Drawing.Point(217, 12);
-            this.btnEditDetails.Name = "btnEditDetails";
-            this.btnEditDetails.Size = new System.Drawing.Size(75, 23);
-            this.btnEditDetails.TabIndex = 41;
-            this.btnEditDetails.Text = "Edit/Update Student Details";
-            this.btnEditDetails.UseVisualStyleBackColor = true;
-            this.btnEditDetails.Click += new System.EventHandler(this.btnEditDetails_Click);
-            // 
             // btnXMLExport
             // 
             this.btnXMLExport.Location = new System.Drawing.Point(3, 66);
@@ -275,20 +251,10 @@
             // 
             // txtboxXMLFileName
             // 
-            this.txtboxXMLFileName.Location = new System.Drawing.Point(0, 125);
+            this.txtboxXMLFileName.Location = new System.Drawing.Point(3, 124);
             this.txtboxXMLFileName.Name = "txtboxXMLFileName";
             this.txtboxXMLFileName.Size = new System.Drawing.Size(170, 20);
             this.txtboxXMLFileName.TabIndex = 44;
-            // 
-            // btnToggleXML
-            // 
-            this.btnToggleXML.Location = new System.Drawing.Point(298, 12);
-            this.btnToggleXML.Name = "btnToggleXML";
-            this.btnToggleXML.Size = new System.Drawing.Size(109, 23);
-            this.btnToggleXML.TabIndex = 45;
-            this.btnToggleXML.Text = "Toggle XML View";
-            this.btnToggleXML.UseVisualStyleBackColor = true;
-            this.btnToggleXML.Click += new System.EventHandler(this.btnToggleXML_Click);
             // 
             // pnlXML
             // 
@@ -339,31 +305,97 @@
             this.pnlEditStudent.Size = new System.Drawing.Size(321, 316);
             this.pnlEditStudent.TabIndex = 47;
             // 
-            // btnExit
+            // menuStrip1
             // 
-            this.btnExit.Location = new System.Drawing.Point(413, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 48;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.studentToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
+            this.menuStrip1.TabIndex = 49;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuLogout,
+            this.menuExit});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // menuLogout
+            // 
+            this.menuLogout.Name = "menuLogout";
+            this.menuLogout.Size = new System.Drawing.Size(117, 22);
+            this.menuLogout.Text = "Log Out";
+            // 
+            // menuExit
+            // 
+            this.menuExit.Name = "menuExit";
+            this.menuExit.Size = new System.Drawing.Size(117, 22);
+            this.menuExit.Text = "Exit";
+            this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
+            // 
+            // studentToolStripMenuItem
+            // 
+            this.studentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAddStu,
+            this.menuEditStu,
+            this.menuDelStu,
+            this.menuDataHis,
+            this.menuReturn});
+            this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
+            this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.studentToolStripMenuItem.Text = "Student";
+            // 
+            // menuAddStu
+            // 
+            this.menuAddStu.Name = "menuAddStu";
+            this.menuAddStu.Size = new System.Drawing.Size(191, 22);
+            this.menuAddStu.Text = "New Student";
+            this.menuAddStu.Click += new System.EventHandler(this.menuAddStu_Click);
+            // 
+            // menuEditStu
+            // 
+            this.menuEditStu.Name = "menuEditStu";
+            this.menuEditStu.Size = new System.Drawing.Size(191, 22);
+            this.menuEditStu.Text = "Edit Student";
+            this.menuEditStu.Click += new System.EventHandler(this.menuEditStu_Click);
+            // 
+            // menuDelStu
+            // 
+            this.menuDelStu.Name = "menuDelStu";
+            this.menuDelStu.Size = new System.Drawing.Size(191, 22);
+            this.menuDelStu.Text = "Delete Student";
+            this.menuDelStu.Click += new System.EventHandler(this.menuDelStu_Click);
+            // 
+            // menuDataHis
+            // 
+            this.menuDataHis.Name = "menuDataHis";
+            this.menuDataHis.Size = new System.Drawing.Size(191, 22);
+            this.menuDataHis.Text = "View Database History";
+            this.menuDataHis.Click += new System.EventHandler(this.menuDataHis_Click);
+            // 
+            // menuReturn
+            // 
+            this.menuReturn.Name = "menuReturn";
+            this.menuReturn.Size = new System.Drawing.Size(191, 22);
+            this.menuReturn.Text = "Return to Main Menu";
+            this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
             // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 462);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pnlEditStudent);
             this.Controls.Add(this.pnlXML);
-            this.Controls.Add(this.btnToggleXML);
-            this.Controls.Add(this.btnEditDetails);
             this.Controls.Add(this.txtBoxCourse);
             this.Controls.Add(this.lblSearchStudentID);
             this.Controls.Add(this.txtBoxSearchable);
             this.Controls.Add(this.btnFindStudent);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.cbCounties);
             this.Controls.Add(this.txtBoxStudentNumber);
             this.Controls.Add(this.panelCourseLevel);
@@ -375,21 +407,22 @@
             this.Controls.Add(this.txtBoxSurname);
             this.Controls.Add(this.txtBoxFirstName);
             this.Controls.Add(this.lblDetails);
-            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "EditStudent";
             this.Text = "Edit Student";
             this.panelCourseLevel.ResumeLayout(false);
             this.panelCourseLevel.PerformLayout();
             this.pnlXML.ResumeLayout(false);
             this.pnlXML.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.ComboBox cbCounties;
         private System.Windows.Forms.TextBox txtBoxStudentNumber;
         private System.Windows.Forms.Panel panelCourseLevel;
@@ -403,20 +436,26 @@
         private System.Windows.Forms.TextBox txtBoxSurname;
         private System.Windows.Forms.TextBox txtBoxFirstName;
         private System.Windows.Forms.Label lblDetails;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnFindStudent;
         private System.Windows.Forms.TextBox txtBoxSearchable;
         private System.Windows.Forms.Label lblSearchStudentID;
         private System.Windows.Forms.TextBox txtBoxCourse;
-        private System.Windows.Forms.Button btnEditDetails;
         private System.Windows.Forms.Button btnXMLExport;
         private System.Windows.Forms.TextBox txtboxXMLFileName;
-        private System.Windows.Forms.Button btnToggleXML;
         private System.Windows.Forms.Panel pnlXML;
         private System.Windows.Forms.Label lblFileName;
         private System.Windows.Forms.Panel pnlEditStudent;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuLogout;
+        private System.Windows.Forms.ToolStripMenuItem menuExit;
+        private System.Windows.Forms.ToolStripMenuItem studentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuAddStu;
+        private System.Windows.Forms.ToolStripMenuItem menuReturn;
+        private System.Windows.Forms.ToolStripMenuItem menuDelStu;
+        private System.Windows.Forms.ToolStripMenuItem menuDataHis;
+        private System.Windows.Forms.ToolStripMenuItem menuEditStu;
     }
 }

@@ -29,85 +29,102 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnAddStudent = new System.Windows.Forms.Button();
             this.dataGridStudents = new System.Windows.Forms.DataGridView();
-            this.btnEditStu = new System.Windows.Forms.Button();
-            this.btnDbHis = new System.Windows.Forms.Button();
-            this.btnDeleteStudent = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEditStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Location = new System.Drawing.Point(114, 12);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(75, 23);
-            this.btnLogOut.TabIndex = 1;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(33, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnAddStudent
-            // 
-            this.btnAddStudent.Location = new System.Drawing.Point(195, 12);
-            this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
-            this.btnAddStudent.TabIndex = 3;
-            this.btnAddStudent.Text = "Add Student";
-            this.btnAddStudent.UseVisualStyleBackColor = true;
-            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // dataGridStudents
             // 
             this.dataGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridStudents.Location = new System.Drawing.Point(33, 41);
+            this.dataGridStudents.Location = new System.Drawing.Point(30, 99);
             this.dataGridStudents.Name = "dataGridStudents";
             this.dataGridStudents.Size = new System.Drawing.Size(637, 267);
             this.dataGridStudents.TabIndex = 7;
             // 
-            // btnEditStu
+            // menuStrip1
             // 
-            this.btnEditStu.Location = new System.Drawing.Point(276, 12);
-            this.btnEditStu.Name = "btnEditStu";
-            this.btnEditStu.Size = new System.Drawing.Size(159, 23);
-            this.btnEditStu.TabIndex = 8;
-            this.btnEditStu.Text = "Edit Student/Export To XML";
-            this.btnEditStu.UseVisualStyleBackColor = true;
-            this.btnEditStu.Click += new System.EventHandler(this.btnEditStu_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.studentToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnDbHis
+            // fileToolStripMenuItem
             // 
-            this.btnDbHis.Location = new System.Drawing.Point(537, 12);
-            this.btnDbHis.Name = "btnDbHis";
-            this.btnDbHis.Size = new System.Drawing.Size(133, 23);
-            this.btnDbHis.TabIndex = 10;
-            this.btnDbHis.Text = "View DataBase History";
-            this.btnDbHis.UseVisualStyleBackColor = true;
-            this.btnDbHis.Click += new System.EventHandler(this.btnDbHis_Click);
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuLogout,
+            this.menuExit});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
-            // btnDeleteStudent
+            // menuLogout
             // 
-            this.btnDeleteStudent.Location = new System.Drawing.Point(441, 12);
-            this.btnDeleteStudent.Name = "btnDeleteStudent";
-            this.btnDeleteStudent.Size = new System.Drawing.Size(90, 23);
-            this.btnDeleteStudent.TabIndex = 9;
-            this.btnDeleteStudent.Text = "Delete Student";
-            this.btnDeleteStudent.UseVisualStyleBackColor = true;
-            this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
+            this.menuLogout.Name = "menuLogout";
+            this.menuLogout.Size = new System.Drawing.Size(152, 22);
+            this.menuLogout.Text = "Log Out";
+            this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
+            // 
+            // menuExit
+            // 
+            this.menuExit.Name = "menuExit";
+            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Text = "Exit";
+            this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
+            // 
+            // studentToolStripMenuItem
+            // 
+            this.studentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAddStu,
+            this.menuEditStu,
+            this.menuDelStu,
+            this.menuDataHis});
+            this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
+            this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.studentToolStripMenuItem.Text = "Student";
+            // 
+            // menuAddStu
+            // 
+            this.menuAddStu.Name = "menuAddStu";
+            this.menuAddStu.Size = new System.Drawing.Size(217, 22);
+            this.menuAddStu.Text = "New Student";
+            this.menuAddStu.Click += new System.EventHandler(this.menuAddStu_Click);
+            // 
+            // menuEditStu
+            // 
+            this.menuEditStu.Name = "menuEditStu";
+            this.menuEditStu.Size = new System.Drawing.Size(217, 22);
+            this.menuEditStu.Text = "Edit Student/Export to XML";
+            this.menuEditStu.Click += new System.EventHandler(this.menuEditStu_Click);
+            // 
+            // menuDelStu
+            // 
+            this.menuDelStu.Name = "menuDelStu";
+            this.menuDelStu.Size = new System.Drawing.Size(217, 22);
+            this.menuDelStu.Text = "Delete Student";
+            this.menuDelStu.Click += new System.EventHandler(this.menuDelStu_Click);
+            // 
+            // menuDataHis
+            // 
+            this.menuDataHis.Name = "menuDataHis";
+            this.menuDataHis.Size = new System.Drawing.Size(217, 22);
+            this.menuDataHis.Text = "View Database History";
+            this.menuDataHis.Click += new System.EventHandler(this.menuDataHis_Click);
             // 
             // studentBindingSource
             // 
@@ -118,30 +135,31 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 562);
-            this.Controls.Add(this.btnDbHis);
-            this.Controls.Add(this.btnDeleteStudent);
-            this.Controls.Add(this.btnEditStu);
             this.Controls.Add(this.dataGridStudents);
-            this.Controls.Add(this.btnAddStudent);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Main Screen";
-            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.BindingSource studentBindingSource;
         private System.Windows.Forms.DataGridView dataGridStudents;
-        private System.Windows.Forms.Button btnEditStu;
-        private System.Windows.Forms.Button btnDbHis;
-        private System.Windows.Forms.Button btnDeleteStudent;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuLogout;
+        private System.Windows.Forms.ToolStripMenuItem menuExit;
+        private System.Windows.Forms.ToolStripMenuItem studentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuAddStu;
+        private System.Windows.Forms.ToolStripMenuItem menuEditStu;
+        private System.Windows.Forms.ToolStripMenuItem menuDelStu;
+        private System.Windows.Forms.ToolStripMenuItem menuDataHis;
     }
 }

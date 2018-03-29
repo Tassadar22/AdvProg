@@ -42,11 +42,19 @@
             this.rbUnderGrad = new System.Windows.Forms.RadioButton();
             this.txtBoxStudentNumber = new System.Windows.Forms.TextBox();
             this.cbCounties = new System.Windows.Forms.ComboBox();
-            this.btnAddStudent = new System.Windows.Forms.Button();
-            this.btnReturn = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEditStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDetails
@@ -205,55 +213,103 @@
             this.cbCounties.Size = new System.Drawing.Size(199, 21);
             this.cbCounties.TabIndex = 12;
             // 
-            // btnAddStudent
+            // menuStrip1
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(24, 12);
-            this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
-            this.btnAddStudent.TabIndex = 13;
-            this.btnAddStudent.Text = "Add Student";
-            this.btnAddStudent.UseVisualStyleBackColor = true;
-            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.studentToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(484, 24);
+            this.menuStrip1.TabIndex = 20;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnReturn
+            // fileToolStripMenuItem
             // 
-            this.btnReturn.Location = new System.Drawing.Point(122, 12);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(118, 23);
-            this.btnReturn.TabIndex = 17;
-            this.btnReturn.Text = "Return to Main Menu";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuLogout,
+            this.menuExit});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // menuLogout
+            // 
+            this.menuLogout.Name = "menuLogout";
+            this.menuLogout.Size = new System.Drawing.Size(117, 22);
+            this.menuLogout.Text = "Log Out";
+            this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
+            // 
+            // menuExit
+            // 
+            this.menuExit.Name = "menuExit";
+            this.menuExit.Size = new System.Drawing.Size(117, 22);
+            this.menuExit.Text = "Exit";
+            // 
+            // studentToolStripMenuItem
+            // 
+            this.studentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAddStu,
+            this.menuReturn,
+            this.menuEditStu,
+            this.menuDelStu,
+            this.menuDataHis});
+            this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
+            this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.studentToolStripMenuItem.Text = "Student";
+            // 
+            // menuAddStu
+            // 
+            this.menuAddStu.Name = "menuAddStu";
+            this.menuAddStu.Size = new System.Drawing.Size(217, 22);
+            this.menuAddStu.Text = "Add Student";
+            this.menuAddStu.Click += new System.EventHandler(this.menuAddStu_Click);
+            // 
+            // menuReturn
+            // 
+            this.menuReturn.Name = "menuReturn";
+            this.menuReturn.Size = new System.Drawing.Size(217, 22);
+            this.menuReturn.Text = "Return To Main Menu";
+            this.menuReturn.Click += new System.EventHandler(this.menuMainMenu_Click);
+            // 
+            // menuEditStu
+            // 
+            this.menuEditStu.Name = "menuEditStu";
+            this.menuEditStu.Size = new System.Drawing.Size(217, 22);
+            this.menuEditStu.Text = "Edit Student/Export to XML";
+            this.menuEditStu.Click += new System.EventHandler(this.menuEditStu_Click);
+            // 
+            // menuDelStu
+            // 
+            this.menuDelStu.Name = "menuDelStu";
+            this.menuDelStu.Size = new System.Drawing.Size(217, 22);
+            this.menuDelStu.Text = "Delete Student";
+            this.menuDelStu.Click += new System.EventHandler(this.menuDelStu_Click);
+            // 
+            // menuDataHis
+            // 
+            this.menuDataHis.Name = "menuDataHis";
+            this.menuDataHis.Size = new System.Drawing.Size(217, 22);
+            this.menuDataHis.Text = "View Database History";
+            this.menuDataHis.Click += new System.EventHandler(this.menuDataHis_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(255, 12);
+            this.btnClear.Location = new System.Drawing.Point(145, 384);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 18;
+            this.btnClear.TabIndex = 21;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(345, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 19;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 462);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.btnAddStudent);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.cbCounties);
             this.Controls.Add(this.txtBoxStudentNumber);
             this.Controls.Add(this.panelCourseLevel);
@@ -268,8 +324,11 @@
             this.Controls.Add(this.lblDetails);
             this.Name = "AddStudent";
             this.Text = "Add Student Field";
+            this.Load += new System.EventHandler(this.AddStudent_Load);
             this.panelCourseLevel.ResumeLayout(false);
             this.panelCourseLevel.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,9 +350,16 @@
         private System.Windows.Forms.RadioButton rbUnderGrad;
         private System.Windows.Forms.TextBox txtBoxStudentNumber;
         private System.Windows.Forms.ComboBox cbCounties;
-        private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuLogout;
+        private System.Windows.Forms.ToolStripMenuItem menuExit;
+        private System.Windows.Forms.ToolStripMenuItem studentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuReturn;
+        private System.Windows.Forms.ToolStripMenuItem menuEditStu;
+        private System.Windows.Forms.ToolStripMenuItem menuDelStu;
+        private System.Windows.Forms.ToolStripMenuItem menuDataHis;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ToolStripMenuItem menuAddStu;
     }
 }

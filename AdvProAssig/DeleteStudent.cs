@@ -76,7 +76,6 @@ namespace AdvProAssig
             }
         }
         
-
         private void ClearFields()
         {
             txtBoxFirstName.Text = null;
@@ -113,6 +112,51 @@ namespace AdvProAssig
         }
 
         private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuAddStu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddStudent studentpage = new AddStudent();
+            studentpage.ShowDialog();
+            this.Close();
+        }
+
+        private void menuEditStu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditStudent editpage = new EditStudent();
+            editpage.ShowDialog();
+            this.Close();
+        }
+
+        private void menuDelStu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DeleteStudent deletepage = new DeleteStudent();
+            deletepage.ShowDialog();
+            this.Close();
+        }
+
+        private void menuDataHis_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DatabaseHistory databaseHistory = new DatabaseHistory();
+            databaseHistory.ShowDialog();
+            this.Close();
+        }
+
+        private void menuLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm studentpage = new LoginForm();
+            studentpage.ShowDialog();
+            this.Close();
+        }
+
+        private void menuExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

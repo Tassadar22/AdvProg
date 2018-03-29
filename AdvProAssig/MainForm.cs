@@ -44,44 +44,47 @@ namespace AdvProAssig
             dataGridStudents.AutoSize = true;
             dataGridStudents.AutoGenerateColumns = false;
         }
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            LoginForm studentpage = new LoginForm();
-            studentpage.ShowDialog();
-            this.Close();
-        }
-        private void btnExit_Click(object sender, EventArgs e)
+        private void menuExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void btnAddStudent_Click(object sender, EventArgs e)
+
+        private void menuAddStu_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddStudent studentpage = new AddStudent();
             studentpage.ShowDialog();
             this.Close();
         }
-        private void btnEditStu_Click(object sender, EventArgs e)
+        private void menuEditStu_Click(object sender, EventArgs e)
         {
             this.Hide();
             EditStudent editpage = new EditStudent();
             editpage.ShowDialog();
             this.Close();
         }
-        private void btnDeleteStudent_Click(object sender, EventArgs e)
+
+        private void menuDelStu_Click(object sender, EventArgs e)
         {
             this.Hide();
             DeleteStudent deletepage = new DeleteStudent();
             deletepage.ShowDialog();
             this.Close();
         }
-        private void btnDbHis_Click(object sender, EventArgs e)
+        private void menuDataHis_Click(object sender, EventArgs e)
         {
             this.Hide();
             DatabaseHistory databaseHistory = new DatabaseHistory();
             databaseHistory.ShowDialog();
             this.Close();
         }
+        private void menuLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm studentpage = new LoginForm();
+            studentpage.ShowDialog();
+            this.Close();
+        }
+
     }
 }
