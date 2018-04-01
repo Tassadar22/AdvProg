@@ -14,6 +14,7 @@ namespace AdvProAssig
         
         public string UserName { get; set; }
         public string Password { get; set; }
+        public bool IsAdmin { get; set; }
         public Staff(){}
         public Staff(string username, string password)
         {

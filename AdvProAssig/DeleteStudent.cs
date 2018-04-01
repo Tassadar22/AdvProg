@@ -155,7 +155,6 @@ namespace AdvProAssig
             studentpage.ShowDialog();
             this.Close();
         }
-
         private void menuExit_Click(object sender, EventArgs e)
         {
             this.Close();

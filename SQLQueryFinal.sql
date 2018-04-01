@@ -37,6 +37,7 @@ AS
 CREATE TABLE Staff(
 UserName VARCHAR(20) NOT NULL PRIMARY KEY,
 Password VARCHAR(100),
+
 )
 GO
 
@@ -53,7 +54,11 @@ AS
 INSERT INTO Staff VALUES ('Seamas','Password')
 INSERT INTO Staff VALUES ('Dhoot','Trumpet')
 INSERT INTO Staff VALUES ('secure','swordfish')
+INSERT INTO Staff VALUES ('Paul Laird','$ecure12£4')
 GO
+
+
+
 EXEC uspMakeDummyStaffData
 
 DELETE FROM Student WHERE StudentID=12345678

@@ -77,3 +77,5 @@ C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.DatabaseHistory.resources
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.DeleteStudent.resources
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.EditStudent.resources
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.MainForm.resources
+C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.DatabaseHistory.resources
+C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.AdminPage.resources

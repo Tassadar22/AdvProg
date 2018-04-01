@@ -104,6 +104,14 @@ namespace AdvProAssig
 
         private void menuAddStu_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            AddStudent studentpage = new AddStudent();
+            studentpage.ShowDialog();
+            this.Close();
+        }
+
+        private void btnAddStu_Click(object sender, EventArgs e)
+        {
             //Form Checker which checks certain broad fields for null values before entry
             if (FullFieldChecker())
             {
@@ -124,11 +132,6 @@ namespace AdvProAssig
                     "First Name, Surname, Email, Phone, Address Line 1\n" +
                     "and City");
             }
-        }
-
-        private void AddStudent_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

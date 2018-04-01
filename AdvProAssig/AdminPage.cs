@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace AdvProAssig
 {
-    public partial class DatabaseHistory : Form
+    public partial class AdminPage : Form
     {
-        public DatabaseHistory()
+        public AdminPage()
         {
             InitializeComponent();
+        }
+
+        private void menuExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void menuAddStu_Click(object sender, EventArgs e)
@@ -24,7 +29,6 @@ namespace AdvProAssig
             studentpage.ShowDialog();
             this.Close();
         }
-
         private void menuEditStu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -40,7 +44,6 @@ namespace AdvProAssig
             deletepage.ShowDialog();
             this.Close();
         }
-
         private void menuDataHis_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -48,7 +51,6 @@ namespace AdvProAssig
             databaseHistory.ShowDialog();
             this.Close();
         }
-
         private void menuLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -57,9 +59,5 @@ namespace AdvProAssig
             this.Close();
         }
 
-        private void menuExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

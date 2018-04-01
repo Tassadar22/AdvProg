@@ -51,6 +51,12 @@
     <Compile Include="AddStudent.Designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPage.Designer.cs">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\DAO.cs" />
     <Compile Include="DataAccess\AccessStaffRecord.cs" />
     <Compile Include="DataAccess\ModifyStudentRecord.cs" />
@@ -90,6 +96,9 @@
     <Compile Include="Business\Student.cs" />
     <EmbeddedResource Include="AddStudent.resx">
       <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPage.resx">
+      <DependentUpon>AdminPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatabaseHistory.resx">
       <DependentUpon>DatabaseHistory.cs</DependentUpon>

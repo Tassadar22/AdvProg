@@ -46,3 +46,12 @@ AS
 BEGIN 
 	Select EVENTDATA()
 END
+
+CREATE TABLE AdminStaff(
+UserName VARCHAR(20) NOT NULL PRIMARY KEY,
+Password VARCHAR(100),
+IsAdmin BIT
+)
+GO
+
+INSERT INTO AdminStaff VALUES ('Admin','Password',0)

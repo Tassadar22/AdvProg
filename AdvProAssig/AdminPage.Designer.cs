@@ -1,6 +1,6 @@
 ﻿namespace AdvProAssig
 {
-    partial class DatabaseHistory
+    partial class AdminPage
     {
         /// <summary>
         /// Required designer variable.
@@ -90,34 +90,38 @@
             this.menuAddStu.Name = "menuAddStu";
             this.menuAddStu.Size = new System.Drawing.Size(217, 22);
             this.menuAddStu.Text = "New Student";
+            this.menuAddStu.Click += new System.EventHandler(this.menuAddStu_Click);
             // 
             // menuEditStu
             // 
             this.menuEditStu.Name = "menuEditStu";
             this.menuEditStu.Size = new System.Drawing.Size(217, 22);
             this.menuEditStu.Text = "Edit Student/Export to XML";
+            this.menuEditStu.Click += new System.EventHandler(this.menuEditStu_Click);
             // 
             // menuDelStu
             // 
             this.menuDelStu.Name = "menuDelStu";
             this.menuDelStu.Size = new System.Drawing.Size(217, 22);
             this.menuDelStu.Text = "Delete Student";
+            this.menuDelStu.Click += new System.EventHandler(this.menuDelStu_Click);
             // 
             // menuDataHis
             // 
             this.menuDataHis.Name = "menuDataHis";
             this.menuDataHis.Size = new System.Drawing.Size(217, 22);
             this.menuDataHis.Text = "View Database History";
+            this.menuDataHis.Click += new System.EventHandler(this.menuDataHis_Click);
             // 
-            // DatabaseHistory
+            // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 462);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "DatabaseHistory";
-            this.Text = "Database History";
+            this.Name = "AdminPage";
+            this.Text = "Admininistrator Page";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -53,6 +53,7 @@
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnAddStu = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -295,7 +296,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(145, 384);
+            this.btnClear.Location = new System.Drawing.Point(241, 383);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 21;
@@ -303,11 +304,22 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnAddStu
+            // 
+            this.btnAddStu.Location = new System.Drawing.Point(117, 383);
+            this.btnAddStu.Name = "btnAddStu";
+            this.btnAddStu.Size = new System.Drawing.Size(75, 23);
+            this.btnAddStu.TabIndex = 22;
+            this.btnAddStu.Text = "Add Student";
+            this.btnAddStu.UseVisualStyleBackColor = true;
+            this.btnAddStu.Click += new System.EventHandler(this.btnAddStu_Click);
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 462);
+            this.Controls.Add(this.btnAddStu);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.cbCounties);
@@ -324,7 +336,6 @@
             this.Controls.Add(this.lblDetails);
             this.Name = "AddStudent";
             this.Text = "Add Student Field";
-            this.Load += new System.EventHandler(this.AddStudent_Load);
             this.panelCourseLevel.ResumeLayout(false);
             this.panelCourseLevel.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -361,5 +372,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuDataHis;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ToolStripMenuItem menuAddStu;
+        private System.Windows.Forms.Button btnAddStu;
     }
 }

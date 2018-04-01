@@ -275,14 +275,14 @@
             // menuLogout
             // 
             this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(152, 22);
+            this.menuLogout.Size = new System.Drawing.Size(117, 22);
             this.menuLogout.Text = "Log Out";
             this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Size = new System.Drawing.Size(117, 22);
             this.menuExit.Text = "Exit";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
@@ -302,24 +302,28 @@
             this.menuAddStu.Name = "menuAddStu";
             this.menuAddStu.Size = new System.Drawing.Size(217, 22);
             this.menuAddStu.Text = "New Student";
+            this.menuAddStu.Click += new System.EventHandler(this.menuAddStu_Click);
             // 
             // menuEditStu
             // 
             this.menuEditStu.Name = "menuEditStu";
             this.menuEditStu.Size = new System.Drawing.Size(217, 22);
             this.menuEditStu.Text = "Edit Student/Export to XML";
+            this.menuEditStu.Click += new System.EventHandler(this.menuEditStu_Click);
             // 
             // menuDelStu
             // 
             this.menuDelStu.Name = "menuDelStu";
             this.menuDelStu.Size = new System.Drawing.Size(217, 22);
             this.menuDelStu.Text = "Delete Student";
+            this.menuDelStu.Click += new System.EventHandler(this.menuDelStu_Click);
             // 
             // menuDataHis
             // 
             this.menuDataHis.Name = "menuDataHis";
             this.menuDataHis.Size = new System.Drawing.Size(217, 22);
             this.menuDataHis.Text = "View Database History";
+            this.menuDataHis.Click += new System.EventHandler(this.menuDataHis_Click);
             // 
             // DeleteStudent
             // 
