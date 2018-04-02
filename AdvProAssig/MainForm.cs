@@ -27,9 +27,6 @@ namespace AdvProAssig
             var list = new BindingList<Student>(updatedlist);
             dataGridStudents.DataSource = list;
 
-            //dataGridStudents.DataSource = updatedlist;
-            //Create Columns
-            //dataGridStudents.ColumnCount = 11;
             dataGridStudents.Columns[0].Name = "First Name";
             dataGridStudents.Columns[1].Name = "Surname";
             dataGridStudents.Columns[2].Name = "Email";

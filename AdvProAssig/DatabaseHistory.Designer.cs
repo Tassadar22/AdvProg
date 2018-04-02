@@ -38,9 +38,7 @@
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridStaff = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -120,27 +118,18 @@
             this.menuReturn.Text = "Return to Main Menu";
             this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
             // 
-            // dataGridStaff
-            // 
-            this.dataGridStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridStaff.Location = new System.Drawing.Point(24, 72);
-            this.dataGridStaff.Name = "dataGridStaff";
-            this.dataGridStaff.Size = new System.Drawing.Size(240, 150);
-            this.dataGridStaff.TabIndex = 1;
-            // 
             // DatabaseHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 462);
-            this.Controls.Add(this.dataGridStaff);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DatabaseHistory";
             this.Text = "Database History";
+            this.Load += new System.EventHandler(this.DatabaseHistory_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,6 +147,5 @@
         private System.Windows.Forms.ToolStripMenuItem menuDelStu;
         private System.Windows.Forms.ToolStripMenuItem menuDataHis;
         private System.Windows.Forms.ToolStripMenuItem menuReturn;
-        private System.Windows.Forms.DataGridView dataGridStaff;
     }
 }

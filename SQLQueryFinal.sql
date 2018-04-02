@@ -40,6 +40,7 @@ Password VARCHAR(100),
 
 )
 GO
+EXEC uspCreateStaff
 
 CREATE PROC uspGetStaffList
 AS
@@ -56,7 +57,6 @@ INSERT INTO Staff VALUES ('Dhoot','Trumpet')
 INSERT INTO Staff VALUES ('secure','swordfish')
 INSERT INTO Staff VALUES ('Paul Laird','$ecure12£4')
 GO
-
 
 
 EXEC uspMakeDummyStaffData

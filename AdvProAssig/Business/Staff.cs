@@ -11,6 +11,7 @@ namespace AdvProAssig
     {
         static List<Staff> Stafflist = new List<Staff>();
         static AccessStaffRecord StaffRecord = new AccessStaffRecord();
+        DAO dao = new DAO();
         
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -20,6 +21,10 @@ namespace AdvProAssig
         {
             UserName = username;
             Password = password;
+        }
+        public override string ToString()
+        {
+            return string.Format($"Username: {UserName}");
         }
         public void GetDataBaseList()
         {
@@ -40,6 +45,7 @@ namespace AdvProAssig
                     {
                         //Character to represent proper username & password entered
                         result = 'a';
+                        dao.MakeLog($"{username} Logged in succesfully");
                         break;
                     }
                     else
@@ -54,13 +60,9 @@ namespace AdvProAssig
         }
         public List<Staff> GetstaffList()
         {
+            GetDataBaseList();
             return Stafflist;
         }
 
-        public void AddStaff(string username, string password, bool isadmin)
-        {
-
-        }
-        
     }
 }

@@ -174,7 +174,7 @@ namespace AdvProAssig
                 txtboxXMLFileName.Text = openFileDialog1.FileName;
             }
         }
-
+        #region Menu
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -251,5 +251,6 @@ namespace AdvProAssig
                     "and City");
             }
         }
+        #endregion
     }
 }

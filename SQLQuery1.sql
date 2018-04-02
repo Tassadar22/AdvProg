@@ -62,6 +62,8 @@ IsAdmin BIT
 )
 GO
 
+INSERT INTO Student Values('Max','Power','Max@DBS.com', '0894561245','54 Briarwood', 'StoneyBatter','Dublin 7','Dublin','UnderGraduate','Business', 78451254)
+
 INSERT INTO AdminStaff VALUES ('Admin','Password',0)
 
 INSERT INTO Student VALUES('John','Smith','John@DBS.com','4159879','45 Merrion Square','Dublin 2','Dublin 2','Dublin','UnderGraduate','Psychology',64888)
@@ -72,19 +74,21 @@ SQLCommand nvarchar(200),
 AuditDateTime datetime
 )
 
- CREATE TRIGGER tr_AuditTableChanges
-ON ALL SERVER
-FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
+CREATE TRigger 
+
+ CREATE TRIGGER tr_StudentTableChanges
+ON Student 
+FOR INSERT, UPDATE, DELETE
 AS
 BEGIN
-    DECLARE @EventData XML
-    SELECT @EventData = EVENTDATA()
-
-    INSERT INTO Stu
+	DECLARE @EventData XML 
+	 SELECT @EventData = EVENTDATA()
+    INSERT INTO TableChanges2
     (DatabaseName, TableName, EventType, LoginName,
      SQLCommand, AuditDateTime)
     VALUES
     (
+	
          @EventData.value('(/EVENT_INSTANCE/DatabaseName)[1]', 'varchar(250)'),
          @EventData.value('(/EVENT_INSTANCE/ObjectName)[1]', 'varchar(250)'),
          @EventData.value('(/EVENT_INSTANCE/EventType)[1]', 'nvarchar(250)'),
@@ -101,3 +105,10 @@ EventType nvarchar(250),
 LoginName nvarchar(250),
 SQLCommand nvarchar(2500),
 AuditDateTime datetime ) 
+
+CREATE TABLE StudentLog
+(
+
+
+ModificationTimestamp datetime
+)
