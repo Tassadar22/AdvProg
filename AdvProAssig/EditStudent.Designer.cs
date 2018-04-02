@@ -62,6 +62,7 @@
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEditStu = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
             this.pnlXML.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -385,11 +386,22 @@
             this.menuReturn.Text = "Return to Main Menu";
             this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
             // 
+            // btnEditStu
+            // 
+            this.btnEditStu.Location = new System.Drawing.Point(357, 334);
+            this.btnEditStu.Name = "btnEditStu";
+            this.btnEditStu.Size = new System.Drawing.Size(110, 23);
+            this.btnEditStu.TabIndex = 50;
+            this.btnEditStu.Text = "Edit/Update student";
+            this.btnEditStu.UseVisualStyleBackColor = true;
+            this.btnEditStu.Click += new System.EventHandler(this.btnEditStu_Click);
+            // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 462);
+            this.Controls.Add(this.btnEditStu);
             this.Controls.Add(this.pnlEditStudent);
             this.Controls.Add(this.pnlXML);
             this.Controls.Add(this.txtBoxCourse);
@@ -457,5 +469,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuDelStu;
         private System.Windows.Forms.ToolStripMenuItem menuDataHis;
         private System.Windows.Forms.ToolStripMenuItem menuEditStu;
+        private System.Windows.Forms.Button btnEditStu;
     }
 }

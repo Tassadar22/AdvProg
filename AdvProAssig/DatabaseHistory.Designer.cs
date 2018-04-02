@@ -38,6 +38,7 @@
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
+            this.rchTxtDataBaseHistory = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,16 +119,25 @@
             this.menuReturn.Text = "Return to Main Menu";
             this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
             // 
+            // rchTxtDataBaseHistory
+            // 
+            this.rchTxtDataBaseHistory.Location = new System.Drawing.Point(12, 64);
+            this.rchTxtDataBaseHistory.Name = "rchTxtDataBaseHistory";
+            this.rchTxtDataBaseHistory.ReadOnly = true;
+            this.rchTxtDataBaseHistory.Size = new System.Drawing.Size(430, 283);
+            this.rchTxtDataBaseHistory.TabIndex = 1;
+            this.rchTxtDataBaseHistory.Text = "";
+            // 
             // DatabaseHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 462);
+            this.Controls.Add(this.rchTxtDataBaseHistory);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DatabaseHistory";
             this.Text = "Database History";
-            this.Load += new System.EventHandler(this.DatabaseHistory_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -147,5 +157,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuDelStu;
         private System.Windows.Forms.ToolStripMenuItem menuDataHis;
         private System.Windows.Forms.ToolStripMenuItem menuReturn;
+        private System.Windows.Forms.RichTextBox rchTxtDataBaseHistory;
     }
 }

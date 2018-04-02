@@ -28,10 +28,16 @@ namespace AdvProAssig.DataAccess
             closeConnection();
             return updatedList;
         }
-        public void AddStaff(string username, string password, bool isadmin)
+        public void AddStaff(string username, string password)
         {
-            SqlCommand addstaffcmd = new SqlCommand($"INSERT INTO Staff VALUES ('{username}','{password}' {isadmin})", openConnection());
+            SqlCommand addstaffcmd = new SqlCommand($"INSERT INTO Staff VALUES ('{username}','{password}')", openConnection());
             addstaffcmd.ExecuteNonQuery();
+            closeConnection();
+        }
+        public void DeleteStaff(string username)
+        {
+            SqlCommand deletestaffcmd = new SqlCommand($"DELETE FROM Staff WHERE UserName='{username}'", openConnection());
+            deletestaffcmd.ExecuteNonQuery();
             closeConnection();
         }
         

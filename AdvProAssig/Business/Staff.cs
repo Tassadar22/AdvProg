@@ -10,6 +10,7 @@ namespace AdvProAssig
     class Staff
     {
         static List<Staff> Stafflist = new List<Staff>();
+        static Staff displaystaff = new Staff();
         static AccessStaffRecord StaffRecord = new AccessStaffRecord();
         DAO dao = new DAO();
         
@@ -63,6 +64,33 @@ namespace AdvProAssig
             GetDataBaseList();
             return Stafflist;
         }
-
+        public void AddStaff(string username, string password)
+        {
+            StaffRecord.AddStaff(username, password);
+        }
+        public string FindStaffMemberandDelete(string searchusername)
+        {
+            GetDataBaseList();
+            string result;
+            bool found = false;
+            foreach(Staff staff in Stafflist)
+            {
+                if(searchusername==staff.UserName&&searchusername!="Administrator")
+                {
+                    found = true;
+                    break;
+                }
+            }
+            if(found)
+            {
+                StaffRecord.DeleteStaff(searchusername);
+                result = $"{searchusername} deleted succesfully";
+            }else
+            {
+                result = $"{searchusername} not found";
+            }
+            GetDataBaseList();
+            return result;
+        }
     }
 }

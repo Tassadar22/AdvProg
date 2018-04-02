@@ -7,16 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdvProAssig;
 
 namespace AdvProAssig
 {
     public partial class AdminPage : Form
     {
+        Staff adminstaff = new Staff();
         public AdminPage()
         {
             InitializeComponent();
+            LoadStaffList();
         }
-
+        private void LoadStaffList()
+        {
+            foreach(Staff staff in adminstaff.GetstaffList())
+            {
+                txtBoxStaffList.Text += staff.UserName+"\n";
+            }
+        }
+        #region MenuControls
         private void menuExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -58,6 +68,48 @@ namespace AdvProAssig
             studentpage.ShowDialog();
             this.Close();
         }
+        #endregion
 
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                adminstaff.AddStaff(txtBoxUserName.Text, txtBoxPassword.Text);
+                txtBoxUserName.Clear();
+                txtBoxPassword.Clear();
+                MessageBox.Show("Added Succesfully");
+                ReturntoMainScreen();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnDeletThis_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show(adminstaff.FindStaffMemberandDelete(txtBoxSearchable.Text));
+                ReturntoMainScreen();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
+
+        private void menuReturn_Click(object sender, EventArgs e)
+        {
+            ReturntoMainScreen();
+        }
+
+        private void ReturntoMainScreen()
+        {
+            this.Hide();
+            MainForm mainscreenturnon = new MainForm();
+            mainscreenturnon.ShowDialog();
+            this.Close();
+        }
     }
 }

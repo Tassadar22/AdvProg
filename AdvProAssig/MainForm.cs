@@ -82,5 +82,13 @@ namespace AdvProAssig
             studentpage.ShowDialog();
             this.Close();
         }
+
+        private void menuAdmin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogin passwordlogin = new AdminLogin();
+            passwordlogin.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -62,11 +62,16 @@ IsAdmin BIT
 )
 GO
 
+DELETE FROM Staff WHERE UserName=''
+DELETE FROM Staff WHERE UserName='Test'
+
 INSERT INTO Student Values('Max','Power','Max@DBS.com', '0894561245','54 Briarwood', 'StoneyBatter','Dublin 7','Dublin','UnderGraduate','Business', 78451254)
 
 INSERT INTO AdminStaff VALUES ('Admin','Password',0)
 
 INSERT INTO Student VALUES('John','Smith','John@DBS.com','4159879','45 Merrion Square','Dublin 2','Dublin 2','Dublin','UnderGraduate','Psychology',64888)
+
+INSERT 
 
 CREATE TABLE TableChanges(
 EventType nvarchar(100),

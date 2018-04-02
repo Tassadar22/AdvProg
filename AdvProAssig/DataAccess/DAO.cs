@@ -29,14 +29,27 @@ namespace AdvProAssig.DataAccess
         }
         public void MakeLog(string historyfile)
         {
-            string AddLog = $"\nMessage {DateTime.UtcNow}\t",filename="databasehistory.log";
+            string AddLog = $"\n{DateTime.UtcNow}\t",filename="databasehistory.log";
             //Sanity checking, create log if it doesn't exist
             if (!File.Exists(filename))
             {
-                File.Create(filename);
+                File.Create(filename).Close();
             }
             AddLog += string.Format($"{historyfile}");
             File.AppendAllText(filename, AddLog);
+        }
+        public string ReadLog()
+        {
+            string logContents="";
+            try
+            {
+                logContents=File.ReadAllText("databasehistory.log");
+            }
+            catch
+            {
+                logContents="Database History could not be found or has not yet been created";
+            }
+            return logContents;
         }
     }
 }

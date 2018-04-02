@@ -114,6 +114,7 @@ namespace AdvProAssig
        
         private void btnXMLExport_Click(object sender, EventArgs e)
         {
+
             if (Displaystudent != null)
             {
                 if(txtboxXMLFileName.Text=="")
@@ -227,6 +228,15 @@ namespace AdvProAssig
 
         private void menuEditStu_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            EditStudent editpage = new EditStudent();
+            editpage.ShowDialog();
+            this.Close();
+        }
+        #endregion
+
+        private void btnEditStu_Click(object sender, EventArgs e)
+        {
             //Form Checker which checks certain broad fields for null values before entry
             if (FullFieldChecker())
             {
@@ -237,7 +247,6 @@ namespace AdvProAssig
                     MessageBox.Show(result);
                     Clearfields();
                     Displaystudent = null;
-
                 }
                 else
                 {
@@ -251,6 +260,5 @@ namespace AdvProAssig
                     "and City");
             }
         }
-        #endregion
     }
 }

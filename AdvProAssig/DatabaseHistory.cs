@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdvProAssig.DataAccess;
 
 namespace AdvProAssig
 {
@@ -14,7 +15,9 @@ namespace AdvProAssig
     {
         public DatabaseHistory()
         {
+            DAO dao = new DAO();
             InitializeComponent();
+            rchTxtDataBaseHistory.Text = dao.ReadLog();
      
         }
         private void menuAddStu_Click(object sender, EventArgs e)
@@ -70,9 +73,5 @@ namespace AdvProAssig
             this.Close();
         }
 
-        private void DatabaseHistory_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

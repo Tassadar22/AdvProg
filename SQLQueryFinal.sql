@@ -22,6 +22,8 @@ INSERT INTO Student Values('Mary','Smith','Mary@DBS.com','0872146455','20 the Gr
 INSERT INTO Student Values('Max','Power','Max@DBS.com', '0894561245','54 Briarwood', 'StoneyBatter','Dublin 7','Dublin','UnderGraduate','Business', 78451254)
 GO
 
+INSERT INTO Staff VALUES('Administrator','RSAencryptedgoodness')
+
 EXEC uspCreateDummyStudentData
 
 CREATE PROC uspGetStudentList
@@ -37,7 +39,6 @@ AS
 CREATE TABLE Staff(
 UserName VARCHAR(20) NOT NULL PRIMARY KEY,
 Password VARCHAR(100),
-
 )
 GO
 EXEC uspCreateStaff
