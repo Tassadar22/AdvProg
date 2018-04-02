@@ -52,6 +52,15 @@ namespace AdvProAssig
             }
             return result;
         }
+        public List<Staff> GetstaffList()
+        {
+            return Stafflist;
+        }
+
+        public void AddStaff(string username, string password, bool isadmin)
+        {
+
+        }
         
     }
 }

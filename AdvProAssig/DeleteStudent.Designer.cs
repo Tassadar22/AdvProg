@@ -58,6 +58,7 @@
             this.menuEditStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
             this.panelCourseLevel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -292,7 +293,8 @@
             this.menuAddStu,
             this.menuEditStu,
             this.menuDelStu,
-            this.menuDataHis});
+            this.menuDataHis,
+            this.menuReturn});
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
             this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.studentToolStripMenuItem.Text = "Student";
@@ -324,6 +326,13 @@
             this.menuDataHis.Size = new System.Drawing.Size(217, 22);
             this.menuDataHis.Text = "View Database History";
             this.menuDataHis.Click += new System.EventHandler(this.menuDataHis_Click);
+            // 
+            // menuReturn
+            // 
+            this.menuReturn.Name = "menuReturn";
+            this.menuReturn.Size = new System.Drawing.Size(217, 22);
+            this.menuReturn.Text = "Return to Main Menu";
+            this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
             // 
             // DeleteStudent
             // 
@@ -395,5 +404,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuEditStu;
         private System.Windows.Forms.ToolStripMenuItem menuDelStu;
         private System.Windows.Forms.ToolStripMenuItem menuDataHis;
+        private System.Windows.Forms.ToolStripMenuItem menuReturn;
     }
 }

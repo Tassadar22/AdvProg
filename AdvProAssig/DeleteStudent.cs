@@ -159,5 +159,13 @@ namespace AdvProAssig
         {
             this.Close();
         }
+
+        private void menuReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainscreenturnon = new MainForm();
+            mainscreenturnon.ShowDialog();
+            this.Close();
+        }
     }
 }

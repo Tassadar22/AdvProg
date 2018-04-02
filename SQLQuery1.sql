@@ -47,6 +47,14 @@ BEGIN
 	Select EVENTDATA()
 END
 
+CREATE TRIGGER tr_StudentChanges
+ON Student
+FOR INSERT, UPDATE, DELETE
+AS
+BEGIN 
+	Select EVENTDATA()
+END
+
 CREATE TABLE AdminStaff(
 UserName VARCHAR(20) NOT NULL PRIMARY KEY,
 Password VARCHAR(100),
@@ -55,3 +63,41 @@ IsAdmin BIT
 GO
 
 INSERT INTO AdminStaff VALUES ('Admin','Password',0)
+
+INSERT INTO Student VALUES('John','Smith','John@DBS.com','4159879','45 Merrion Square','Dublin 2','Dublin 2','Dublin','UnderGraduate','Psychology',64888)
+
+CREATE TABLE TableChanges(
+EventType nvarchar(100),
+SQLCommand nvarchar(200),
+AuditDateTime datetime
+)
+
+ CREATE TRIGGER tr_AuditTableChanges
+ON ALL SERVER
+FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
+AS
+BEGIN
+    DECLARE @EventData XML
+    SELECT @EventData = EVENTDATA()
+
+    INSERT INTO Stu
+    (DatabaseName, TableName, EventType, LoginName,
+     SQLCommand, AuditDateTime)
+    VALUES
+    (
+         @EventData.value('(/EVENT_INSTANCE/DatabaseName)[1]', 'varchar(250)'),
+         @EventData.value('(/EVENT_INSTANCE/ObjectName)[1]', 'varchar(250)'),
+         @EventData.value('(/EVENT_INSTANCE/EventType)[1]', 'nvarchar(250)'),
+         @EventData.value('(/EVENT_INSTANCE/LoginName)[1]', 'varchar(250)'),
+         @EventData.value('(/EVENT_INSTANCE/TSQLCommand)[1]', 'nvarchar(2500)'),
+         GetDate()
+    )
+END
+
+Create TABLE TableChanges2 
+( DatabaseName nvarchar(250),
+TableName nvarchar(250), 
+EventType nvarchar(250), 
+LoginName nvarchar(250),
+SQLCommand nvarchar(2500),
+AuditDateTime datetime ) 

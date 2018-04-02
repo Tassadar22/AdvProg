@@ -76,14 +76,14 @@
             // menuLogout
             // 
             this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(152, 22);
+            this.menuLogout.Size = new System.Drawing.Size(117, 22);
             this.menuLogout.Text = "Log Out";
             this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Size = new System.Drawing.Size(117, 22);
             this.menuExit.Text = "Exit";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 

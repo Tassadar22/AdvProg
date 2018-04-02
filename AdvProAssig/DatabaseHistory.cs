@@ -12,9 +12,24 @@ namespace AdvProAssig
 {
     public partial class DatabaseHistory : Form
     {
+        Staff methodstaff = new Staff();
+        List<Staff> stafflist = new List<Staff>();
         public DatabaseHistory()
         {
             InitializeComponent();
+            stafflist = methodstaff.GetstaffList();
+            LoadDataGrid();
+        }
+
+        private void LoadDataGrid()
+        {
+            var list = new BindingList<Staff>(stafflist);
+            dataGridStaff.DataSource = list;
+
+            dataGridStaff.Columns[0].Name = "User Name";
+            dataGridStaff.Columns[1].Name = "Password";
+            dataGridStaff.AutoSize = true;
+            dataGridStaff.AutoGenerateColumns = false;
         }
 
         private void menuAddStu_Click(object sender, EventArgs e)
@@ -59,6 +74,14 @@ namespace AdvProAssig
 
         private void menuExit_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void menuReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainscreenturnon = new MainForm();
+            mainscreenturnon.ShowDialog();
             this.Close();
         }
     }

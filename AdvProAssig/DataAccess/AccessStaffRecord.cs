@@ -27,9 +27,9 @@ namespace AdvProAssig.DataAccess
             closeConnection();
             return updatedList;
         }
-        public void AddStaff(string username, string password)
+        public void AddStaff(string username, string password, bool isadmin)
         {
-            SqlCommand addstaffcmd = new SqlCommand($"INSERT INTO Staff VALUES ('{username}','{password}'", openConnection());
+            SqlCommand addstaffcmd = new SqlCommand($"INSERT INTO Staff VALUES ('{username}','{password}' {isadmin})", openConnection());
             addstaffcmd.ExecuteNonQuery();
             closeConnection();
         }

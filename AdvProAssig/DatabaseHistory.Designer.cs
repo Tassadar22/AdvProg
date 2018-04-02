@@ -37,7 +37,10 @@
             this.menuEditStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridStaff = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -63,14 +66,14 @@
             // menuLogout
             // 
             this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(152, 22);
+            this.menuLogout.Size = new System.Drawing.Size(117, 22);
             this.menuLogout.Text = "Log Out";
             this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Size = new System.Drawing.Size(117, 22);
             this.menuExit.Text = "Exit";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
@@ -80,7 +83,8 @@
             this.menuAddStu,
             this.menuEditStu,
             this.menuDelStu,
-            this.menuDataHis});
+            this.menuDataHis,
+            this.menuReturn});
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
             this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.studentToolStripMenuItem.Text = "Student";
@@ -109,17 +113,34 @@
             this.menuDataHis.Size = new System.Drawing.Size(217, 22);
             this.menuDataHis.Text = "View Database History";
             // 
+            // menuReturn
+            // 
+            this.menuReturn.Name = "menuReturn";
+            this.menuReturn.Size = new System.Drawing.Size(217, 22);
+            this.menuReturn.Text = "Return to Main Menu";
+            this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
+            // 
+            // dataGridStaff
+            // 
+            this.dataGridStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridStaff.Location = new System.Drawing.Point(24, 72);
+            this.dataGridStaff.Name = "dataGridStaff";
+            this.dataGridStaff.Size = new System.Drawing.Size(240, 150);
+            this.dataGridStaff.TabIndex = 1;
+            // 
             // DatabaseHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 462);
+            this.Controls.Add(this.dataGridStaff);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DatabaseHistory";
             this.Text = "Database History";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +157,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuEditStu;
         private System.Windows.Forms.ToolStripMenuItem menuDelStu;
         private System.Windows.Forms.ToolStripMenuItem menuDataHis;
+        private System.Windows.Forms.ToolStripMenuItem menuReturn;
+        private System.Windows.Forms.DataGridView dataGridStaff;
     }
 }
