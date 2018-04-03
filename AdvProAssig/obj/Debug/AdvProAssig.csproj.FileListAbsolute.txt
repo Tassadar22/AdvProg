@@ -79,8 +79,6 @@ C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.MainForm.resources
 C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.DatabaseHistory.resources
 C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.AdminPage.resources
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.AdminPage.resources
-C:\Code2\AdvProg\AdvProAssig\bin\Debug\StudentDatabase.mdf
-C:\Code2\AdvProg\AdvProAssig\bin\Debug\StudentDatabase_log.ldf
 C:\Code2\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.AdminLogin.resources
 C:\Code\AdvProg\AdvProAssig\obj\Debug\AdvProAssig.AdminLogin.resources
 C:\Code\AdvProg\AdvProAssig\bin\Debug\AdvProAssig.exe.CodeAnalysisLog.xml

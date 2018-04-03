@@ -18,6 +18,7 @@ namespace AdvProAssig
         {
             InitializeComponent();
             LoadStaffList();
+            txtBoxPassword.PasswordChar = '*';
         }
         private void LoadStaffList()
         {

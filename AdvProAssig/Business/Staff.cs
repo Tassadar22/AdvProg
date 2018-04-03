@@ -9,24 +9,21 @@ namespace AdvProAssig
 {
     class Staff
     {
-        static List<Staff> Stafflist = new List<Staff>();
-        static Staff displaystaff = new Staff();
-        static AccessStaffRecord StaffRecord = new AccessStaffRecord();
-        DAO dao = new DAO();
-        
+        static List<Staff> Stafflist = new List<Staff>(); //List frequently updated by database 
+        static AccessStaffRecord StaffRecord = new AccessStaffRecord(); //Access staffrecord to 
+        DAO dao = new DAO(); //DAO class for making log
+        //Auto-implemented properties
         public string UserName { get; set; }
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
+        //Constructors
         public Staff(){}
         public Staff(string username, string password)
         {
             UserName = username;
             Password = password;
         }
-        public override string ToString()
-        {
-            return string.Format($"Username: {UserName}");
-        }
+     
         public void GetDataBaseList()
         {
             //Method to extract data from database and get stafflist 
@@ -46,7 +43,7 @@ namespace AdvProAssig
                     {
                         //Character to represent proper username & password entered
                         result = 'a';
-                        dao.MakeLog($"{username} Logged in succesfully");
+                        dao.MakeLog($"{username} Logged in succesfully"); //Log created on succesful login
                         break;
                     }
                     else
@@ -69,7 +66,7 @@ namespace AdvProAssig
             StaffRecord.AddStaff(username, password);
         }
         public string FindStaffMemberandDelete(string searchusername)
-        {
+        {//Finds
             GetDataBaseList();
             string result;
             bool found = false;

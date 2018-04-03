@@ -37,6 +37,7 @@
             this.menuEditStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
             this.txtBoxStaffList = new System.Windows.Forms.RichTextBox();
             this.lblUserNameList = new System.Windows.Forms.Label();
             this.txtBoxUserName = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.txtBoxSearchable = new System.Windows.Forms.TextBox();
             this.lblDairyleaSearchables = new System.Windows.Forms.Label();
             this.btnDeletThis = new System.Windows.Forms.Button();
-            this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,14 +74,14 @@
             // menuLogout
             // 
             this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(152, 22);
+            this.menuLogout.Size = new System.Drawing.Size(117, 22);
             this.menuLogout.Text = "Log Out";
             this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Size = new System.Drawing.Size(117, 22);
             this.menuExit.Text = "Exit";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
@@ -124,6 +124,13 @@
             this.menuDataHis.Size = new System.Drawing.Size(217, 22);
             this.menuDataHis.Text = "View Database History";
             this.menuDataHis.Click += new System.EventHandler(this.menuDataHis_Click);
+            // 
+            // menuReturn
+            // 
+            this.menuReturn.Name = "menuReturn";
+            this.menuReturn.Size = new System.Drawing.Size(217, 22);
+            this.menuReturn.Text = "Return to Main Menu";
+            this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
             // 
             // txtBoxStaffList
             // 
@@ -210,13 +217,6 @@
             this.btnDeletThis.Text = "Delete Staff Member";
             this.btnDeletThis.UseVisualStyleBackColor = true;
             this.btnDeletThis.Click += new System.EventHandler(this.btnDeletThis_Click);
-            // 
-            // menuReturn
-            // 
-            this.menuReturn.Name = "menuReturn";
-            this.menuReturn.Size = new System.Drawing.Size(217, 22);
-            this.menuReturn.Text = "Return to Main Menu";
-            this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
             // 
             // AdminPage
             // 

@@ -29,13 +29,13 @@ namespace AdvProAssig.DataAccess
             return updatedList;
         }
         public void AddStaff(string username, string password)
-        {
+        {//Given staff query values, enter into database
             SqlCommand addstaffcmd = new SqlCommand($"INSERT INTO Staff VALUES ('{username}','{password}')", openConnection());
             addstaffcmd.ExecuteNonQuery();
             closeConnection();
         }
         public void DeleteStaff(string username)
-        {
+        {//Delete record using Staff name as identifier
             SqlCommand deletestaffcmd = new SqlCommand($"DELETE FROM Staff WHERE UserName='{username}'", openConnection());
             deletestaffcmd.ExecuteNonQuery();
             closeConnection();
