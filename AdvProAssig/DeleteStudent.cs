@@ -18,15 +18,10 @@ namespace AdvProAssig
         {
             InitializeComponent();
         }
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            ReturntoMainScreen();
-        }
-
-
+   
         private void btnFindStudent_Click(object sender, EventArgs e)
         {
-           //Update List from database
+           //Update List from database before searching for student
            Student.PullInfofromDB();
            bool stuidfound, notnull;
             int validintnumber;
@@ -77,7 +72,7 @@ namespace AdvProAssig
         }
         
         private void ClearFields()
-        {
+        {//Function to clear fields
             txtBoxFirstName.Text = null;
             txtBoxSurname.Text = null;
             txtBoxEmail.Text = null;
@@ -99,7 +94,7 @@ namespace AdvProAssig
             this.Close();
         }
         private void UndoChanges(object sender, EventArgs e)
-        {//Validation function that uses regex to insure only integer value is entered
+        {//Validation function that uses regex to insure only integer value is entered and if non integer value is entered deletes character
             if (System.Text.RegularExpressions.Regex.IsMatch(txtBoxSearchable.Text, "[^0-9]"))
             {
                 MessageBox.Show("Please enter only numbers.");
@@ -110,12 +105,7 @@ namespace AdvProAssig
         {
             ClearFields();
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        #region menu
         private void menuAddStu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -162,10 +152,17 @@ namespace AdvProAssig
 
         private void menuReturn_Click(object sender, EventArgs e)
         {
+            ReturntoMainScreen();
+        }
+        #endregion
+
+        private void menuAdmin_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            MainForm mainscreenturnon = new MainForm();
-            mainscreenturnon.ShowDialog();
+            AdminLogin passwordlogin = new AdminLogin();
+            passwordlogin.ShowDialog();
             this.Close();
         }
+
     }
 }

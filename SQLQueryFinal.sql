@@ -22,7 +22,7 @@ INSERT INTO Student Values('Mary','Smith','Mary@DBS.com','0872146455','20 the Gr
 INSERT INTO Student Values('Max','Power','Max@DBS.com', '0894561245','54 Briarwood', 'StoneyBatter','Dublin 7','Dublin','UnderGraduate','Business', 78451254)
 GO
 
-INSERT INTO Staff VALUES('Administrator','RSAencryptedgoodness')
+
 
 EXEC uspCreateDummyStudentData
 
@@ -54,7 +54,7 @@ EXEC uspCreateStaff
 CREATE PROC uspMakeDummyStaffData
 AS
 INSERT INTO Staff VALUES ('Seamas','Password')
-INSERT INTO Staff VALUES ('Dhoot','Trumpet')
+INSERT INTO Staff VALUES('Administrator','RSAencryptedgoodness')
 INSERT INTO Staff VALUES ('secure','swordfish')
 INSERT INTO Staff VALUES ('Paul Laird','$ecure12£4')
 GO

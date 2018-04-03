@@ -16,11 +16,10 @@ namespace AdvProAssig
         public AddStudent()
         {
             InitializeComponent();
-            Student teststudent = new Student("John", "w", "wad@awd.com", "4545", "45613", "456", "45", "dublin", "Postgraduate", "Psychology", 456464);
         }
         private void Clearfields()
         {
-            //function to clear all fields 
+            //function to clear all fields and reset values to null 
             txtBoxFirstName.Clear(); txtBoxSurname.Clear(); txtBoxEmail.Clear(); txtBoxPhone.Clear(); txtBoxAdl1.Clear(); txtBoxAdl2.Clear(); txtBoxCity.Clear(); txtBoxStudentNumber.Clear();
             cbCounties.Text = " ";
             cbCourse.Text = " ";
@@ -41,7 +40,7 @@ namespace AdvProAssig
             Clearfields();
         }
         private bool FullFieldChecker()
-        {
+        {//Validation function
             bool allFieldsFull = true;
             if (txtBoxFirstName.Text == "")
                 allFieldsFull = false;
@@ -62,7 +61,7 @@ namespace AdvProAssig
         {
             this.Close();
         }
-
+        #region menubuttons
         private void menuLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -85,7 +84,6 @@ namespace AdvProAssig
             editpage.ShowDialog();
             this.Close();
         }
-
         private void menuDelStu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -101,7 +99,6 @@ namespace AdvProAssig
             databaseHistory.ShowDialog();
             this.Close();
         }
-
         private void menuAddStu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -109,7 +106,7 @@ namespace AdvProAssig
             studentpage.ShowDialog();
             this.Close();
         }
-
+        #endregion
         private void btnAddStu_Click(object sender, EventArgs e)
         {
             //Form Checker which checks certain broad fields for null values before entry
@@ -134,5 +131,20 @@ namespace AdvProAssig
             }
         }
 
+        private void administratorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogin passwordlogin = new AdminLogin();
+            passwordlogin.ShowDialog();
+            this.Close();
+        }
+        private void UndoChanges(object sender, EventArgs e)
+        {//Validation function that uses regex to insure only integer value is entered and if non integer value is entered deletes character
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtBoxStudentNumber.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtBoxStudentNumber.Text = txtBoxStudentNumber.Text.Remove(txtBoxStudentNumber.Text.Length - 1);
+            }
+        }
     }
 }

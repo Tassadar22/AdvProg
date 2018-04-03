@@ -43,12 +43,10 @@
             this.txtBoxSurname = new System.Windows.Forms.TextBox();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.lblDetails = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnFindStudent = new System.Windows.Forms.Button();
             this.txtBoxCounty = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,6 +57,7 @@
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.panelCourseLevel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -195,16 +194,6 @@
             this.lblDetails.Text = "First Name:\r\n\r\nSurname:\r\n\r\nEmail:\r\n\r\nPhone:\r\n\r\nAddress Line 1:\r\n\r\nAddress Line 2:" +
     "\r\n\r\nCounty:\r\n\r\nCity:\r\n\r\nCourse:\r\n\r\nCourseLevel:\r\n\r\n\r\nStudent Number:\r\n\r\n";
             // 
-            // btnReturn
-            // 
-            this.btnReturn.Location = new System.Drawing.Point(15, 26);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(118, 23);
-            this.btnReturn.TabIndex = 41;
-            this.btnReturn.Text = "Return to Main Menu";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(397, 356);
@@ -242,16 +231,6 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(233, 26);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 61;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // menuStrip1
             // 
@@ -294,7 +273,8 @@
             this.menuEditStu,
             this.menuDelStu,
             this.menuDataHis,
-            this.menuReturn});
+            this.menuReturn,
+            this.menuAdmin});
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
             this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.studentToolStripMenuItem.Text = "Student";
@@ -334,12 +314,18 @@
             this.menuReturn.Text = "Return to Main Menu";
             this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
             // 
+            // menuAdmin
+            // 
+            this.menuAdmin.Name = "menuAdmin";
+            this.menuAdmin.Size = new System.Drawing.Size(217, 22);
+            this.menuAdmin.Text = "Administrator";
+            this.menuAdmin.Click += new System.EventHandler(this.menuAdmin_Click);
+            // 
             // DeleteStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtBoxCounty);
             this.Controls.Add(this.btnFindStudent);
@@ -357,7 +343,6 @@
             this.Controls.Add(this.txtBoxSurname);
             this.Controls.Add(this.txtBoxFirstName);
             this.Controls.Add(this.lblDetails);
-            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MainMenuStrip = this.menuStrip1;
@@ -389,12 +374,10 @@
         private System.Windows.Forms.TextBox txtBoxSurname;
         private System.Windows.Forms.TextBox txtBoxFirstName;
         private System.Windows.Forms.Label lblDetails;
-        private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnFindStudent;
         private System.Windows.Forms.TextBox txtBoxCounty;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuLogout;
@@ -405,5 +388,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuDelStu;
         private System.Windows.Forms.ToolStripMenuItem menuDataHis;
         private System.Windows.Forms.ToolStripMenuItem menuReturn;
+        private System.Windows.Forms.ToolStripMenuItem menuAdmin;
     }
 }

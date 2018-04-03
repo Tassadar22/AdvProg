@@ -20,7 +20,7 @@ namespace AdvProAssig
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
-        {
+        {//Function to return to main menu
             this.Hide();
             MainForm returntomain = new MainForm();
             returntomain.ShowDialog();
@@ -28,7 +28,7 @@ namespace AdvProAssig
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {
+        {//Login method to check password
             switch(AdminStaff.UserNamePasswordChecker("Administrator",txtBoxPassword.Text))
             {
                 case 'a':
@@ -43,6 +43,7 @@ namespace AdvProAssig
             }
         }
 
+        #region Menu
         private void menuLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -87,5 +88,6 @@ namespace AdvProAssig
             databaseHistory.ShowDialog();
             this.Close();
         }
+        #endregion
     }
 }

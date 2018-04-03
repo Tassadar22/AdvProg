@@ -63,6 +63,7 @@
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditStu = new System.Windows.Forms.Button();
+            this.menuAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.panelCourseLevel.SuspendLayout();
             this.pnlXML.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -346,7 +347,8 @@
             this.menuEditStu,
             this.menuDelStu,
             this.menuDataHis,
-            this.menuReturn});
+            this.menuReturn,
+            this.menuAdmin});
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
             this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.studentToolStripMenuItem.Text = "Student";
@@ -395,6 +397,13 @@
             this.btnEditStu.Text = "Edit/Update student";
             this.btnEditStu.UseVisualStyleBackColor = true;
             this.btnEditStu.Click += new System.EventHandler(this.btnEditStu_Click);
+            // 
+            // menuAdmin
+            // 
+            this.menuAdmin.Name = "menuAdmin";
+            this.menuAdmin.Size = new System.Drawing.Size(191, 22);
+            this.menuAdmin.Text = "Administrator";
+            this.menuAdmin.Click += new System.EventHandler(this.administrator7ToolStripMenuItem_Click);
             // 
             // EditStudent
             // 
@@ -470,5 +479,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuDataHis;
         private System.Windows.Forms.ToolStripMenuItem menuEditStu;
         private System.Windows.Forms.Button btnEditStu;
+        private System.Windows.Forms.ToolStripMenuItem menuAdmin;
     }
 }

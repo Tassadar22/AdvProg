@@ -115,14 +115,14 @@
             // menuLogout
             // 
             this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(152, 22);
+            this.menuLogout.Size = new System.Drawing.Size(117, 22);
             this.menuLogout.Text = "Log Out";
             this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Size = new System.Drawing.Size(117, 22);
             this.menuExit.Text = "Exit";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
@@ -172,7 +172,7 @@
             this.menuAdmin.Size = new System.Drawing.Size(217, 22);
             this.menuAdmin.Text = "Administrator";
             // 
-            // AdminPrompt
+            // AdminLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,7 +184,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "AdminPrompt";
+            this.Name = "AdminLogin";
             this.Text = "Admin Password";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

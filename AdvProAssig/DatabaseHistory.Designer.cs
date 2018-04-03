@@ -39,6 +39,7 @@
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
             this.rchTxtDataBaseHistory = new System.Windows.Forms.RichTextBox();
+            this.menuAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +84,8 @@
             this.menuEditStu,
             this.menuDelStu,
             this.menuDataHis,
-            this.menuReturn});
+            this.menuReturn,
+            this.menuAdmin});
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
             this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.studentToolStripMenuItem.Text = "Student";
@@ -128,6 +130,13 @@
             this.rchTxtDataBaseHistory.TabIndex = 1;
             this.rchTxtDataBaseHistory.Text = "";
             // 
+            // menuAdmin
+            // 
+            this.menuAdmin.Name = "menuAdmin";
+            this.menuAdmin.Size = new System.Drawing.Size(217, 22);
+            this.menuAdmin.Text = "Administrator";
+            this.menuAdmin.Click += new System.EventHandler(this.menuAdmin_Click);
+            // 
             // DatabaseHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,5 +167,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuDataHis;
         private System.Windows.Forms.ToolStripMenuItem menuReturn;
         private System.Windows.Forms.RichTextBox rchTxtDataBaseHistory;
+        private System.Windows.Forms.ToolStripMenuItem menuAdmin;
     }
 }

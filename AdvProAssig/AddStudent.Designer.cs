@@ -52,6 +52,7 @@
             this.menuEditStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAddStu = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
@@ -170,6 +171,7 @@
             this.txtBoxStudentNumber.Name = "txtBoxStudentNumber";
             this.txtBoxStudentNumber.Size = new System.Drawing.Size(199, 20);
             this.txtBoxStudentNumber.TabIndex = 11;
+            this.txtBoxStudentNumber.TextChanged += new System.EventHandler(this.UndoChanges);
             // 
             // cbCounties
             // 
@@ -237,14 +239,14 @@
             // menuLogout
             // 
             this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(152, 22);
+            this.menuLogout.Size = new System.Drawing.Size(117, 22);
             this.menuLogout.Text = "Log Out";
             this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Size = new System.Drawing.Size(117, 22);
             this.menuExit.Text = "Exit";
             // 
             // studentToolStripMenuItem
@@ -254,7 +256,8 @@
             this.menuReturn,
             this.menuEditStu,
             this.menuDelStu,
-            this.menuDataHis});
+            this.menuDataHis,
+            this.menuAdmin});
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
             this.studentToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.studentToolStripMenuItem.Text = "Student";
@@ -293,6 +296,13 @@
             this.menuDataHis.Size = new System.Drawing.Size(217, 22);
             this.menuDataHis.Text = "View Database History";
             this.menuDataHis.Click += new System.EventHandler(this.menuDataHis_Click);
+            // 
+            // menuAdmin
+            // 
+            this.menuAdmin.Name = "menuAdmin";
+            this.menuAdmin.Size = new System.Drawing.Size(217, 22);
+            this.menuAdmin.Text = "Administrator";
+            this.menuAdmin.Click += new System.EventHandler(this.administratorToolStripMenuItem_Click);
             // 
             // btnClear
             // 
@@ -373,5 +383,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ToolStripMenuItem menuAddStu;
         private System.Windows.Forms.Button btnAddStu;
+        private System.Windows.Forms.ToolStripMenuItem menuAdmin;
     }
 }
