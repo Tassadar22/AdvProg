@@ -9,7 +9,7 @@ using System.IO;
 namespace AdvProAssig.DataAccess
 {
     class DAO
-    {
+    {//Connection string
         private SqlConnection conn;
         string connectionstring = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StudentDataBase;Integrated Security=True;";
         public DAO()
@@ -28,7 +28,7 @@ namespace AdvProAssig.DataAccess
                 conn.Close();
         }
         public void MakeLog(string historyfile)
-        {
+        {//Function to output to local directory to create log with timestamp
             string AddLog = $"\n{DateTime.UtcNow}\t",filename="databasehistory.log";
             //Sanity checking, create log if it doesn't exist
             if (!File.Exists(filename))
@@ -39,7 +39,7 @@ namespace AdvProAssig.DataAccess
             File.AppendAllText(filename, AddLog);
         }
         public string ReadLog()
-        {
+        {//Read database history Log if it exists and return contents
             string logContents="";
             try
             {

@@ -9,7 +9,7 @@ using System.IO;
 namespace AdvProAssig.DataAccess
 {
     class ModifyStudentRecord:DAO
-    {
+    {//Method to add to database Record
         public void AddtoDB(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
         {
             string databasestring = string.Format($"INSERT INTO Student VALUES ('{firstname}', '{surname}', '{email}'," +
@@ -21,7 +21,7 @@ namespace AdvProAssig.DataAccess
                 $"Address line 2: {addlin2}, City: {city}, County: {county}, Graduate Level: {gradlevel}, Course {cour}, Student Number: {stunum}");
         }
         public List<Student> GetList()
-        {
+        {//Method to read entire contents of student Database
             List<Student> updatedList = new List<Student>();
             SqlCommand GetCurrentStudentList = new SqlCommand("uspGetStudentList", openConnection());
             SqlDataReader reader;
