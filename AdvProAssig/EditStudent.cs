@@ -13,7 +13,6 @@ namespace AdvProAssig
 {
     public partial class EditStudent : Form
     {
-        Student searchablestu = new Student();
         Student Displaystudent;
         public EditStudent()
         {
@@ -23,12 +22,6 @@ namespace AdvProAssig
             txtBoxCourse.ReadOnly = true;
             pnlXML.Visible = false;
         }
-
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            ReturntoMainScreen();
-        }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clearfields();
@@ -113,21 +106,21 @@ namespace AdvProAssig
         }
        
         private void btnXMLExport_Click(object sender, EventArgs e)
-        {
+        {//Function to export to XML
 
             if (Displaystudent != null)
-            {
-                if(txtboxXMLFileName.Text=="")
+            {//Checks if display name is already entered
+                if (txtboxXMLFileName.Text=="")
                 {
                     txtboxXMLFileName.Text = $"{Displaystudent.FirstName} {Displaystudent.Surname} details.xml";
                 }
-                
+                //Sanity checking, checks if it exists and if so warns user that it will become populated
                 if(File.Exists(txtboxXMLFileName.Text))
                 {
                     DialogResult dialogResult = MessageBox.Show("File contains previous XML data, if you would like to append to it, select yes\n" +
                         "If No, the original file will be deleted and a new one will be created with the same name", "File is not empty", MessageBoxButtons.YesNoCancel);
                     if (dialogResult == DialogResult.Yes)
-                    {
+                    {//Puts student object into XML format
                         Displaystudent.ExportToXml(Displaystudent, txtboxXMLFileName.Text, true);
                     }
                     else if (dialogResult == DialogResult.No)
@@ -149,7 +142,7 @@ namespace AdvProAssig
         }
      
         private bool FullFieldChecker()
-        {
+        {//Check if all fields are populated before sending data on 
             bool allFieldsFull = true;
             if (txtBoxEmail.Text == "")
                 allFieldsFull = false;
@@ -163,7 +156,7 @@ namespace AdvProAssig
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
-        {
+        {//Open file dialog box to search for XML file
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Title = "Browse XML Files";
             openFileDialog1.CheckFileExists = true;
@@ -233,6 +226,13 @@ namespace AdvProAssig
             editpage.ShowDialog();
             this.Close();
         }
+        private void administrator7ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogin passwordlogin = new AdminLogin();
+            passwordlogin.ShowDialog();
+            this.Close();
+        }
         #endregion
 
         private void btnEditStu_Click(object sender, EventArgs e)
@@ -242,7 +242,7 @@ namespace AdvProAssig
             {
                 string result;
                 result = Student.EditStudentValidator(txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), txtBoxSearchable.Text, txtBoxStudentNumber.Text);
-                if (result == "Data Succesfully updated")
+                if (result == "Data Succesfully updated")//Pass functions passed to Student class
                 {
                     MessageBox.Show(result);
                     Clearfields();
@@ -259,14 +259,6 @@ namespace AdvProAssig
                     "First Name, Surname, Email, Phone, Address Line 1\n" +
                     "and City");
             }
-        }
-
-        private void administrator7ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminLogin passwordlogin = new AdminLogin();
-            passwordlogin.ShowDialog();
-            this.Close();
         }
     }
 }

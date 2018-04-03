@@ -106,12 +106,19 @@ namespace AdvProAssig
             studentpage.ShowDialog();
             this.Close();
         }
+        private void administratorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogin passwordlogin = new AdminLogin();
+            passwordlogin.ShowDialog();
+            this.Close();
+        }
         #endregion
         private void btnAddStu_Click(object sender, EventArgs e)
         {
             //Form Checker which checks certain broad fields for null values before entry
             if (FullFieldChecker())
-            {
+            {//Method which passes to add student validator basic data
                 string result = Student.AddStudentValidator(txtBoxFirstName.Text, txtBoxSurname.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAdl1.Text, txtBoxAdl2.Text, cbCounties.Text, txtBoxCity.Text, SelectedRadioButton(), cbCourse.Text, txtBoxStudentNumber.Text);
                 if (result == "Data Succesfully Added")
                 {
@@ -131,20 +138,6 @@ namespace AdvProAssig
             }
         }
 
-        private void administratorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminLogin passwordlogin = new AdminLogin();
-            passwordlogin.ShowDialog();
-            this.Close();
-        }
-        private void UndoChanges(object sender, EventArgs e)
-        {//Validation function that uses regex to insure only integer value is entered and if non integer value is entered deletes character
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtBoxStudentNumber.Text, "[^0-9]"))
-            {
-                MessageBox.Show("Please enter only numbers.");
-                txtBoxStudentNumber.Text = txtBoxStudentNumber.Text.Remove(txtBoxStudentNumber.Text.Length - 1);
-            }
-        }
+
     }
 }

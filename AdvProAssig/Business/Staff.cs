@@ -62,11 +62,11 @@ namespace AdvProAssig
             return Stafflist;
         }
         public void AddStaff(string username, string password)
-        {
+        {//Invokes dataacess layer to add object
             StaffRecord.AddStaff(username, password);
         }
         public string FindStaffMemberandDelete(string searchusername)
-        {//Finds
+        {//Searches through database for administrator password to compare against username
             GetDataBaseList();
             string result;
             bool found = false;

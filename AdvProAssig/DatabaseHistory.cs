@@ -17,10 +17,16 @@ namespace AdvProAssig
         {
             DAO dao = new DAO();
             InitializeComponent();
-            rchTxtDataBaseHistory.Text = dao.ReadLog(); //Display log contents on form load
-     
+            rchTxtDataBaseHistory.Text = dao.ReadLog(); //Display log contents of database history
         }
         #region Menu
+        private void menuAdmin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogin passwordlogin = new AdminLogin();
+            passwordlogin.ShowDialog();
+            this.Close();
+        }
         private void menuAddStu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -75,12 +81,6 @@ namespace AdvProAssig
         }
         #endregion
 
-        private void menuAdmin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminLogin passwordlogin = new AdminLogin();
-            passwordlogin.ShowDialog();
-            this.Close();
-        }
+  
     }
 }

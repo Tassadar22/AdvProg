@@ -13,15 +13,15 @@ namespace AdvProAssig
 {
     public partial class AdminPage : Form
     {
-        Staff adminstaff = new Staff();
+        Staff adminstaff = new Staff();//Staff object for modifying details
         public AdminPage()
         {
             InitializeComponent();
             LoadStaffList();
-            txtBoxPassword.PasswordChar = '*';
+            txtBoxPassword.PasswordChar = '*';//Mask characters
         }
         private void LoadStaffList()
-        {
+        {//Populate text field with staffname details
             foreach(Staff staff in adminstaff.GetstaffList())
             {
                 txtBoxStaffList.Text += staff.UserName+"\n";
@@ -72,7 +72,7 @@ namespace AdvProAssig
         #endregion
 
         private void btnAddStaff_Click(object sender, EventArgs e)
-        {
+        {//As Name implies, add member
             try
             {
                 adminstaff.AddStaff(txtBoxUserName.Text, txtBoxPassword.Text);

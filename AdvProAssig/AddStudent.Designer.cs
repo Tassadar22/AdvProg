@@ -171,7 +171,6 @@
             this.txtBoxStudentNumber.Name = "txtBoxStudentNumber";
             this.txtBoxStudentNumber.Size = new System.Drawing.Size(199, 20);
             this.txtBoxStudentNumber.TabIndex = 11;
-            this.txtBoxStudentNumber.TextChanged += new System.EventHandler(this.UndoChanges);
             // 
             // cbCounties
             // 

@@ -62,8 +62,9 @@
             this.menuDelStu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataHis = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReturn = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEditStu = new System.Windows.Forms.Button();
             this.menuAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEditStu = new System.Windows.Forms.Button();
+            this.btnToggleXMLView = new System.Windows.Forms.Button();
             this.panelCourseLevel.SuspendLayout();
             this.pnlXML.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -388,6 +389,13 @@
             this.menuReturn.Text = "Return to Main Menu";
             this.menuReturn.Click += new System.EventHandler(this.menuReturn_Click);
             // 
+            // menuAdmin
+            // 
+            this.menuAdmin.Name = "menuAdmin";
+            this.menuAdmin.Size = new System.Drawing.Size(191, 22);
+            this.menuAdmin.Text = "Administrator";
+            this.menuAdmin.Click += new System.EventHandler(this.administrator7ToolStripMenuItem_Click);
+            // 
             // btnEditStu
             // 
             this.btnEditStu.Location = new System.Drawing.Point(357, 334);
@@ -398,18 +406,22 @@
             this.btnEditStu.UseVisualStyleBackColor = true;
             this.btnEditStu.Click += new System.EventHandler(this.btnEditStu_Click);
             // 
-            // menuAdmin
+            // btnToggleXMLView
             // 
-            this.menuAdmin.Name = "menuAdmin";
-            this.menuAdmin.Size = new System.Drawing.Size(191, 22);
-            this.menuAdmin.Text = "Administrator";
-            this.menuAdmin.Click += new System.EventHandler(this.administrator7ToolStripMenuItem_Click);
+            this.btnToggleXMLView.Location = new System.Drawing.Point(368, 292);
+            this.btnToggleXMLView.Name = "btnToggleXMLView";
+            this.btnToggleXMLView.Size = new System.Drawing.Size(109, 23);
+            this.btnToggleXMLView.TabIndex = 51;
+            this.btnToggleXMLView.Text = "Toggle XML view";
+            this.btnToggleXMLView.UseVisualStyleBackColor = true;
+            this.btnToggleXMLView.Click += new System.EventHandler(this.btnToggleXML_Click);
             // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 462);
+            this.Controls.Add(this.btnToggleXMLView);
             this.Controls.Add(this.btnEditStu);
             this.Controls.Add(this.pnlEditStudent);
             this.Controls.Add(this.pnlXML);
@@ -480,5 +492,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuEditStu;
         private System.Windows.Forms.Button btnEditStu;
         private System.Windows.Forms.ToolStripMenuItem menuAdmin;
+        private System.Windows.Forms.Button btnToggleXMLView;
     }
 }

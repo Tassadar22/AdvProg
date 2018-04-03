@@ -14,7 +14,6 @@ namespace AdvProAssig
 {
     public partial class LoginForm : Form
     {
-        ModifyStudentRecord findstu = new ModifyStudentRecord();
         //Variable for passing values between both checker functions
         Staff loginstaff = new Staff();
         public LoginForm()
@@ -33,37 +32,34 @@ namespace AdvProAssig
         }
         private void menuLogin_Click(object sender, EventArgs e)
         {
-            Login();
-
+            this.Hide();
+            LoginForm studentpage = new LoginForm();
+            studentpage.ShowDialog();
+            this.Close();
         }
-        private void Login()
-        {
-            switch (loginstaff.UserNamePasswordChecker(txtBoxUserName.Text, txtBoxPassword.Text))
-            {
-                case 'a':
-                    //Upon succesful login
-                    this.Hide();
-                    MainForm studentpage = new MainForm();
-                    studentpage.ShowDialog();
-                    this.Close();
-                    break;
-                case 'b':
-                    MessageBox.Show("Incorrect Password entered");
-                    break;
-                case 'c':
-                    MessageBox.Show("Username Not Found");
-                    break;
-            }
-        }
-
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {
-            Login();
+        {//Send login data to server to check if user currently exists and user password is correct
+            switch (loginstaff.UserNamePasswordChecker(txtBoxUserName.Text, txtBoxPassword.Text))
+            {
+                case 'a':
+                    //Upon succesful login the main form menu is displayed
+                    this.Hide();
+                    MainForm studentpage = new MainForm();
+                    studentpage.ShowDialog();
+                    this.Close();
+                    break;
+                case 'b'://If password is wrong, display this message
+                    MessageBox.Show("Incorrect Password entered");
+                    break;
+                case 'c'://If username not found in list, display message
+                    MessageBox.Show("Username Not Found");
+                    break;
+            }
         }
     }
 }

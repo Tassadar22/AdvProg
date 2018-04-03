@@ -13,7 +13,6 @@ namespace AdvProAssig
 {
     public partial class DeleteStudent : Form
     {
-        Student searchablestu = new Student();
         public DeleteStudent()
         {
             InitializeComponent();
@@ -26,17 +25,15 @@ namespace AdvProAssig
            bool stuidfound, notnull;
             int validintnumber;
            notnull = int.TryParse(txtBoxSearchable.Text, out validintnumber);
-           
+           //Check if student ID can be found in database first before retrieving details
            stuidfound = Student.CheckDBforStudentID(validintnumber);
-           
            if (stuidfound&&notnull)
            {
                 Student foundstudent = Student.StudentFinder(int.Parse(txtBoxSearchable.Text));
                 PopulateFieldswithResults(foundstudent);
                 MessageBox.Show("Student Found");
            }
-            else
-                MessageBox.Show("Student Not Found");
+            else MessageBox.Show("Student Not Found");
         }
         private void PopulateFieldswithResults(Student foundstudent)
         {
@@ -106,6 +103,13 @@ namespace AdvProAssig
             ClearFields();
         }
         #region menu
+        private void menuAdmin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogin passwordlogin = new AdminLogin();
+            passwordlogin.ShowDialog();
+            this.Close();
+        }
         private void menuAddStu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -156,13 +160,7 @@ namespace AdvProAssig
         }
         #endregion
 
-        private void menuAdmin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminLogin passwordlogin = new AdminLogin();
-            passwordlogin.ShowDialog();
-            this.Close();
-        }
+    
 
     }
 }

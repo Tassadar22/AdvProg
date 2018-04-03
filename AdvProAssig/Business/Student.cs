@@ -10,9 +10,9 @@ namespace AdvProAssig
 {
     class Student:ModifyStudentRecord
     {
-        static public List<Student> studentlist = new List<Student>();
-        static ModifyStudentRecord data = new ModifyStudentRecord();
-        static public DataSet StudentDataSet;
+        static public List<Student> studentlist = new List<Student>(); //Static student held list of students
+        static ModifyStudentRecord data = new ModifyStudentRecord();//Object to access DAO
+        static public DataSet StudentDataSet; //For XML exporting
         
         //Constructors
         public string FirstName { get; set; }
@@ -45,24 +45,23 @@ namespace AdvProAssig
         //Function to insure that valid inputs are entered
         public static string AddStudentValidator(string firstnamein, string surnamein, string emailin, string phonein, string addlin1in, string addlin2in, string countyin, string cityin, string gradlevelin, string courin, string stunumin)
         {
-            //Outcome message to be passed to program
+            //Outcome message to be passed to form
             string outcome="";
             //Boolean toggle to indicate whether the passed values meet validation requirements and boolean toggle to see if ID is correct
             bool makeobject = true, checkdatabase=true;
             int studentnumber;
-            string[] textboxstringlist = { firstnamein, surnamein, emailin, phonein, addlin1in, cityin, countyin, gradlevelin };
             //Check Length of integer
             if(stunumin.Length!=8)
             {
                 outcome += "Student Number can only be eight digits long\n";
                 makeobject = false;
                 checkdatabase = false;
-            }//Check if integer value is 
+            }//Check if integer value is integer
             if (!int.TryParse(stunumin, out studentnumber))
             {
                 outcome += "Student Number must only contain an integer\n";
                 makeobject = false;
-                checkdatabase = false;//boolean flag which performs prevalidation check to see if database should be checked 
+                checkdatabase = false;//boolean flag which performs check to see if database should be checked 
             }
             if (checkdatabase)
             {
@@ -90,7 +89,7 @@ namespace AdvProAssig
             }
           
             if(makeobject)
-            {//Object meets validation 
+            {//Object meets validation and is added
                 outcome = "Data Succesfully Added";
                 Student.AddStudent(firstnamein, surnamein, emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, courin, studentnumber);
             }
@@ -151,16 +150,11 @@ namespace AdvProAssig
                 updateobject = false;
             }
             if (updateobject)
-            {//if data meets validation requirements and can be parsed it will be 
+            {//if data meets validation requirements and can be parsed it will be added to database
                 outcome = "Data Succesfully updated";
                 UpdateStudent(emailin, phonein, addlin1in, addlin2in, countyin, cityin, gradlevelin, oldstudnumber, studentnumberfinal);
             }
             return outcome;
-        }
-        public override string ToString()
-        {
-            return string.Format($"FirstName: {FirstName}\nSurname: {Surname}\nEmail: {Email}\nPhone: {Phone}\nAddressLine 1: {AddressLine1}\nAddressLine: {AddressLine2}\nCity: {City}\nCounty: {County}\n" +
-                $"Graduate Level: {GraduateLevel}\nCourse Level: {Course}\nStudent Number {StudentNumber}\n");
         }
         public static void AddStudent(string firstname, string surname, string email, string phone, string addlin1, string addlin2, string county, string city, string gradlevel, string cour, int stunum)
         {
@@ -202,7 +196,7 @@ namespace AdvProAssig
             }
             return message;
         }
-        //Method takes values from Student object 
+        //Method takes values from Student object and converts into XML format
         public void ExportToXml(Student student, string filename, bool alsoread)
         {
             //Add student object to Dataset
@@ -251,17 +245,17 @@ namespace AdvProAssig
             StudentDataSet.Clear();
         }
         public List<Student> Exportlist(List<Student> inputlist)
-        {
+        {//Pass class list when called
             PullInfofromDB();
             inputlist = studentlist;
             return inputlist;
         }
-        public static void PullInfofromDB()
+        public static void PullInfofromDB()//Update List when change has been made to database
         {
             ModifyStudentRecord sturecord = new ModifyStudentRecord();
             studentlist = sturecord.GetList();
         }
-        //Consider deleting
+        //Method for validation if county to be added exists or not
         static bool CheckCountyList(string countynameinput)
         {
             bool result = false;
@@ -308,7 +302,7 @@ namespace AdvProAssig
             return result;
         }
         static bool CourseChecker(string coursenamechecking)
-        {
+        {//Method to check if Course is within list of available courses.
             bool result = false;
             string[] Courselist = { "Psychology", "Business", "Marketing", "Software Development", "DataAnalytics" };
             foreach(string coursename in Courselist)
@@ -322,7 +316,7 @@ namespace AdvProAssig
             return result;
         }
         public static bool CheckDBforStudentID(int id)
-        {
+        {//Method to check database to see if student currently exists
             //Function to check local list to see if similar ID already exists
             bool idfound = false;
             PullInfofromDB();
@@ -337,7 +331,7 @@ namespace AdvProAssig
             return idfound;
         }
         public static Student StudentFinder(int id)
-        {
+        {//LINQ Method to return found student
             return studentlist.Find(x => x.StudentNumber == id);
         }
     }

@@ -23,24 +23,13 @@ namespace AdvProAssig
             LoadDataGrid();
         }
         private void LoadDataGrid()
-        {
+        {//Function to populate datagrid
             var list = new BindingList<Student>(updatedlist);
             dataGridStudents.DataSource = list;
-
-            dataGridStudents.Columns[0].Name = "First Name";
-            dataGridStudents.Columns[1].Name = "Surname";
-            dataGridStudents.Columns[2].Name = "Email";
-            dataGridStudents.Columns[3].Name = "Phone";
-            dataGridStudents.Columns[4].Name = "Address Line 1";
-            dataGridStudents.Columns[5].Name = "Address Line 2";
-            dataGridStudents.Columns[6].Name = "City";
-            dataGridStudents.Columns[7].Name = "County";
-            dataGridStudents.Columns[8].Name = "Graduate Level";
-            dataGridStudents.Columns[9].Name = "Course level";
-            dataGridStudents.Columns[10].Name = "Student Number";
             dataGridStudents.AutoSize = true;
             dataGridStudents.AutoGenerateColumns = false;
         }
+        #region menu
         private void menuExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -90,5 +79,6 @@ namespace AdvProAssig
             passwordlogin.ShowDialog();
             this.Close();
         }
+        #endregion
     }
 }

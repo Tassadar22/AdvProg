@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxUserName = new System.Windows.Forms.TextBox();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
-            this.btnQkLogin = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLogin = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,16 +71,6 @@
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.Size = new System.Drawing.Size(100, 20);
             this.txtBoxPassword.TabIndex = 4;
-            // 
-            // btnQkLogin
-            // 
-            this.btnQkLogin.Location = new System.Drawing.Point(148, 163);
-            this.btnQkLogin.Name = "btnQkLogin";
-            this.btnQkLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnQkLogin.TabIndex = 6;
-            this.btnQkLogin.Text = "quick login";
-            this.btnQkLogin.UseVisualStyleBackColor = true;
-            this.btnQkLogin.Click += new System.EventHandler(this.btnQkLogin_Click);
             // 
             // menuStrip1
             // 
@@ -132,7 +121,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 210);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnQkLogin);
             this.Controls.Add(this.txtBoxPassword);
             this.Controls.Add(this.txtBoxUserName);
             this.Controls.Add(this.label2);
@@ -153,7 +141,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxUserName;
         private System.Windows.Forms.TextBox txtBoxPassword;
-        private System.Windows.Forms.Button btnQkLogin;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuLogin;

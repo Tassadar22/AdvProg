@@ -12,11 +12,11 @@ namespace AdvProAssig
 {
     public partial class AdminLogin : Form
     {
-        Staff AdminStaff = new Staff();
+        Staff AdminStaff = new Staff();//Object created for modifying staff page
         public AdminLogin()
         {
             InitializeComponent();
-            txtBoxPassword.PasswordChar = '*';
+            txtBoxPassword.PasswordChar = '*';//obscure login
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace AdvProAssig
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {//Login method to check password
+        {//Login method to check password for administrator account only
             switch(AdminStaff.UserNamePasswordChecker("Administrator",txtBoxPassword.Text))
             {
                 case 'a':
